@@ -247,7 +247,15 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     // //+ 选择负载均衡策略 根据service_address_vec
     // service_address = lB.select(service_address_vec);
     //LoadBalancer* lB = new RoundRobinLoadBalancer();
-    LoadBalancer* lB = new ConsistentHashLoadBalancer();
+    std::string loadbalancer = MprpcApplication::GetInstance().GetConfig().Load("loadbalancer"); 
+    LoadBalancer* lB = nullptr;
+    if (loadbalancer == "RoundRobinLoadBalancer") {
+        std::cout << "负载均衡策略为RR" << std::endl; 
+        lB = new ConsistentHashLoadBalancer();
+    } else {
+        std::cout << "负载均衡策略为C" << std::endl; 
+        lB = new ConsistentHashLoadBalancer();
+    }
     ServiceAddress service_address = lB->select(service_address_vec);
     std::cout << "负载均衡策略选择: " << service_address.port << std::endl;
 

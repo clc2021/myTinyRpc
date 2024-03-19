@@ -16,7 +16,9 @@ void MprpcApplication::MprpcConfig::LoadConfigFile(const char *config_file)
     std::cout << "start to Load Config File" << std::endl;
 
     // 打开文件
+    std::cout << "即将打开文件: " << config_file << std::endl;
     FILE *pf = fopen(config_file, "r");
+    std::cout << "已经执行打开文件：" << config_file << std::endl;
     if (nullptr == pf)
     {
         std::cout << config_file << " is not exist!" << std::endl;
@@ -114,6 +116,8 @@ void ShowArgsHelp()
 
 void MprpcApplication::Init(int argc, char **argv)
 {
+    // // 开始加载配置文件
+    // std::lock_guard<std::mutex> lock(MprpcApplication::GetInstance().fileMutex); // 加锁
     if (argc < 2) 
     {
         ShowArgsHelp();
@@ -140,7 +144,6 @@ void MprpcApplication::Init(int argc, char **argv)
         }
     }
 
-    // 开始加载配置文件
     m_config.LoadConfigFile(config_file.c_str());
 
     printf("=======================Loading Configure Information======================\n");
@@ -149,10 +152,11 @@ void MprpcApplication::Init(int argc, char **argv)
     printf("rpc_server_port:  %-10s\n", m_config.Load("rpc_server_port").c_str()); // 3000
     printf("zookeeper_ip:     %-10s\n", m_config.Load("zookeeper_ip").c_str()); // 127.0.0.1
     printf("zookeeper_port:   %-10s\n", m_config.Load("zookeeper_port").c_str()); // 2181
+    printf("loadbalancer:     %-10s\n", m_config.Load("loadbalancer").c_str()); // 负载策略
     printf("==========================================================================\n");  
 }
 
-MprpcApplication& MprpcApplication::GetInstance()
+MprpcApplication& MprpcApplication::GetInstance() // 单例设计模式
 {
     static MprpcApplication app;
     return app;

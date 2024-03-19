@@ -7,6 +7,13 @@
 #include <thread>
 #include <vector>
 #include <string>
+#include <mutex>
+#include <condition_variable>
+
+//互斥锁和条件变量
+std::mutex mtx;
+std::condition_variable cv;
+bool ready = false;
 
 void loginService(fixbug::UserServiceRpc_Stub& stub, MprpcController& controller)
 {
@@ -60,42 +67,38 @@ void registerService(fixbug::UserServiceRpc_Stub& stub, MprpcController& control
     }
 }
 
-void clientThread(const std::string& configFile, int count) {
+void clientThread(const std::string& configFile) {
     // 初始化客户端
-    char* argv[] = {const_cast<char*>("./client_multi_thread"), const_cast<char*>("-i"), const_cast<char*>((configFile + std::to_string(count) + std::string(".conf")).c_str()), nullptr};
-    std::cout << argv[2] << std::endl;
+    char* argv[] = {const_cast<char*>("./client_multi_thread"), const_cast<char*>("-i"), const_cast<char*>(configFile.c_str()), nullptr};
+    {
+        std::unique_lock<std::mutex> lock(mtx);
+        cv.wait(lock, [] { return ready; });
+    }
     MprpcApplication::Init(3, argv);
     fixbug::UserServiceRpc_Stub stub(new MprpcChannel());
     MprpcController controller;
 
-    // 调用登录服务
-    loginService(stub, controller);
-
-    // 调用注册服务
-    registerService(stub, controller);
+    loginService(stub, controller); // 调用登录服务
+    registerService(stub, controller); // 调用注册服务
 }
 
 int main(int argc, char **argv)
 {
-    // 启动的客户端数量
-    const int numClients = 4;
-    int count = 0;
-
-    // 客户端线程容器
-    std::vector<std::thread> clientThreads;
-
-    // 指定配置文件路径
-    std::string configFile = "test";
-
-    // 创建并启动多个客户端线程
-    for (int i = 0; i < numClients; ++i) {
-        count++;
-        clientThreads.emplace_back(clientThread, configFile, count);
-        sleep(1);
+    const int numClients = 4; // 启动的客户端数量
+    std::vector<std::thread> clientThreads; // 客户端线程容器
+    std::vector<std::string> configFiles = {"test1.conf", "test2.conf", "test3.conf", "test4.conf"}; // 指定配置文件路径
+    
+    {
+        std::lock_guard<std::mutex> lock(mtx);
+        ready = true;
+        cv.notify_all();
+    }
+    
+    for (int i = 0; i < numClients; ++i) { // 创建并启动多个客户端线程
+        clientThreads.emplace_back(clientThread, configFiles[i]);
     }
 
-    // 等待所有客户端线程结束
-    for (auto& thread : clientThreads) {
+    for (auto& thread : clientThreads) { // 等待所有客户端线程结束
         thread.join();
     }
 

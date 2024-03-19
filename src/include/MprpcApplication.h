@@ -22,7 +22,7 @@ public:
         void Trim(std::string &src_buf);
 
         // 键值对储存信息
-        std::unordered_map<std::string, std::string> m_configMap;        
+        std::unordered_map<std::string, std::string> m_configMap;    
     };
 
     static void Init(int argc, char **argv);
