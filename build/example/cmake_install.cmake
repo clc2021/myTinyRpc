@@ -1,4 +1,4 @@
-# Install script for directory: /home/clab/Downloads/new_projects/tinyrpcGai/example
+# Install script for directory: /home/ubuntu/projects/tinyGai/example
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,9 +37,14 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/clab/Downloads/new_projects/tinyrpcGai/build/example/login/cmake_install.cmake")
+  include("/home/ubuntu/projects/tinyGai/build/example/login/cmake_install.cmake")
 
 endif()
 

@@ -1,12 +1,12 @@
 set(SRC_LIST
+    RoundRobinLoadBalancer.cc 
+    ConsistentHashLoadBalancer.cc
     MprpcApplication.cc
     MprpcProvider.cc
     rpc_header.pb.cc
     MprpcChannel.cc
     MprpcController.cc
     ZookeeperUtil.cc
-    RoundRobinLoadBalancer.cc 
-    ConsistentHashLoadBalancer.cc
     )
 # aux_source_directory() 用于将指定目录下所有源文件都添加到一个变量中
 aux_source_directory(mprpc SRC_LIST)

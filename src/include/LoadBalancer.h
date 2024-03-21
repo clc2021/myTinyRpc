@@ -1,7 +1,7 @@
 #ifndef __LOADBALANCER_H__
 #define __LOADBALANCER_H__
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <vector>
 #include <atomic>
 #include <climits>

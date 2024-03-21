@@ -1,23 +1,20 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/clab/Downloads/new_projects/tinyrpcGai/example/user.pb.cc" "/home/clab/Downloads/new_projects/tinyrpcGai/build/example/login/CMakeFiles/server.dir/__/user.pb.cc.o"
-  "/home/clab/Downloads/new_projects/tinyrpcGai/example/login/server.cc" "/home/clab/Downloads/new_projects/tinyrpcGai/build/example/login/CMakeFiles/server.dir/server.cc.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src/include"
-  "../example"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/ubuntu/projects/tinyGai/example/user.pb.cc" "example/login/CMakeFiles/server.dir/__/user.pb.cc.o" "gcc" "example/login/CMakeFiles/server.dir/__/user.pb.cc.o.d"
+  "/home/ubuntu/projects/tinyGai/example/login/server.cc" "example/login/CMakeFiles/server.dir/server.cc.o" "gcc" "example/login/CMakeFiles/server.dir/server.cc.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/clab/Downloads/new_projects/tinyrpcGai/build/src/CMakeFiles/mprpc.dir/DependInfo.cmake"
+  "/home/ubuntu/projects/tinyGai/build/src/CMakeFiles/mprpc.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

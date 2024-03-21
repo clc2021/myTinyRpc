@@ -243,7 +243,10 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         LOG_ERROR << "GetServiceAddress failed()";
         return ;
     }
-
+    for (int i = 0; i < service_address_vec.size(); i++)
+        std::cout << service_address_vec[i].port << "\t";
+    std::cout << std::endl;
+    // 微服务地址：3000 3002 4545 5001
     // //+ 选择负载均衡策略 根据service_address_vec
     // service_address = lB.select(service_address_vec);
     //LoadBalancer* lB = new RoundRobinLoadBalancer();
@@ -251,7 +254,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     LoadBalancer* lB = nullptr;
     if (loadbalancer == "RoundRobinLoadBalancer") {
         std::cout << "负载均衡策略为RR" << std::endl; 
-        lB = new ConsistentHashLoadBalancer();
+        lB = new RoundRobinLoadBalancer();
     } else {
         std::cout << "负载均衡策略为C" << std::endl; 
         lB = new ConsistentHashLoadBalancer();
