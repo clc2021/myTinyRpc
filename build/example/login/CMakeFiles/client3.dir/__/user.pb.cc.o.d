@@ -1,7 +1,7 @@
 example/login/CMakeFiles/client3.dir/__/user.pb.cc.o: \
- /home/ubuntu/projects/tinyGai/example/user.pb.cc \
+ /home/ubuntu/projects/tinyrpcGai/example/user.pb.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyGai/example/user.pb.h \
+ /home/ubuntu/projects/tinyrpcGai/example/user.pb.h \
  /usr/include/c++/11/limits \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

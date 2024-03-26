@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyGai
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyrpcGai
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyGai/build
+CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyrpcGai/build
 
 # Include any dependencies generated for this target.
 include example/login/CMakeFiles/client3.dir/depend.make
@@ -72,30 +72,30 @@ include example/login/CMakeFiles/client3.dir/flags.make
 example/login/CMakeFiles/client3.dir/client3.cc.o: example/login/CMakeFiles/client3.dir/flags.make
 example/login/CMakeFiles/client3.dir/client3.cc.o: ../example/login/client3.cc
 example/login/CMakeFiles/client3.dir/client3.cc.o: example/login/CMakeFiles/client3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/login/CMakeFiles/client3.dir/client3.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/login/CMakeFiles/client3.dir/client3.cc.o -MF CMakeFiles/client3.dir/client3.cc.o.d -o CMakeFiles/client3.dir/client3.cc.o -c /home/ubuntu/projects/tinyGai/example/login/client3.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/login/CMakeFiles/client3.dir/client3.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/login/CMakeFiles/client3.dir/client3.cc.o -MF CMakeFiles/client3.dir/client3.cc.o.d -o CMakeFiles/client3.dir/client3.cc.o -c /home/ubuntu/projects/tinyrpcGai/example/login/client3.cc
 
 example/login/CMakeFiles/client3.dir/client3.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client3.dir/client3.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/example/login/client3.cc > CMakeFiles/client3.dir/client3.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/example/login/client3.cc > CMakeFiles/client3.dir/client3.cc.i
 
 example/login/CMakeFiles/client3.dir/client3.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client3.dir/client3.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/example/login/client3.cc -o CMakeFiles/client3.dir/client3.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/example/login/client3.cc -o CMakeFiles/client3.dir/client3.cc.s
 
 example/login/CMakeFiles/client3.dir/__/user.pb.cc.o: example/login/CMakeFiles/client3.dir/flags.make
 example/login/CMakeFiles/client3.dir/__/user.pb.cc.o: ../example/user.pb.cc
 example/login/CMakeFiles/client3.dir/__/user.pb.cc.o: example/login/CMakeFiles/client3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/login/CMakeFiles/client3.dir/__/user.pb.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/login/CMakeFiles/client3.dir/__/user.pb.cc.o -MF CMakeFiles/client3.dir/__/user.pb.cc.o.d -o CMakeFiles/client3.dir/__/user.pb.cc.o -c /home/ubuntu/projects/tinyGai/example/user.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/login/CMakeFiles/client3.dir/__/user.pb.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/login/CMakeFiles/client3.dir/__/user.pb.cc.o -MF CMakeFiles/client3.dir/__/user.pb.cc.o.d -o CMakeFiles/client3.dir/__/user.pb.cc.o -c /home/ubuntu/projects/tinyrpcGai/example/user.pb.cc
 
 example/login/CMakeFiles/client3.dir/__/user.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client3.dir/__/user.pb.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/example/user.pb.cc > CMakeFiles/client3.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/example/user.pb.cc > CMakeFiles/client3.dir/__/user.pb.cc.i
 
 example/login/CMakeFiles/client3.dir/__/user.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client3.dir/__/user.pb.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/example/user.pb.cc -o CMakeFiles/client3.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/example/user.pb.cc -o CMakeFiles/client3.dir/__/user.pb.cc.s
 
 # Object files for target client3
 client3_OBJECTS = \
@@ -110,18 +110,18 @@ client3_EXTERNAL_OBJECTS =
 ../bin/client3: example/login/CMakeFiles/client3.dir/build.make
 ../bin/client3: ../lib/libmprpc.a
 ../bin/client3: example/login/CMakeFiles/client3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/client3"
-	cd /home/ubuntu/projects/tinyGai/build/example/login && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client3.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/client3"
+	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/login/CMakeFiles/client3.dir/build: ../bin/client3
 .PHONY : example/login/CMakeFiles/client3.dir/build
 
 example/login/CMakeFiles/client3.dir/clean:
-	cd /home/ubuntu/projects/tinyGai/build/example/login && $(CMAKE_COMMAND) -P CMakeFiles/client3.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && $(CMAKE_COMMAND) -P CMakeFiles/client3.dir/cmake_clean.cmake
 .PHONY : example/login/CMakeFiles/client3.dir/clean
 
 example/login/CMakeFiles/client3.dir/depend:
-	cd /home/ubuntu/projects/tinyGai/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/tinyGai /home/ubuntu/projects/tinyGai/example/login /home/ubuntu/projects/tinyGai/build /home/ubuntu/projects/tinyGai/build/example/login /home/ubuntu/projects/tinyGai/build/example/login/CMakeFiles/client3.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/tinyrpcGai /home/ubuntu/projects/tinyrpcGai/example/login /home/ubuntu/projects/tinyrpcGai/build /home/ubuntu/projects/tinyrpcGai/build/example/login /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client3.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/login/CMakeFiles/client3.dir/depend
 

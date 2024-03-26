@@ -13,4 +13,4 @@ aux_source_directory(mprpc SRC_LIST)
 # 生成静态库: 生成可执行文件用 add_exe, 生成静态库用add_library()
 add_library(mprpc ${SRC_LIST})  
 # 目标需要链接的库
-target_link_libraries(mprpc muduo_net muduo_base pthread zookeeper_mt)
+target_link_libraries(mprpc muduo_net muduo_base pthread zookeeper_mt uuid)

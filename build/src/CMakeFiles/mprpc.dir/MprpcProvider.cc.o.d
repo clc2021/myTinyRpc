@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
- /home/ubuntu/projects/tinyGai/src/MprpcProvider.cc \
+ /home/ubuntu/projects/tinyrpcGai/src/MprpcProvider.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyGai/src/include/MprpcProvider.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/MprpcProvider.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/service.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -208,8 +208,8 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/stubs/hash.h \
  /usr/include/c++/11/cstring /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
- /home/ubuntu/projects/tinyGai/src/include/MprpcApplication.h \
- /home/ubuntu/projects/tinyGai/src/include/MprpcChannel.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/MprpcApplication.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/MprpcChannel.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/descriptor.h \
  /usr/include/c++/11/atomic \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/stubs/logging.h \
@@ -288,10 +288,11 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp \
  /usr/include/boost/core/addressof.hpp \
- /home/ubuntu/projects/tinyGai/src/include/ErrorCode.h \
- /home/ubuntu/projects/tinyGai/src/include/LoadBalancer.h \
- /home/ubuntu/projects/tinyGai/src/include/MprpcController.h \
- /home/ubuntu/projects/tinyGai/src/include/ZookeeperUtil.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/ErrorCode.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/LoadBalancer.h \
+ /usr/include/uuid/uuid.h /usr/include/x86_64-linux-gnu/sys/time.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/MprpcController.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/ZookeeperUtil.h \
  /usr/include/semaphore.h /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/zookeeper/zookeeper.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
@@ -310,7 +311,7 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/include/x86_64-linux-gnu/asm/sockios.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/zookeeper/proto.h \
+ /usr/include/zookeeper/proto.h \
  /usr/include/zookeeper/zookeeper_version.h \
  /usr/include/zookeeper/recordio.h \
  /usr/include/zookeeper/zookeeper.jute.h /usr/include/memory.h \
@@ -354,6 +355,6 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/include/boost/type_traits/is_same.hpp \
  /usr/include/muduo/net/EventLoop.h /usr/include/muduo/base/Mutex.h \
  /usr/include/muduo/base/CurrentThread.h /usr/include/muduo/net/TimerId.h \
- /home/ubuntu/projects/tinyGai/src/include/rpc_header.pb.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/rpc_header.pb.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/extension_set.h \
  /usr/include/c++/11/cassert

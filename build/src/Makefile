@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyGai
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyrpcGai
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyGai/build
+CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyrpcGai/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/projects/tinyGai/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles /home/ubuntu/projects/tinyGai/build/src//CMakeFiles/progress.marks
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles /home/ubuntu/projects/tinyrpcGai/build/src//CMakeFiles/progress.marks
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/projects/tinyGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/mprpc.dir/rule:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mprpc.dir/rule
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mprpc.dir/rule
 .PHONY : src/CMakeFiles/mprpc.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ mprpc: src/CMakeFiles/mprpc.dir/rule
 
 # fast build rule for target.
 mprpc/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/build
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/build
 .PHONY : mprpc/fast
 
 ConsistentHashLoadBalancer.o: ConsistentHashLoadBalancer.cc.o
@@ -135,7 +135,7 @@ ConsistentHashLoadBalancer.o: ConsistentHashLoadBalancer.cc.o
 
 # target to build an object file
 ConsistentHashLoadBalancer.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o
 .PHONY : ConsistentHashLoadBalancer.cc.o
 
 ConsistentHashLoadBalancer.i: ConsistentHashLoadBalancer.cc.i
@@ -143,7 +143,7 @@ ConsistentHashLoadBalancer.i: ConsistentHashLoadBalancer.cc.i
 
 # target to preprocess a source file
 ConsistentHashLoadBalancer.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.i
 .PHONY : ConsistentHashLoadBalancer.cc.i
 
 ConsistentHashLoadBalancer.s: ConsistentHashLoadBalancer.cc.s
@@ -151,7 +151,7 @@ ConsistentHashLoadBalancer.s: ConsistentHashLoadBalancer.cc.s
 
 # target to generate assembly for a file
 ConsistentHashLoadBalancer.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.s
 .PHONY : ConsistentHashLoadBalancer.cc.s
 
 MprpcApplication.o: MprpcApplication.cc.o
@@ -159,7 +159,7 @@ MprpcApplication.o: MprpcApplication.cc.o
 
 # target to build an object file
 MprpcApplication.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o
 .PHONY : MprpcApplication.cc.o
 
 MprpcApplication.i: MprpcApplication.cc.i
@@ -167,7 +167,7 @@ MprpcApplication.i: MprpcApplication.cc.i
 
 # target to preprocess a source file
 MprpcApplication.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcApplication.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcApplication.cc.i
 .PHONY : MprpcApplication.cc.i
 
 MprpcApplication.s: MprpcApplication.cc.s
@@ -175,7 +175,7 @@ MprpcApplication.s: MprpcApplication.cc.s
 
 # target to generate assembly for a file
 MprpcApplication.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcApplication.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcApplication.cc.s
 .PHONY : MprpcApplication.cc.s
 
 MprpcChannel.o: MprpcChannel.cc.o
@@ -183,7 +183,7 @@ MprpcChannel.o: MprpcChannel.cc.o
 
 # target to build an object file
 MprpcChannel.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o
 .PHONY : MprpcChannel.cc.o
 
 MprpcChannel.i: MprpcChannel.cc.i
@@ -191,7 +191,7 @@ MprpcChannel.i: MprpcChannel.cc.i
 
 # target to preprocess a source file
 MprpcChannel.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcChannel.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcChannel.cc.i
 .PHONY : MprpcChannel.cc.i
 
 MprpcChannel.s: MprpcChannel.cc.s
@@ -199,7 +199,7 @@ MprpcChannel.s: MprpcChannel.cc.s
 
 # target to generate assembly for a file
 MprpcChannel.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcChannel.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcChannel.cc.s
 .PHONY : MprpcChannel.cc.s
 
 MprpcController.o: MprpcController.cc.o
@@ -207,7 +207,7 @@ MprpcController.o: MprpcController.cc.o
 
 # target to build an object file
 MprpcController.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcController.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcController.cc.o
 .PHONY : MprpcController.cc.o
 
 MprpcController.i: MprpcController.cc.i
@@ -215,7 +215,7 @@ MprpcController.i: MprpcController.cc.i
 
 # target to preprocess a source file
 MprpcController.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcController.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcController.cc.i
 .PHONY : MprpcController.cc.i
 
 MprpcController.s: MprpcController.cc.s
@@ -223,7 +223,7 @@ MprpcController.s: MprpcController.cc.s
 
 # target to generate assembly for a file
 MprpcController.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcController.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcController.cc.s
 .PHONY : MprpcController.cc.s
 
 MprpcProvider.o: MprpcProvider.cc.o
@@ -231,7 +231,7 @@ MprpcProvider.o: MprpcProvider.cc.o
 
 # target to build an object file
 MprpcProvider.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o
 .PHONY : MprpcProvider.cc.o
 
 MprpcProvider.i: MprpcProvider.cc.i
@@ -239,7 +239,7 @@ MprpcProvider.i: MprpcProvider.cc.i
 
 # target to preprocess a source file
 MprpcProvider.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcProvider.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcProvider.cc.i
 .PHONY : MprpcProvider.cc.i
 
 MprpcProvider.s: MprpcProvider.cc.s
@@ -247,7 +247,7 @@ MprpcProvider.s: MprpcProvider.cc.s
 
 # target to generate assembly for a file
 MprpcProvider.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcProvider.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/MprpcProvider.cc.s
 .PHONY : MprpcProvider.cc.s
 
 RoundRobinLoadBalancer.o: RoundRobinLoadBalancer.cc.o
@@ -255,7 +255,7 @@ RoundRobinLoadBalancer.o: RoundRobinLoadBalancer.cc.o
 
 # target to build an object file
 RoundRobinLoadBalancer.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o
 .PHONY : RoundRobinLoadBalancer.cc.o
 
 RoundRobinLoadBalancer.i: RoundRobinLoadBalancer.cc.i
@@ -263,7 +263,7 @@ RoundRobinLoadBalancer.i: RoundRobinLoadBalancer.cc.i
 
 # target to preprocess a source file
 RoundRobinLoadBalancer.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.i
 .PHONY : RoundRobinLoadBalancer.cc.i
 
 RoundRobinLoadBalancer.s: RoundRobinLoadBalancer.cc.s
@@ -271,7 +271,7 @@ RoundRobinLoadBalancer.s: RoundRobinLoadBalancer.cc.s
 
 # target to generate assembly for a file
 RoundRobinLoadBalancer.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.s
 .PHONY : RoundRobinLoadBalancer.cc.s
 
 ZookeeperUtil.o: ZookeeperUtil.cc.o
@@ -279,7 +279,7 @@ ZookeeperUtil.o: ZookeeperUtil.cc.o
 
 # target to build an object file
 ZookeeperUtil.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o
 .PHONY : ZookeeperUtil.cc.o
 
 ZookeeperUtil.i: ZookeeperUtil.cc.i
@@ -287,7 +287,7 @@ ZookeeperUtil.i: ZookeeperUtil.cc.i
 
 # target to preprocess a source file
 ZookeeperUtil.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.i
 .PHONY : ZookeeperUtil.cc.i
 
 ZookeeperUtil.s: ZookeeperUtil.cc.s
@@ -295,7 +295,7 @@ ZookeeperUtil.s: ZookeeperUtil.cc.s
 
 # target to generate assembly for a file
 ZookeeperUtil.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s
 .PHONY : ZookeeperUtil.cc.s
 
 rpc_header.pb.o: rpc_header.pb.cc.o
@@ -303,7 +303,7 @@ rpc_header.pb.o: rpc_header.pb.cc.o
 
 # target to build an object file
 rpc_header.pb.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o
 .PHONY : rpc_header.pb.cc.o
 
 rpc_header.pb.i: rpc_header.pb.cc.i
@@ -311,7 +311,7 @@ rpc_header.pb.i: rpc_header.pb.cc.i
 
 # target to preprocess a source file
 rpc_header.pb.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.i
 .PHONY : rpc_header.pb.cc.i
 
 rpc_header.pb.s: rpc_header.pb.cc.s
@@ -319,7 +319,7 @@ rpc_header.pb.s: rpc_header.pb.cc.s
 
 # target to generate assembly for a file
 rpc_header.pb.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.s
 .PHONY : rpc_header.pb.cc.s
 
 # Help Target
@@ -366,6 +366,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/projects/tinyGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

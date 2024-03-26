@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o: \
- /home/ubuntu/projects/tinyGai/src/ConsistentHashLoadBalancer.cc \
+ /home/ubuntu/projects/tinyrpcGai/src/ConsistentHashLoadBalancer.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyGai/src/include/LoadBalancer.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/LoadBalancer.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

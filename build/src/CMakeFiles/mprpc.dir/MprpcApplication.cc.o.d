@@ -1,8 +1,8 @@
 src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: \
- /home/ubuntu/projects/tinyGai/src/MprpcApplication.cc \
+ /home/ubuntu/projects/tinyrpcGai/src/MprpcApplication.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyGai/src/include/MprpcApplication.h \
- /home/ubuntu/projects/tinyGai/src/include/MprpcChannel.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/MprpcApplication.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/MprpcChannel.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/service.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -287,11 +287,12 @@ src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp \
  /usr/include/boost/core/addressof.hpp \
- /home/ubuntu/projects/tinyGai/src/include/MprpcApplication.h \
- /home/ubuntu/projects/tinyGai/src/include/ErrorCode.h \
- /home/ubuntu/projects/tinyGai/src/include/LoadBalancer.h \
- /home/ubuntu/projects/tinyGai/src/include/MprpcController.h \
- /home/ubuntu/projects/tinyGai/src/include/ZookeeperUtil.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/MprpcApplication.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/ErrorCode.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/LoadBalancer.h \
+ /usr/include/uuid/uuid.h /usr/include/x86_64-linux-gnu/sys/time.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/MprpcController.h \
+ /home/ubuntu/projects/tinyrpcGai/src/include/ZookeeperUtil.h \
  /usr/include/semaphore.h /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/zookeeper/zookeeper.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
@@ -310,7 +311,7 @@ src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: \
  /usr/include/x86_64-linux-gnu/asm/sockios.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/zookeeper/proto.h \
+ /usr/include/zookeeper/proto.h \
  /usr/include/zookeeper/zookeeper_version.h \
  /usr/include/zookeeper/recordio.h \
  /usr/include/zookeeper/zookeeper.jute.h /usr/include/memory.h

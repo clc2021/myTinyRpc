@@ -13,6 +13,7 @@
 
 #include <string.h>
 #include "LoadBalancer.h"
+#include <uuid/uuid.h>
 
 // struct ServiceAddress
 // {
@@ -23,7 +24,16 @@
 
 class MprpcChannel : public google::protobuf::RpcChannel
 {
+private:
+    std::string uuidString;
 public:
+    MprpcChannel() {
+        uuid_t uuid;
+        uuid_generate(uuid);
+        char uuidStr[37];
+        uuid_unparse(uuid, uuidStr);
+        uuidString = std::string(uuidStr); // uuidString
+    }
     // 重写RpcChannel::CallMethod方法，统一做rpc方法的序列化和网络发送
     void CallMethod(const google::protobuf::MethodDescriptor* method,
                           google::protobuf::RpcController* controller, 

@@ -1,17 +1,4 @@
 #!/bin/bash
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-./client -i test1.conf &
-# ./client -i test2.conf &
-# ./client -i test3.conf &
-# ./client -i test4.conf &
+./client1 -i test1.conf &
+./client2 -i test1.conf &
+./client3 -i test1.conf &

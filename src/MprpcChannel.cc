@@ -238,6 +238,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     
     // 获取微服务地址
     std::vector<ServiceAddress> service_address_vec; // 服务地址集合
+
     if (false == GetServiceAddress(method->service()->name(), method->name(), service_address_vec, controller))
     {
         LOG_ERROR << "GetServiceAddress failed()";
@@ -257,7 +258,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         lB = new RoundRobinLoadBalancer();
     } else {
         std::cout << "负载均衡策略为C" << std::endl; 
-        lB = new ConsistentHashLoadBalancer();
+        lB = new ConsistentHashLoadBalancer(uuidString);
     }
     ServiceAddress service_address = lB->select(service_address_vec);
     std::cout << "负载均衡策略选择: " << service_address.port << std::endl;

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/projects/tinyGai/src
+# Install script for directory: /home/ubuntu/projects/tinyrpcGai/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

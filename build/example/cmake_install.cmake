@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/projects/tinyGai/example
+# Install script for directory: /home/ubuntu/projects/tinyrpcGai/example
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ubuntu/projects/tinyGai/build/example/login/cmake_install.cmake")
+  include("/home/ubuntu/projects/tinyrpcGai/build/example/login/cmake_install.cmake")
 
 endif()
 

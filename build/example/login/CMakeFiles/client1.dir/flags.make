@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ubuntu/projects/tinyGai/src/include -I/home/ubuntu/projects/tinyGai/example
+CXX_INCLUDES = -I/home/ubuntu/projects/tinyrpcGai/src/include -I/home/ubuntu/projects/tinyrpcGai/example
 
 CXX_FLAGS = -g
 

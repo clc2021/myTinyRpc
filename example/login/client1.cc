@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     for (int i = 0; i < 10; i++) {
         loginService(stub, controller);
         registerService(stub, controller);
-        sleep(3);
+        sleep(1);
     }
     return 0;
 }

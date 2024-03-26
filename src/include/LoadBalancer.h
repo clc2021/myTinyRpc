@@ -33,12 +33,14 @@ class ConsistentHashLoadBalancer: public LoadBalancer { // 一致性哈希
 // 需要造出环，虚拟的节点用来分配？
 private:
     static const int VALUE_NODE_SIZE = 10; // 每个物理节点在哈希环上的数量
-
+    std::string m_uuid;
     std::string buildServiceInstanceKey(ServiceAddress address);
+    std::string buildClientInstanceKey(ServiceAddress address);
     std::map<int, ServiceAddress> makeConsistentHashRing(std::vector<ServiceAddress> services);
     ServiceAddress allocateNode(std::map<int, ServiceAddress> ring, int hashCode);
 
 public:
+    ConsistentHashLoadBalancer(std::string uuid) : m_uuid(uuid) {}
     ServiceAddress select(std::vector<ServiceAddress>& discoveries);
 };
 // const std::string ConsistentHashLoadBalancer::VALUE_NODE_SPLIT = "$"; // 静态整型变量可以类内初始化，但是非整数类型的需要类外定义和初始化

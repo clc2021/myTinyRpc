@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyGai
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyrpcGai
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyGai/build
+CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyrpcGai/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -139,14 +139,14 @@ src/clean: src/CMakeFiles/mprpc.dir/clean
 src/CMakeFiles/mprpc.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=16,17,18,19,20,21,22,23,24 "Built target mprpc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=16,17,18,19,20,21,22,23,24 "Built target mprpc"
 .PHONY : src/CMakeFiles/mprpc.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/mprpc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mprpc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/mprpc.dir/rule
 
 # Convenience name for target.
@@ -165,14 +165,14 @@ src/CMakeFiles/mprpc.dir/clean:
 example/login/CMakeFiles/client.dir/all: src/CMakeFiles/mprpc.dir/all
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=1,2,3 "Built target client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=1,2,3 "Built target client"
 .PHONY : example/login/CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
 example/login/CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : example/login/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
@@ -191,14 +191,14 @@ example/login/CMakeFiles/client.dir/clean:
 example/login/CMakeFiles/client1.dir/all: src/CMakeFiles/mprpc.dir/all
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=4,5,6 "Built target client1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=4,5,6 "Built target client1"
 .PHONY : example/login/CMakeFiles/client1.dir/all
 
 # Build rule for subdir invocation for target.
 example/login/CMakeFiles/client1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client1.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : example/login/CMakeFiles/client1.dir/rule
 
 # Convenience name for target.
@@ -217,14 +217,14 @@ example/login/CMakeFiles/client1.dir/clean:
 example/login/CMakeFiles/client2.dir/all: src/CMakeFiles/mprpc.dir/all
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=7,8,9 "Built target client2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=7,8,9 "Built target client2"
 .PHONY : example/login/CMakeFiles/client2.dir/all
 
 # Build rule for subdir invocation for target.
 example/login/CMakeFiles/client2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : example/login/CMakeFiles/client2.dir/rule
 
 # Convenience name for target.
@@ -243,14 +243,14 @@ example/login/CMakeFiles/client2.dir/clean:
 example/login/CMakeFiles/client3.dir/all: src/CMakeFiles/mprpc.dir/all
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=10,11,12 "Built target client3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=10,11,12 "Built target client3"
 .PHONY : example/login/CMakeFiles/client3.dir/all
 
 # Build rule for subdir invocation for target.
 example/login/CMakeFiles/client3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client3.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : example/login/CMakeFiles/client3.dir/rule
 
 # Convenience name for target.
@@ -269,14 +269,14 @@ example/login/CMakeFiles/client3.dir/clean:
 example/login/CMakeFiles/client_multi_thread.dir/all: src/CMakeFiles/mprpc.dir/all
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=13,14,15 "Built target client_multi_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=13,14,15 "Built target client_multi_thread"
 .PHONY : example/login/CMakeFiles/client_multi_thread.dir/all
 
 # Build rule for subdir invocation for target.
 example/login/CMakeFiles/client_multi_thread.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_multi_thread.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : example/login/CMakeFiles/client_multi_thread.dir/rule
 
 # Convenience name for target.
@@ -295,14 +295,14 @@ example/login/CMakeFiles/client_multi_thread.dir/clean:
 example/login/CMakeFiles/server.dir/all: src/CMakeFiles/mprpc.dir/all
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=25,26,27 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=25,26,27 "Built target server"
 .PHONY : example/login/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
 example/login/CMakeFiles/server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : example/login/CMakeFiles/server.dir/rule
 
 # Convenience name for target.

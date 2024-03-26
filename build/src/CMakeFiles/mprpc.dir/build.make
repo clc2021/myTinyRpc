@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyGai
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyrpcGai
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyGai/build
+CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyrpcGai/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/mprpc.dir/depend.make
@@ -72,114 +72,114 @@ include src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o: src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o: ../src/RoundRobinLoadBalancer.cc
 src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o -MF CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o.d -o CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o -c /home/ubuntu/projects/tinyGai/src/RoundRobinLoadBalancer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o -MF CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o.d -o CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/RoundRobinLoadBalancer.cc
 
 src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/src/RoundRobinLoadBalancer.cc > CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/RoundRobinLoadBalancer.cc > CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.i
 
 src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/src/RoundRobinLoadBalancer.cc -o CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/RoundRobinLoadBalancer.cc -o CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.s
 
 src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o: src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o: ../src/ConsistentHashLoadBalancer.cc
 src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o -MF CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o.d -o CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o -c /home/ubuntu/projects/tinyGai/src/ConsistentHashLoadBalancer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o -MF CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o.d -o CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/ConsistentHashLoadBalancer.cc
 
 src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/src/ConsistentHashLoadBalancer.cc > CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/ConsistentHashLoadBalancer.cc > CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.i
 
 src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/src/ConsistentHashLoadBalancer.cc -o CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/ConsistentHashLoadBalancer.cc -o CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.s
 
 src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: ../src/MprpcApplication.cc
 src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o -MF CMakeFiles/mprpc.dir/MprpcApplication.cc.o.d -o CMakeFiles/mprpc.dir/MprpcApplication.cc.o -c /home/ubuntu/projects/tinyGai/src/MprpcApplication.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o -MF CMakeFiles/mprpc.dir/MprpcApplication.cc.o.d -o CMakeFiles/mprpc.dir/MprpcApplication.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/MprpcApplication.cc
 
 src/CMakeFiles/mprpc.dir/MprpcApplication.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/MprpcApplication.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/src/MprpcApplication.cc > CMakeFiles/mprpc.dir/MprpcApplication.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/MprpcApplication.cc > CMakeFiles/mprpc.dir/MprpcApplication.cc.i
 
 src/CMakeFiles/mprpc.dir/MprpcApplication.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/MprpcApplication.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/src/MprpcApplication.cc -o CMakeFiles/mprpc.dir/MprpcApplication.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/MprpcApplication.cc -o CMakeFiles/mprpc.dir/MprpcApplication.cc.s
 
 src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: ../src/MprpcProvider.cc
 src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o -MF CMakeFiles/mprpc.dir/MprpcProvider.cc.o.d -o CMakeFiles/mprpc.dir/MprpcProvider.cc.o -c /home/ubuntu/projects/tinyGai/src/MprpcProvider.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o -MF CMakeFiles/mprpc.dir/MprpcProvider.cc.o.d -o CMakeFiles/mprpc.dir/MprpcProvider.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/MprpcProvider.cc
 
 src/CMakeFiles/mprpc.dir/MprpcProvider.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/MprpcProvider.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/src/MprpcProvider.cc > CMakeFiles/mprpc.dir/MprpcProvider.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/MprpcProvider.cc > CMakeFiles/mprpc.dir/MprpcProvider.cc.i
 
 src/CMakeFiles/mprpc.dir/MprpcProvider.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/MprpcProvider.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/src/MprpcProvider.cc -o CMakeFiles/mprpc.dir/MprpcProvider.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/MprpcProvider.cc -o CMakeFiles/mprpc.dir/MprpcProvider.cc.s
 
 src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o: src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o: ../src/rpc_header.pb.cc
 src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o -MF CMakeFiles/mprpc.dir/rpc_header.pb.cc.o.d -o CMakeFiles/mprpc.dir/rpc_header.pb.cc.o -c /home/ubuntu/projects/tinyGai/src/rpc_header.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o -MF CMakeFiles/mprpc.dir/rpc_header.pb.cc.o.d -o CMakeFiles/mprpc.dir/rpc_header.pb.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/rpc_header.pb.cc
 
 src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/rpc_header.pb.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/src/rpc_header.pb.cc > CMakeFiles/mprpc.dir/rpc_header.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/rpc_header.pb.cc > CMakeFiles/mprpc.dir/rpc_header.pb.cc.i
 
 src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/rpc_header.pb.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/src/rpc_header.pb.cc -o CMakeFiles/mprpc.dir/rpc_header.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/rpc_header.pb.cc -o CMakeFiles/mprpc.dir/rpc_header.pb.cc.s
 
 src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o: src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o: ../src/MprpcChannel.cc
 src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o -MF CMakeFiles/mprpc.dir/MprpcChannel.cc.o.d -o CMakeFiles/mprpc.dir/MprpcChannel.cc.o -c /home/ubuntu/projects/tinyGai/src/MprpcChannel.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o -MF CMakeFiles/mprpc.dir/MprpcChannel.cc.o.d -o CMakeFiles/mprpc.dir/MprpcChannel.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/MprpcChannel.cc
 
 src/CMakeFiles/mprpc.dir/MprpcChannel.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/MprpcChannel.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/src/MprpcChannel.cc > CMakeFiles/mprpc.dir/MprpcChannel.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/MprpcChannel.cc > CMakeFiles/mprpc.dir/MprpcChannel.cc.i
 
 src/CMakeFiles/mprpc.dir/MprpcChannel.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/MprpcChannel.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/src/MprpcChannel.cc -o CMakeFiles/mprpc.dir/MprpcChannel.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/MprpcChannel.cc -o CMakeFiles/mprpc.dir/MprpcChannel.cc.s
 
 src/CMakeFiles/mprpc.dir/MprpcController.cc.o: src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/MprpcController.cc.o: ../src/MprpcController.cc
 src/CMakeFiles/mprpc.dir/MprpcController.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/mprpc.dir/MprpcController.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/MprpcController.cc.o -MF CMakeFiles/mprpc.dir/MprpcController.cc.o.d -o CMakeFiles/mprpc.dir/MprpcController.cc.o -c /home/ubuntu/projects/tinyGai/src/MprpcController.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/mprpc.dir/MprpcController.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/MprpcController.cc.o -MF CMakeFiles/mprpc.dir/MprpcController.cc.o.d -o CMakeFiles/mprpc.dir/MprpcController.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/MprpcController.cc
 
 src/CMakeFiles/mprpc.dir/MprpcController.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/MprpcController.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/src/MprpcController.cc > CMakeFiles/mprpc.dir/MprpcController.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/MprpcController.cc > CMakeFiles/mprpc.dir/MprpcController.cc.i
 
 src/CMakeFiles/mprpc.dir/MprpcController.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/MprpcController.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/src/MprpcController.cc -o CMakeFiles/mprpc.dir/MprpcController.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/MprpcController.cc -o CMakeFiles/mprpc.dir/MprpcController.cc.s
 
 src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o: src/CMakeFiles/mprpc.dir/flags.make
 src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o: ../src/ZookeeperUtil.cc
 src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o -MF CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o.d -o CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o -c /home/ubuntu/projects/tinyGai/src/ZookeeperUtil.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o -MF CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o.d -o CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/ZookeeperUtil.cc
 
 src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/ZookeeperUtil.cc.i"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyGai/src/ZookeeperUtil.cc > CMakeFiles/mprpc.dir/ZookeeperUtil.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/ZookeeperUtil.cc > CMakeFiles/mprpc.dir/ZookeeperUtil.cc.i
 
 src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s"
-	cd /home/ubuntu/projects/tinyGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyGai/src/ZookeeperUtil.cc -o CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/ZookeeperUtil.cc -o CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s
 
 # Object files for target mprpc
 mprpc_OBJECTS = \
@@ -205,19 +205,19 @@ mprpc_EXTERNAL_OBJECTS =
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/build.make
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library ../../lib/libmprpc.a"
-	cd /home/ubuntu/projects/tinyGai/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mprpc.dir/cmake_clean_target.cmake
-	cd /home/ubuntu/projects/tinyGai/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mprpc.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library ../../lib/libmprpc.a"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mprpc.dir/cmake_clean_target.cmake
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mprpc.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/mprpc.dir/build: ../lib/libmprpc.a
 .PHONY : src/CMakeFiles/mprpc.dir/build
 
 src/CMakeFiles/mprpc.dir/clean:
-	cd /home/ubuntu/projects/tinyGai/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mprpc.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mprpc.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/mprpc.dir/clean
 
 src/CMakeFiles/mprpc.dir/depend:
-	cd /home/ubuntu/projects/tinyGai/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/tinyGai /home/ubuntu/projects/tinyGai/src /home/ubuntu/projects/tinyGai/build /home/ubuntu/projects/tinyGai/build/src /home/ubuntu/projects/tinyGai/build/src/CMakeFiles/mprpc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/tinyrpcGai /home/ubuntu/projects/tinyrpcGai/src /home/ubuntu/projects/tinyrpcGai/build /home/ubuntu/projects/tinyrpcGai/build/src /home/ubuntu/projects/tinyrpcGai/build/src/CMakeFiles/mprpc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/mprpc.dir/depend
 

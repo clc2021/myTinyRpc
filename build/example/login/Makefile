@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyGai
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyrpcGai
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyGai/build
+CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyrpcGai/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/projects/tinyGai/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles /home/ubuntu/projects/tinyGai/build/example/login//CMakeFiles/progress.marks
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyGai/build/CMakeFiles 0
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles /home/ubuntu/projects/tinyrpcGai/build/example/login//CMakeFiles/progress.marks
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/clean
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/preinstall
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/preinstall
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/projects/tinyGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/login/CMakeFiles/client.dir/rule:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client.dir/rule
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client.dir/rule
 .PHONY : example/login/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ client: example/login/CMakeFiles/client.dir/rule
 
 # fast build rule for target.
 client/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/build
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/build
 .PHONY : client/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client1.dir/rule:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client1.dir/rule
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client1.dir/rule
 .PHONY : example/login/CMakeFiles/client1.dir/rule
 
 # Convenience name for target.
@@ -141,12 +141,12 @@ client1: example/login/CMakeFiles/client1.dir/rule
 
 # fast build rule for target.
 client1/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/build
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/build
 .PHONY : client1/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client2.dir/rule:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client2.dir/rule
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client2.dir/rule
 .PHONY : example/login/CMakeFiles/client2.dir/rule
 
 # Convenience name for target.
@@ -155,12 +155,12 @@ client2: example/login/CMakeFiles/client2.dir/rule
 
 # fast build rule for target.
 client2/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/build
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/build
 .PHONY : client2/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client3.dir/rule:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client3.dir/rule
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client3.dir/rule
 .PHONY : example/login/CMakeFiles/client3.dir/rule
 
 # Convenience name for target.
@@ -169,12 +169,12 @@ client3: example/login/CMakeFiles/client3.dir/rule
 
 # fast build rule for target.
 client3/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/build
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/build
 .PHONY : client3/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client_multi_thread.dir/rule:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_multi_thread.dir/rule
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_multi_thread.dir/rule
 .PHONY : example/login/CMakeFiles/client_multi_thread.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ client_multi_thread: example/login/CMakeFiles/client_multi_thread.dir/rule
 
 # fast build rule for target.
 client_multi_thread/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/build
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/build
 .PHONY : client_multi_thread/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/server.dir/rule:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/server.dir/rule
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/server.dir/rule
 .PHONY : example/login/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
@@ -197,7 +197,7 @@ server: example/login/CMakeFiles/server.dir/rule
 
 # fast build rule for target.
 server/fast:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/build
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
 __/user.pb.o: __/user.pb.cc.o
@@ -205,12 +205,12 @@ __/user.pb.o: __/user.pb.cc.o
 
 # target to build an object file
 __/user.pb.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.o
 .PHONY : __/user.pb.cc.o
 
 __/user.pb.i: __/user.pb.cc.i
@@ -218,12 +218,12 @@ __/user.pb.i: __/user.pb.cc.i
 
 # target to preprocess a source file
 __/user.pb.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.i
 .PHONY : __/user.pb.cc.i
 
 __/user.pb.s: __/user.pb.cc.s
@@ -231,12 +231,12 @@ __/user.pb.s: __/user.pb.cc.s
 
 # target to generate assembly for a file
 __/user.pb.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.s
 .PHONY : __/user.pb.cc.s
 
 client.o: client.cc.o
@@ -244,7 +244,7 @@ client.o: client.cc.o
 
 # target to build an object file
 client.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/client.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/client.cc.o
 .PHONY : client.cc.o
 
 client.i: client.cc.i
@@ -252,7 +252,7 @@ client.i: client.cc.i
 
 # target to preprocess a source file
 client.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/client.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/client.cc.i
 .PHONY : client.cc.i
 
 client.s: client.cc.s
@@ -260,7 +260,7 @@ client.s: client.cc.s
 
 # target to generate assembly for a file
 client.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/client.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/client.cc.s
 .PHONY : client.cc.s
 
 client1.o: client1.cc.o
@@ -268,7 +268,7 @@ client1.o: client1.cc.o
 
 # target to build an object file
 client1.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.o
 .PHONY : client1.cc.o
 
 client1.i: client1.cc.i
@@ -276,7 +276,7 @@ client1.i: client1.cc.i
 
 # target to preprocess a source file
 client1.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.i
 .PHONY : client1.cc.i
 
 client1.s: client1.cc.s
@@ -284,7 +284,7 @@ client1.s: client1.cc.s
 
 # target to generate assembly for a file
 client1.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.s
 .PHONY : client1.cc.s
 
 client2.o: client2.cc.o
@@ -292,7 +292,7 @@ client2.o: client2.cc.o
 
 # target to build an object file
 client2.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.o
 .PHONY : client2.cc.o
 
 client2.i: client2.cc.i
@@ -300,7 +300,7 @@ client2.i: client2.cc.i
 
 # target to preprocess a source file
 client2.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.i
 .PHONY : client2.cc.i
 
 client2.s: client2.cc.s
@@ -308,7 +308,7 @@ client2.s: client2.cc.s
 
 # target to generate assembly for a file
 client2.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.s
 .PHONY : client2.cc.s
 
 client3.o: client3.cc.o
@@ -316,7 +316,7 @@ client3.o: client3.cc.o
 
 # target to build an object file
 client3.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.o
 .PHONY : client3.cc.o
 
 client3.i: client3.cc.i
@@ -324,7 +324,7 @@ client3.i: client3.cc.i
 
 # target to preprocess a source file
 client3.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.i
 .PHONY : client3.cc.i
 
 client3.s: client3.cc.s
@@ -332,7 +332,7 @@ client3.s: client3.cc.s
 
 # target to generate assembly for a file
 client3.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.s
 .PHONY : client3.cc.s
 
 client_multi_thread.o: client_multi_thread.cc.o
@@ -340,7 +340,7 @@ client_multi_thread.o: client_multi_thread.cc.o
 
 # target to build an object file
 client_multi_thread.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/client_multi_thread.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/client_multi_thread.cc.o
 .PHONY : client_multi_thread.cc.o
 
 client_multi_thread.i: client_multi_thread.cc.i
@@ -348,7 +348,7 @@ client_multi_thread.i: client_multi_thread.cc.i
 
 # target to preprocess a source file
 client_multi_thread.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/client_multi_thread.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/client_multi_thread.cc.i
 .PHONY : client_multi_thread.cc.i
 
 client_multi_thread.s: client_multi_thread.cc.s
@@ -356,7 +356,7 @@ client_multi_thread.s: client_multi_thread.cc.s
 
 # target to generate assembly for a file
 client_multi_thread.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/client_multi_thread.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/client_multi_thread.cc.s
 .PHONY : client_multi_thread.cc.s
 
 server.o: server.cc.o
@@ -364,7 +364,7 @@ server.o: server.cc.o
 
 # target to build an object file
 server.cc.o:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.o
 .PHONY : server.cc.o
 
 server.i: server.cc.i
@@ -372,7 +372,7 @@ server.i: server.cc.i
 
 # target to preprocess a source file
 server.cc.i:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.i
 .PHONY : server.cc.i
 
 server.s: server.cc.s
@@ -380,7 +380,7 @@ server.s: server.cc.s
 
 # target to generate assembly for a file
 server.cc.s:
-	cd /home/ubuntu/projects/tinyGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.s
 .PHONY : server.cc.s
 
 # Help Target
@@ -429,6 +429,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/projects/tinyGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
