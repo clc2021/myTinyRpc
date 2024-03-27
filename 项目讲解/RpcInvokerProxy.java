@@ -91,11 +91,9 @@ public class RpcInvokerProxy implements InvocationHandler {
         // 1.获取负载均衡策略
         // 这里的loadBalancerType是RpcInvokerProxy类的私有变量
         final LoadBalancer loadBalancer = LoadBalancerFactory.get(loadBalancerType);
-
         // 2.根据策略获取对应服务
         /// 这里返回的是当前节点+剩余服务节点，是为了容错的一个包装。
         final ServiceMetaRes serviceMetaRes = loadBalancer.select(params, serviceName);
-
         ServiceMeta curServiceMeta = serviceMetaRes.getCurServiceMeta();
         final Collection<ServiceMeta> otherServiceMeta = serviceMetaRes.getOtherServiceMeta();
         long count = 1;

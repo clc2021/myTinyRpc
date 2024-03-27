@@ -153,6 +153,8 @@ void MprpcApplication::Init(int argc, char **argv)
     printf("zookeeper_ip:     %-10s\n", m_config.Load("zookeeper_ip").c_str()); // 127.0.0.1
     printf("zookeeper_port:   %-10s\n", m_config.Load("zookeeper_port").c_str()); // 2181
     printf("loadbalancer:     %-10s\n", m_config.Load("loadbalancer").c_str()); // 负载策略
+    printf("faulttolerant:    %-10s\n", m_config.Load("faulttolerant").c_str()); // 容错机制
+    printf("retrycount:       %-10s\n", m_config.Load("retrycount").c_str()); // 重试次数
     printf("==========================================================================\n");  
 }
 

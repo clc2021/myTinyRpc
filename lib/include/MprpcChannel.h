@@ -14,6 +14,7 @@
 #include <string.h>
 #include "LoadBalancer.h"
 #include <uuid/uuid.h>
+#include <set>
 
 // struct ServiceAddress
 // {
@@ -26,6 +27,7 @@ class MprpcChannel : public google::protobuf::RpcChannel
 {
 private:
     std::string uuidString;
+    int retryCount;
 public:
     MprpcChannel() {
         uuid_t uuid;
@@ -63,7 +65,7 @@ private:
     
     bool GetServiceAddress(const std::string& service_name, // eg. UserServiceRpc
                     const std::string& method_name,  // Register
-                    std::vector<ServiceAddress>& service_address, // 得到127.0.0.1:2181
+                    std::set<ServiceAddress>& service_address, // 得到127.0.0.1:2181
                     ::google::protobuf::RpcController* controller);
 };
 

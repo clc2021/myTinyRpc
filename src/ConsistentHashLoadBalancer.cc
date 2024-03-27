@@ -17,7 +17,7 @@ std::string ConsistentHashLoadBalancer::buildClientInstanceKey(ServiceAddress ad
     return res; 
 }
 
-std::map<int, ServiceAddress> ConsistentHashLoadBalancer::makeConsistentHashRing(std::vector<ServiceAddress> services) { // 做哈希环
+std::map<int, ServiceAddress> ConsistentHashLoadBalancer::makeConsistentHashRing(std::set<ServiceAddress> services) { // 做哈希环
     std::map<int, ServiceAddress> ring;
     std::hash<std::string> str_hash; // 声明一个哈希函数对象
     // std::sort(services.begin(), services.end(), compareAddress);
@@ -45,15 +45,18 @@ ServiceAddress ConsistentHashLoadBalancer::allocateNode(std::map<int, ServiceAdd
     return entry->second; //int和地址信息 
 } 
 
-ServiceAddress ConsistentHashLoadBalancer::select(std::vector<ServiceAddress>& discoveries) {
+ServiceAddressRes ConsistentHashLoadBalancer::select(std::set<ServiceAddress>& discoveries) { // 这里的select()相当于getCur()
     // discoveries就是注册中心获得的地址们：
     // eg. [127.0.0.1:4544, 127.0.0.1:3000, 127.0.0.1:3002]
     static int i = 0;
-    ServiceAddress res;
+    ServiceAddress cur;
     std::hash<std::string> str_hash; // 声明一个哈希函数对象
-    int hashCode = str_hash(buildClientInstanceKey(discoveries[0]));
+    int hashCode = str_hash(buildClientInstanceKey(*(discoveries.begin())));
     std::cout << "hashcode = " << hashCode << std::endl;
     // make每次都一样，那么hashcode呢？
-    res = allocateNode(makeConsistentHashRing(discoveries), hashCode);
-    return res;
+    cur = allocateNode(makeConsistentHashRing(discoveries), hashCode);
+    // 这里的res是被选择的那个节点
+    ServiceAddressRes sar;
+    return sar.build(cur, discoveries);
 }
+

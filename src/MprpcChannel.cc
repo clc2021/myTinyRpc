@@ -11,6 +11,7 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <errno.h>
+#include <set>
 
 // 读取配置文件rpcserver的信息
 // std::string ip = MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");
@@ -19,7 +20,7 @@
 
 bool MprpcChannel::GetServiceAddress(const std::string& service_name, // eg. UserServiceRpc
                     const std::string& method_name,  // Register
-                    std::vector<ServiceAddress>& service_address, // 得到127.0.0.1:2181
+                    std::set<ServiceAddress>& service_address, // 得到127.0.0.1:2181
                     ::google::protobuf::RpcController* controller) 
                     {
     ZkClient zkCli;
@@ -27,11 +28,11 @@ bool MprpcChannel::GetServiceAddress(const std::string& service_name, // eg. Use
     std::string method_path = "/" + service_name + "/" + method_name; // /UserService/Login
     std::vector<std::string> host_datas = zkCli.GetChildData(method_path.c_str());
     std::cout <<"GetChildData: ";
-    //----------
+
     for (int i = 0; i < host_datas.size(); i++) 
         std::cout << host_datas[i] << "\t";
     std::cout << std::endl;
-    //-----
+
     for (int i = 0; i < host_datas.size(); i++) {
         std::string host_data = zkCli.GetData(host_datas[i].c_str()); // /UserService/Login/Node455
         std::cout << "host_data = " << host_data << std::endl; // 127.0.0.1:3002
@@ -48,7 +49,7 @@ bool MprpcChannel::GetServiceAddress(const std::string& service_name, // eg. Use
         ServiceAddress temp;
         temp.ip = host_data.substr(0, idx); // 127.0.0.1
         temp.port = atoi(host_data.substr(idx+1, host_data.size()-idx).c_str()); // 2181
-        service_address.push_back(temp);
+        service_address.insert(temp);
     }
     return true;
 }
@@ -227,30 +228,17 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         return;
     }
 
-    // // 获取微服务的地址
-    // ServiceAddress service_address;
-    // if (false == GetServiceAddress(method->service()->name(), method->name(), service_address, controller))
-    // {
-    //     LOG_ERROR << "GetServiceAddress failed()";
-    //     return;
-    // }
-    // std::cout << "在客户端, GetServiceAddress得到的地址" << service_address.ip << ":" << service_address.port << std::endl;
-    
     // 获取微服务地址
-    std::vector<ServiceAddress> service_address_vec; // 服务地址集合
+    std::set<ServiceAddress> service_address_set; // 服务地址集合
 
-    if (false == GetServiceAddress(method->service()->name(), method->name(), service_address_vec, controller))
+    if (false == GetServiceAddress(method->service()->name(), method->name(), service_address_set, controller))
     {
         LOG_ERROR << "GetServiceAddress failed()";
         return ;
     }
-    for (int i = 0; i < service_address_vec.size(); i++)
-        std::cout << service_address_vec[i].port << "\t";
+    for (auto it = service_address_set.begin(); it != service_address_set.end(); it++)
+        std::cout << it->port << "\t";
     std::cout << std::endl;
-    // 微服务地址：3000 3002 4545 5001
-    // //+ 选择负载均衡策略 根据service_address_vec
-    // service_address = lB.select(service_address_vec);
-    //LoadBalancer* lB = new RoundRobinLoadBalancer();
     std::string loadbalancer = MprpcApplication::GetInstance().GetConfig().Load("loadbalancer"); 
     LoadBalancer* lB = nullptr;
     if (loadbalancer == "RoundRobinLoadBalancer") {
@@ -260,22 +248,47 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         std::cout << "负载均衡策略为C" << std::endl; 
         lB = new ConsistentHashLoadBalancer(uuidString);
     }
-    ServiceAddress service_address = lB->select(service_address_vec);
-    std::cout << "负载均衡策略选择: " << service_address.port << std::endl;
 
-    // 通过网络发送RPC请求，返回clientfd，我们将用此接收响应
-    // 注意：这里似乎是直接向着127.0.0.1:12182发送数据了。
-    int client_fd;
-    res = SendRpcRquest(&client_fd, service_address, rpc_request_str, controller);
-    if (res) {
-        LOG_ERROR << "SendRpcRquest failed()";
-        return;
-    }
+    ///
+    ServiceAddressRes serviceAddressRes = lB->select(service_address_set);
+    ServiceAddress curAddress = serviceAddressRes.getCurServiceAddress();
+    std::set<ServiceAddress> othersAddress = serviceAddressRes.getOtherServiceAddress();
+    std::cout << "负载均衡策略选择: " << curAddress.port << std::endl;
     
-    // 接收响应信息
-    res = ReceiveRpcResponse(client_fd, response, controller);
-    if (res) {
-        LOG_ERROR << "ReceiveRpcResponse failed()";
-        return;
+    // 以下为重试机制+容错机制
+
+    std::string retryCountStr = MprpcApplication::GetInstance().GetConfig().Load("retrycount");
+    std::string faulTolerant = MprpcApplication::GetInstance().GetConfig().Load("faulttolerant"); 
+    std::cout << "faulTolerant = " << faulTolerant << std::endl;
+    retryCount = std::stoi(retryCountStr);
+    int count = 1;
+    while (count <= retryCount) {
+        // 通过网络发送RPC请求，返回clientfd，我们将用此接收响应
+        int client_fd;
+        res = SendRpcRquest(&client_fd, curAddress, rpc_request_str, controller);
+        if (res) {
+            LOG_ERROR << "SendRpcRquest failed()";
+            return;
+        }
+        // 接收响应信息
+        res = ReceiveRpcResponse(client_fd, response, controller);
+        if (res) {
+            std::cout << "现在选择相应的容错策略: " << std::endl;
+            if (faulTolerant == "FailOver") {
+                count++;
+                std::cout << "故障转移 这是第" << count << "次重试" << std::endl;
+                if (!othersAddress.empty()) { // 这是一个set
+                    auto next = othersAddress.begin();
+                    curAddress = *next;
+                    othersAddress.erase(next);
+                }
+            } else {
+                LOG_ERROR << "ReceiveRpcResponse failed()";
+                return ;
+            }
+            // return;
+        } else
+            break;
     }
+
 }

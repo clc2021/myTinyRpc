@@ -7,26 +7,63 @@
 #include <climits>
 #include <map> // 用来做哈希环
 #include <functional> // 
+#include <set>
 
 struct ServiceAddress
 {
     std::string ip;
     uint16_t port;
+
+    bool operator< (const ServiceAddress & other) const {
+        return ip != other.ip ? ip < other.ip : port < other.port;
+    }
+};
+
+// 这个类可以专门用来返回给Channel，这样可以准备当前节点和剩余节点
+class ServiceAddressRes {
+private:
+    ServiceAddress curServiceAddress;
+    std::set<ServiceAddress> otherServiceAddress;
+public:
+    std::set<ServiceAddress> getOtherServiceAddress() {
+        return otherServiceAddress;
+    }
+
+    ServiceAddress getCurServiceAddress() {
+        return curServiceAddress;
+    }
+
+    ServiceAddressRes(ServiceAddress cur, std::set<ServiceAddress> others) {
+        curServiceAddress = cur;
+        otherServiceAddress = std::move(others);
+    }
+
+    ServiceAddressRes() {}
+
+    ServiceAddressRes build(ServiceAddress cur, std::set<ServiceAddress> others) {
+        ServiceAddressRes serviceAddressRes(cur, others);
+        if (otherServiceAddress.size() == 1)
+            otherServiceAddress.clear();
+        else
+            otherServiceAddress.erase(curServiceAddress);
+        return serviceAddressRes;
+    }
 };
 
 class LoadBalancer { // 抽象类
 public:
 // 这里的discoveries就是所有的地址集合
-    virtual ServiceAddress select(std::vector<ServiceAddress>& discoveries) = 0;
+    virtual ServiceAddressRes select(std::set<ServiceAddress>& discoveries) = 0;
 };
 
 
 class RoundRobinLoadBalancer: public LoadBalancer {
 private:
     static std::atomic<int> roundRobinId; // 创建一个私有静态的原子整数变量，初始化为0   
-    
+    std::vector<ServiceAddress> getDiscoveries(std::set<ServiceAddress>& discoveries);
+
 public:
-    ServiceAddress select(std::vector<ServiceAddress>& discoveries);
+    ServiceAddressRes select(std::set<ServiceAddress>& discoveries);
 };
 
 class ConsistentHashLoadBalancer: public LoadBalancer { // 一致性哈希
@@ -36,12 +73,12 @@ private:
     std::string m_uuid;
     std::string buildServiceInstanceKey(ServiceAddress address);
     std::string buildClientInstanceKey(ServiceAddress address);
-    std::map<int, ServiceAddress> makeConsistentHashRing(std::vector<ServiceAddress> services);
+    std::map<int, ServiceAddress> makeConsistentHashRing(std::set<ServiceAddress> services);
     ServiceAddress allocateNode(std::map<int, ServiceAddress> ring, int hashCode);
 
 public:
     ConsistentHashLoadBalancer(std::string uuid) : m_uuid(uuid) {}
-    ServiceAddress select(std::vector<ServiceAddress>& discoveries);
+    ServiceAddressRes select(std::set<ServiceAddress>& discoveries);
 };
 // const std::string ConsistentHashLoadBalancer::VALUE_NODE_SPLIT = "$"; // 静态整型变量可以类内初始化，但是非整数类型的需要类外定义和初始化
 #endif
