@@ -110,18 +110,6 @@ void MprpcProvider::Run()
     uint16_t port = atoi(MprpcApplication::GetInstance().GetConfig().Load("rpc_server_port").c_str()); // 本地port
     muduo::net::InetAddress address(ip, port);
 
-    // 创建 TcpServer 对象  
-    // &m_eventLoop：这是一个指向 EventLoop 对象的指针。EventLoop 是 Muduo 网络库中的事件循环，
-    // 负责处理事件分派和调度。通过将 TcpServer 关联到特定的事件循环，可以确保网络事件的处理与程序
-    // 的主事件循环同步。
-    // address：这是一个 muduo::net::InetAddress 对象，表示服务器监听的地址和端口。在这个例子中，
-    // 它指定了服务器要绑定的 IP 地址和端口号。
-    // "RpcProvider"：这是服务器的名字，用于标识这个 TcpServer 实例。这个名字通常用于日志记录和诊
-    // 断，以便在多个服务器实例运行时区分它们。
-    // 这个对象的作用是告诉 TcpServer 类在哪个地址上监听传入的连接。当客户端想要连接到服务器时，
-    // 它们会使用这个地址和端口来尝试建立连接。服务器会监听这个地址上的端口，并在有新连接到来时进行处理
-    // 事件循环组件；TCP服务器绑定的地址，也就是服务器的IP地址和端口号。；字符串，用来表示TCP服务器名称
-    // address: TcpServer在哪个地址上监听传入的连接。
     muduo::net::TcpServer server(&m_eventLoop, address, "RpcProvider"); // 一个TCP连接的对象，server
 
     // 设置muduo库线程数量
@@ -259,19 +247,6 @@ void MprpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
 }
 
 // Closure的回调操作，用于序列化rpc的响应和网络发送
-/*
-SerializeToString() 是 Google Protocol Buffers（protobuf）库中的一个函数，
-用于将消息对象序列化为字符串。Protocol Buffers 是一种轻量级的数据交换格式，
-它能够有效地将结构化的数据序列化为紧凑的二进制格式，并且可以反序列化为原始的
-结构化数据。
-在使用 Protocol Buffers 时，我们首先定义一个消息类型（Message），然后使用
-编译器生成的代码（例如 protoc）生成对应的数据结构和序列化/反序列化方法。
-SerializeToString() 就是其中之一，它用于将消息对象序列化为字符串。
-具体来说，SerializeToString() 接受一个消息对象作为参数，将该对象的数据按照
-定义的消息格式序列化为一个字符串。这个字符串可以保存到文件中、通过网络发送、
-存储到数据库等等。反之，我们也可以使用反序列化函数（如 ParseFromString()）
-将这个字符串解析成对应的消息对象。
-*/
 void MprpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr& conn, 
                                     google::protobuf::Message* response)
 {

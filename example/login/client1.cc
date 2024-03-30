@@ -1,3 +1,7 @@
+/*
+这里的channel1.cc：
+主要是用来测试故障转移。
+*/
 #include "user.pb.h"
 #include "MprpcApplication.h"
 #include "MprpcChannel.h"
@@ -78,7 +82,7 @@ int main(int argc, char **argv)
     for (int i = 0; i < 10; i++) {
         loginService(stub, controller);
         registerService(stub, controller);
-        sleep(1);
+        sleep(2);
     }
     return 0;
 }

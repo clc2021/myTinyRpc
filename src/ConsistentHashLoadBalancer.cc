@@ -26,11 +26,11 @@ std::map<int, ServiceAddress> ConsistentHashLoadBalancer::makeConsistentHashRing
             ring[str_hash(buildServiceInstanceKey(instance) + "$" + std::to_string(i))] = instance;
         }
     }
-    std::cout << " ====================" << std::endl;
-    for (auto it = ring.begin(); it != ring.end(); it++) {
-        std::cout << it->first << "=" << it->second.ip << ":" << it->second.port << std::endl;
-    }
-    std::cout << " ====================" << std::endl;
+    // std::cout << " ====================" << std::endl;
+    // for (auto it = ring.begin(); it != ring.end(); it++) {
+    //     std::cout << it->first << "=" << it->second.ip << ":" << it->second.port << std::endl;
+    // }
+    // std::cout << " ====================" << std::endl;
     return ring; // 返回哈希环
 }
 

@@ -195,6 +195,19 @@ client_multi_thread/fast:
 .PHONY : client_multi_thread/fast
 
 #=============================================================================
+# Target rules for targets named client_failover
+
+# Build rule for target.
+client_failover: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client_failover
+.PHONY : client_failover
+
+# fast build rule for target.
+client_failover/fast:
+	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/build
+.PHONY : client_failover/fast
+
+#=============================================================================
 # Target rules for targets named server
 
 # Build rule for target.
@@ -219,6 +232,7 @@ help:
 	@echo "... client1"
 	@echo "... client2"
 	@echo "... client3"
+	@echo "... client_failover"
 	@echo "... client_multi_thread"
 	@echo "... mprpc"
 	@echo "... server"

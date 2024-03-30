@@ -66,7 +66,8 @@ void ZkClient::Start() // == zookeeper_init()连接节点。
 	例如数据库服务器、应用服务器、消息队列服务器等。在这种情况下，一个 ZooKeeper 服务器也可以被称为一个节点，
 	但是在不同的上下文中可能会有不同的含义，需要根据具体的语境来理解。
 	*/
-    m_zhandle = zookeeper_init(connstr.c_str(), global_watcher, 30000, nullptr, nullptr, 0);
+    // m_zhandle = zookeeper_init(connstr.c_str(), global_watcher, 30000, nullptr, nullptr, 0);
+	m_zhandle = zookeeper_init(connstr.c_str(), global_watcher, 3000, nullptr, nullptr, 0);
     if (nullptr == m_zhandle) 
     {
         std::cout << "zookeeper_init error!" << std::endl;

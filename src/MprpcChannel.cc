@@ -265,14 +265,15 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     while (count <= retryCount) {
         // 通过网络发送RPC请求，返回clientfd，我们将用此接收响应
         int client_fd;
-        res = SendRpcRquest(&client_fd, curAddress, rpc_request_str, controller);
-        if (res) {
-            LOG_ERROR << "SendRpcRquest failed()";
-            return;
-        }
+        RPC_CHANNEL_CODE res1 = SendRpcRquest(&client_fd, curAddress, rpc_request_str, controller);
+        // if (res) {
+        //     LOG_ERROR << "SendRpcRquest failed()";
+        //     return;
+        // }
         // 接收响应信息
-        res = ReceiveRpcResponse(client_fd, response, controller);
-        if (res) {
+        RPC_CHANNEL_CODE res2 = ReceiveRpcResponse(client_fd, response, controller);
+        if (res1 || res2) {
+            std::cout << "接收响应错误: " << std::endl;
             std::cout << "现在选择相应的容错策略: " << std::endl;
             if (faulTolerant == "FailOver") {
                 count++;
@@ -287,8 +288,10 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                 return ;
             }
             // return;
-        } else
+        } else {
+            std::cout << "接收响应成功" << std::endl;
             break;
+        }
     }
 
 }

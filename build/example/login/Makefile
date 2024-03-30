@@ -187,6 +187,20 @@ client_multi_thread/fast:
 .PHONY : client_multi_thread/fast
 
 # Convenience name for target.
+example/login/CMakeFiles/client_failover.dir/rule:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_failover.dir/rule
+.PHONY : example/login/CMakeFiles/client_failover.dir/rule
+
+# Convenience name for target.
+client_failover: example/login/CMakeFiles/client_failover.dir/rule
+.PHONY : client_failover
+
+# fast build rule for target.
+client_failover/fast:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/build
+.PHONY : client_failover/fast
+
+# Convenience name for target.
 example/login/CMakeFiles/server.dir/rule:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/server.dir/rule
 .PHONY : example/login/CMakeFiles/server.dir/rule
@@ -210,6 +224,7 @@ __/user.pb.cc.o:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.o
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.o
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.o
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.o
 .PHONY : __/user.pb.cc.o
 
@@ -223,6 +238,7 @@ __/user.pb.cc.i:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.i
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.i
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.i
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.i
 .PHONY : __/user.pb.cc.i
 
@@ -236,6 +252,7 @@ __/user.pb.cc.s:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.s
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.s
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.s
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.s
 .PHONY : __/user.pb.cc.s
 
@@ -335,6 +352,30 @@ client3.cc.s:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.s
 .PHONY : client3.cc.s
 
+client_failover.o: client_failover.cc.o
+.PHONY : client_failover.o
+
+# target to build an object file
+client_failover.cc.o:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.o
+.PHONY : client_failover.cc.o
+
+client_failover.i: client_failover.cc.i
+.PHONY : client_failover.i
+
+# target to preprocess a source file
+client_failover.cc.i:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.i
+.PHONY : client_failover.cc.i
+
+client_failover.s: client_failover.cc.s
+.PHONY : client_failover.s
+
+# target to generate assembly for a file
+client_failover.cc.s:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.s
+.PHONY : client_failover.cc.s
+
 client_multi_thread.o: client_multi_thread.cc.o
 .PHONY : client_multi_thread.o
 
@@ -395,6 +436,7 @@ help:
 	@echo "... client1"
 	@echo "... client2"
 	@echo "... client3"
+	@echo "... client_failover"
 	@echo "... client_multi_thread"
 	@echo "... server"
 	@echo "... __/user.pb.o"
@@ -412,6 +454,9 @@ help:
 	@echo "... client3.o"
 	@echo "... client3.i"
 	@echo "... client3.s"
+	@echo "... client_failover.o"
+	@echo "... client_failover.i"
+	@echo "... client_failover.s"
 	@echo "... client_multi_thread.o"
 	@echo "... client_multi_thread.i"
 	@echo "... client_multi_thread.s"
