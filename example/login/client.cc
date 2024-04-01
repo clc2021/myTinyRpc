@@ -4,7 +4,7 @@
 #include "MprpcController.h"
 
 #include <iostream>
-
+// fixbug是proto里的
 void loginService(fixbug::UserServiceRpc_Stub& stub, MprpcController& controller)
 {
     fixbug::LoginRequest request;

@@ -41,11 +41,11 @@ public:
     ServiceAddressRes() {}
 
     ServiceAddressRes build(ServiceAddress cur, std::set<ServiceAddress> others) {
-        ServiceAddressRes serviceAddressRes(cur, others);
-        if (otherServiceAddress.size() == 1)
-            otherServiceAddress.clear();
+        if (others.size() == 1)
+            others.clear();
         else
-            otherServiceAddress.erase(curServiceAddress);
+            others.erase(cur);
+        ServiceAddressRes serviceAddressRes(cur, others);
         return serviceAddressRes;
     }
 };

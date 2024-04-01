@@ -13,6 +13,7 @@
 // service2名 -> ServiceInfo结构体【service2对象, {rpc1名 -> 方法1描述*, rpc2名 -> 方法2描述*...}】,  
 // service3名 -> ServiceInfo结构体【service3对象, {rpc1名 -> 描述*, rpc2名 -> 描述*....}】
 // ...}
+
 void MprpcProvider::NotifyService(google::protobuf::Service *service) 
 {
     // ServiceInfo：包括服务对象和方法名-方法描述，一个对象可能跟多个这样的方法名+描述在一起
@@ -44,24 +45,6 @@ void MprpcProvider::NotifyService(google::protobuf::Service *service)
 }
 
 // 将服务注册到zookeeper上
-/*
-InetAddress：IP地址和端口号
-muduo::net::InetAddress address("127.0.0.1", 8080); // IPv4 地址示例
-muduo::net::InetAddress address("::1", 8080);      // IPv6 地址示例
-
-*/
-// RegisterZookeeper(IP:port, zookeeper客户端) 服务端保留的是字符串服务，然后根据这个ip地址进行服务注册
-// RegisterZookeeper会把字符串类型的服务和ip:port一块注册到zookeeper上
-// 但是注意：这里字符串是路径，服务名变成路径，而ip:port是值，服务地址是值
-//  ____________________
-// |                    |
-// |__服务名__|__地址___| 
-// |  Login   |         |
-// |_Register_|_________|        
-// |__________|_________|
-
-// 这个address是rpc服务器的地址：127.0.0.1:3000的那个
-// 但是代码里注册是ip+2181
 void MprpcProvider::RegisterZookeeper(const muduo::net::InetAddress& address, ZkClient* zkCli)
 {
     // 把当前rpc节点上要发布的服务全部注册到zk上面，让rpc client可以从zk上发现服务
@@ -78,25 +61,15 @@ void MprpcProvider::RegisterZookeeper(const muduo::net::InetAddress& address, Zk
         for (auto &mp : sp.second.m_methodMap) // sp.second.methodMap就是多个方法名+方法描述
         {
             std::string method_path = service_path + "/" + mp.first; // /service1名/方法1名
-            // std::cout << "method_path = " << method_path <<std::endl;
-            //               method_path = /UserServiceRpc/Register
-            //               method_path = /UserServiceRpc/Login
             char method_path_data[128] = {0};
-            // 这个为什么要和zk_port一样？？？？？？？？？？？？？？？？？？
-            //+ 将12182改成4545
             //sprintf(method_path_data, "%s:%d", address.toIp().c_str(), 4545);
             sprintf(method_path_data, "%s:%d", address.toIp().c_str(), address.port());
             std::cout << "服务端的 " << address.toIpPort().c_str() << std::endl;
-            // printf("%s:%d", address.toIp().c_str(), 2181); 
-            // // 127.0.0.1:
             // ZOO_EPHEMERAL表示znode是一个临时性节点
             char childPath[16] = {0};
             sprintf(childPath, "Node%d", address.port());
             zkCli->Create(method_path.c_str(), nullptr, 0); //也是永久的
             zkCli->CreateMultipleChildren(method_path.c_str(), childPath, method_path_data, strlen(method_path_data), ZOO_EPHEMERAL);
-            // std::cout<< "zkCli->CreateMultipleChildren(节点路径" << method_path.c_str() << "节点初始值, " << method_path_data << std::endl;
-            //              zkCli->Create(节点路径/UserServiceRpc/Register节点初始值, 127.0.0.1:2181
-            //              zkCli->Create(节点路径/UserServiceRpc/Login节点初始值, 127.0.0.1:2181
         }
     }
 }
@@ -142,14 +115,14 @@ void MprpcProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn)
     }
 }
 
-// 解析数据包
-// 将buffer前四个字节读出来，方便知道接下来要读取多少数据
-// muduo::net::Buffer类型 通常用来管理接收和发送数据的缓冲区
+// 解析数据包，
+// 将buffer前四个字节读出来，方便知道接下来要读取多少数据，
+// muduo::net::Buffer类型 通常用来管理接收和发送数据的缓冲区。
 void MprpcProvider::ParseRequest(muduo::net::Buffer* buffer, RequestInfo* req_info)
 {
-    // retrieveAllAsString() 从某个地方比如网络连接和文件检索数据, 并以字符串的形式
+    // retrieveAllAsString() 从某个地方比如网络连接和文件检索数据, 并以字符串的形式。
     // 返回所有检索到的数据, 这个函数通常会在网络通信或文件读取等场景中使用。
-    std::string recv_buf = buffer->retrieveAllAsString(); // 网络上接受的远程rpc调用请求的字符流
+    std::string recv_buf = buffer->retrieveAllAsString(); // 网络上接受的远程rpc调用请求的字符流。
     
     uint32_t header_size = 0; // 无符号整数类型，32bit占4字节
     char* address = (char*)&header_size; // 4个字节， (char *)(uint32_t的地址)

@@ -42,6 +42,7 @@ public:
                           const google::protobuf::Message* request,
                           google::protobuf::Message* response, 
                           google::protobuf::Closure* done);
+    
 private:
     // 按照自定义协议打包请求信息，成功返回序列化后的字符串
     RPC_CHANNEL_CODE PackageRequest(std::string* rpc_request_str,

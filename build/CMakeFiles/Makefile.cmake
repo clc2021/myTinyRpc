@@ -128,7 +128,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "example/login/CMakeFiles/client.dir/DependInfo.cmake"
   "example/login/CMakeFiles/client1.dir/DependInfo.cmake"
   "example/login/CMakeFiles/client2.dir/DependInfo.cmake"
-  "example/login/CMakeFiles/client3.dir/DependInfo.cmake"
+  "example/login/CMakeFiles/client_async.dir/DependInfo.cmake"
   "example/login/CMakeFiles/client_multi_thread.dir/DependInfo.cmake"
   "example/login/CMakeFiles/client_failover.dir/DependInfo.cmake"
   "example/login/CMakeFiles/server.dir/DependInfo.cmake"

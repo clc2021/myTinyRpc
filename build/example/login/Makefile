@@ -159,18 +159,18 @@ client2/fast:
 .PHONY : client2/fast
 
 # Convenience name for target.
-example/login/CMakeFiles/client3.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client3.dir/rule
-.PHONY : example/login/CMakeFiles/client3.dir/rule
+example/login/CMakeFiles/client_async.dir/rule:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_async.dir/rule
+.PHONY : example/login/CMakeFiles/client_async.dir/rule
 
 # Convenience name for target.
-client3: example/login/CMakeFiles/client3.dir/rule
-.PHONY : client3
+client_async: example/login/CMakeFiles/client_async.dir/rule
+.PHONY : client_async
 
 # fast build rule for target.
-client3/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/build
-.PHONY : client3/fast
+client_async/fast:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/build
+.PHONY : client_async/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client_multi_thread.dir/rule:
@@ -222,7 +222,7 @@ __/user.pb.cc.o:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.o
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.o
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.o
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.o
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.o
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.o
@@ -236,7 +236,7 @@ __/user.pb.cc.i:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.i
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.i
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.i
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.i
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.i
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.i
@@ -250,7 +250,7 @@ __/user.pb.cc.s:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/__/user.pb.cc.s
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.s
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.s
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/__/user.pb.cc.s
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.s
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.s
@@ -328,29 +328,29 @@ client2.cc.s:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.s
 .PHONY : client2.cc.s
 
-client3.o: client3.cc.o
-.PHONY : client3.o
+client_async.o: client_async.cc.o
+.PHONY : client_async.o
 
 # target to build an object file
-client3.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.o
-.PHONY : client3.cc.o
+client_async.cc.o:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.o
+.PHONY : client_async.cc.o
 
-client3.i: client3.cc.i
-.PHONY : client3.i
+client_async.i: client_async.cc.i
+.PHONY : client_async.i
 
 # target to preprocess a source file
-client3.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.i
-.PHONY : client3.cc.i
+client_async.cc.i:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.i
+.PHONY : client_async.cc.i
 
-client3.s: client3.cc.s
-.PHONY : client3.s
+client_async.s: client_async.cc.s
+.PHONY : client_async.s
 
 # target to generate assembly for a file
-client3.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/client3.cc.s
-.PHONY : client3.cc.s
+client_async.cc.s:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.s
+.PHONY : client_async.cc.s
 
 client_failover.o: client_failover.cc.o
 .PHONY : client_failover.o
@@ -435,7 +435,7 @@ help:
 	@echo "... client"
 	@echo "... client1"
 	@echo "... client2"
-	@echo "... client3"
+	@echo "... client_async"
 	@echo "... client_failover"
 	@echo "... client_multi_thread"
 	@echo "... server"
@@ -451,9 +451,9 @@ help:
 	@echo "... client2.o"
 	@echo "... client2.i"
 	@echo "... client2.s"
-	@echo "... client3.o"
-	@echo "... client3.i"
-	@echo "... client3.s"
+	@echo "... client_async.o"
+	@echo "... client_async.i"
+	@echo "... client_async.s"
 	@echo "... client_failover.o"
 	@echo "... client_failover.i"
 	@echo "... client_failover.s"

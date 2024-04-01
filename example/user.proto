@@ -4,13 +4,17 @@ package fixbug;
 
 option cc_generic_services = true;
 
-message ResultCode
+message ResultCode 
 {
     int32 errcode = 1;
     bytes errmsg = 2;
 }
 
-message LoginRequest
+// 两个RPC调用的请求和响应分别定义：
+// Login()的请求和响应分别为LoginRequest  LoginResponse
+// Register()的请求和响应分别为 RegisterRequest RegisterResponse
+// 然后这两个RPC调用都属于UserServiceRpc服务。
+message LoginRequest 
 {
     bytes name = 1;
     bytes pwd = 2;

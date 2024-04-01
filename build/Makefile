@@ -169,17 +169,17 @@ client2/fast:
 .PHONY : client2/fast
 
 #=============================================================================
-# Target rules for targets named client3
+# Target rules for targets named client_async
 
 # Build rule for target.
-client3: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client3
-.PHONY : client3
+client_async: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client_async
+.PHONY : client_async
 
 # fast build rule for target.
-client3/fast:
-	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client3.dir/build.make example/login/CMakeFiles/client3.dir/build
-.PHONY : client3/fast
+client_async/fast:
+	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/build
+.PHONY : client_async/fast
 
 #=============================================================================
 # Target rules for targets named client_multi_thread
@@ -231,7 +231,7 @@ help:
 	@echo "... client"
 	@echo "... client1"
 	@echo "... client2"
-	@echo "... client3"
+	@echo "... client_async"
 	@echo "... client_failover"
 	@echo "... client_multi_thread"
 	@echo "... mprpc"

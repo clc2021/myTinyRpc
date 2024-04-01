@@ -356,4 +356,5 @@ src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o: \
  /usr/include/boost/type_traits/add_reference.hpp \
  /usr/include/boost/utility/enable_if.hpp \
  /usr/include/boost/core/enable_if.hpp \
- /usr/include/boost/type_traits/is_same.hpp /usr/include/arpa/inet.h
+ /usr/include/boost/type_traits/is_same.hpp /usr/include/arpa/inet.h \
+ /usr/include/netinet/tcp.h

@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <set>
+#include <netinet/tcp.h>
 
 // 读取配置文件rpcserver的信息
 // std::string ip = MprpcApplication::GetInstance().GetConfig().Load("rpcserverip");
@@ -83,10 +84,8 @@ bool MprpcChannel::GetServiceAddress(const std::string& service_name, // eg. Use
     return true;
 }
 
-/*
-总体来说，这段代码的作用是将 RPC 请求的头部信息和参数序列化后，按照一定格式拼接成一个完整的
- RPC 请求字符串，并存储到指定的字符串对象中。
-*/
+// 总体来说，这段代码的作用是将 RPC 请求的头部信息和参数序列化后，按照一定格式拼接成一个完整的
+//  RPC 请求字符串，并存储到指定的字符串对象中。
 RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
                                               const google::protobuf::MethodDescriptor* method,
                                               google::protobuf::RpcController* controller,
@@ -123,9 +122,6 @@ RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
         return CHANNEL_PACKAGE_ERR;
     }
 
-    // + ----------- +------+ ------------ +------+ ----------- +------+ --------- +------+ -------- +
-    // + header_size +------+ service_name +------+ method_name +------+ args_size +------+ args_str +
-    // + ----------- +------+ ------------ +------+ ----------- +------+ --------- +------+ -------- +
     // memset(rpc_request_str, '\0', sizeof(rpc_request_str));
     (*rpc_request_str).insert(0, std::string((char*)&header_size, 4));
     (*rpc_request_str) += rpc_header_str;
@@ -154,7 +150,18 @@ RPC_CHANNEL_CODE MprpcChannel::SendRpcRquest(int* fd,
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(service_address.port);
     server_addr.sin_addr.s_addr = inet_addr(service_address.ip.c_str());
-    std::cout<< "客户端连接connect: "<< service_address.ip << ":" << service_address.port << std::endl;
+    LOG_INFO << "客户端连接connect: "<< service_address.ip << ":" << service_address.port;
+
+    struct timeval timeout;
+    timeout.tv_sec = 5; // 5s
+    timeout.tv_usec = 0;
+    if (setsockopt(client_fd, SOL_SOCKET, SO_SNDTIMEO, (char *)&timeout, sizeof(timeout)) < 0) {
+        close(client_fd);
+        char errtxt[512] = {0};
+        sprintf(errtxt, "超时! errno:%d", errno);
+        controller->SetFailed(errtxt);
+        return CHANNEL_SEND_ERR;
+    }
 
     // 连接rpc服务节点：这里连接的是RPC服务器ip:zookeeper的port
     if (-1 == connect(client_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)))
@@ -225,6 +232,8 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     RPC_CHANNEL_CODE res =  PackageRequest(ptr, method, controller, request);
     if (res) {
         LOG_ERROR << "PackageRequest failed()";
+        if (!done)
+            done->Run();
         return;
     }
 
@@ -234,6 +243,8 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     if (false == GetServiceAddress(method->service()->name(), method->name(), service_address_set, controller))
     {
         LOG_ERROR << "GetServiceAddress failed()";
+        if (!done)
+            done->Run();
         return ;
     }
     for (auto it = service_address_set.begin(); it != service_address_set.end(); it++)
@@ -249,14 +260,12 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         lB = new ConsistentHashLoadBalancer(uuidString);
     }
 
-    ///
     ServiceAddressRes serviceAddressRes = lB->select(service_address_set);
     ServiceAddress curAddress = serviceAddressRes.getCurServiceAddress();
     std::set<ServiceAddress> othersAddress = serviceAddressRes.getOtherServiceAddress();
     std::cout << "负载均衡策略选择: " << curAddress.port << std::endl;
     
     // 以下为重试机制+容错机制
-
     std::string retryCountStr = MprpcApplication::GetInstance().GetConfig().Load("retrycount");
     std::string faulTolerant = MprpcApplication::GetInstance().GetConfig().Load("faulttolerant"); 
     std::cout << "faulTolerant = " << faulTolerant << std::endl;
@@ -266,18 +275,16 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         // 通过网络发送RPC请求，返回clientfd，我们将用此接收响应
         int client_fd;
         RPC_CHANNEL_CODE res1 = SendRpcRquest(&client_fd, curAddress, rpc_request_str, controller);
-        // if (res) {
-        //     LOG_ERROR << "SendRpcRquest failed()";
-        //     return;
-        // }
-        // 接收响应信息
         RPC_CHANNEL_CODE res2 = ReceiveRpcResponse(client_fd, response, controller);
         if (res1 || res2) {
             std::cout << "接收响应错误: " << std::endl;
             std::cout << "现在选择相应的容错策略: " << std::endl;
             if (faulTolerant == "FailOver") {
                 count++;
-                std::cout << "故障转移 这是第" << count << "次重试" << std::endl;
+                std::cout << "当前cur" << curAddress.port << std::endl << "others:  ";
+                for (auto it =  othersAddress.begin(); it != othersAddress.end(); it++)
+                    std::cout << (*it).port << "\t";
+                std::cout << "\n故障转移 这是第" << count << "次重试" << std::endl;
                 if (!othersAddress.empty()) { // 这是一个set
                     auto next = othersAddress.begin();
                     curAddress = *next;
@@ -285,13 +292,18 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                 }
             } else {
                 LOG_ERROR << "ReceiveRpcResponse failed()";
+                if (done)
+                    done->Run();
                 return ;
             }
             // return;
         } else {
             std::cout << "接收响应成功" << std::endl;
-            break;
+            if (!done)
+                done->Run();
+            return;
         }
     }
-
+    if (!done)
+        done->Run();
 }
