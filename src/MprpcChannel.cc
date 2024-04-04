@@ -232,8 +232,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     RPC_CHANNEL_CODE res =  PackageRequest(ptr, method, controller, request);
     if (res) {
         LOG_ERROR << "PackageRequest failed()";
-        if (!done)
-            done->Run();
+        done->Run();
         return;
     }
 
@@ -243,8 +242,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     if (false == GetServiceAddress(method->service()->name(), method->name(), service_address_set, controller))
     {
         LOG_ERROR << "GetServiceAddress failed()";
-        if (!done)
-            done->Run();
+        done->Run();
         return ;
     }
     for (auto it = service_address_set.begin(); it != service_address_set.end(); it++)
@@ -292,18 +290,16 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                 }
             } else {
                 LOG_ERROR << "ReceiveRpcResponse failed()";
-                if (done)
-                    done->Run();
+                done->Run();
                 return ;
             }
             // return;
         } else {
             std::cout << "接收响应成功" << std::endl;
-            if (!done)
-                done->Run();
+            std::cout << "CallMethod()里, done调用开始..." << std::endl;
+            done->Run();
+            std::cout << "CallMethod()里, done调用结束..." << std::endl;
             return;
         }
     }
-    if (!done)
-        done->Run();
 }

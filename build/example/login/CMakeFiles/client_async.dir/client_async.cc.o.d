@@ -318,4 +318,6 @@ example/login/CMakeFiles/client_async.dir/client_async.cc.o: \
  /home/ubuntu/projects/tinyrpcGai/src/include/MprpcChannel.h \
  /home/ubuntu/projects/tinyrpcGai/src/include/MprpcController.h \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/this_thread_sleep.h
+ /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/future \
+ /usr/include/c++/11/condition_variable \
+ /usr/include/c++/11/bits/atomic_futex.h

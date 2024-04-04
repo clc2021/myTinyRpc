@@ -6,19 +6,18 @@
 #include <iostream>
 #include <string>
 
-// 一个本地服务，现在要将它变成rpc服务
 class UserService : public fixbug::UserServiceRpc  // 这里用fixbug，是因为在package fixbug
 {   
 public:
     bool Login(const std::string& name, const std::string& pwd)
     {
-        std::cout << "doing local service: Login" << std::endl;
+        std::cout << "在服务端: Login" << std::endl;
         std::cout << "name:" << name << " pwd:" << pwd << std::endl;
     }
     
     bool Register(uint32_t id, std::string name, std::string pwd)
     {
-        std::cout << "doing local service: Register" << std::endl;
+        std::cout << "在服务端: Register" << std::endl;
         std::cout << "id" << id << "name:" << name << " pwd:" << pwd << std::endl;
     }
 
@@ -39,12 +38,18 @@ public:
         // 把响应写入
         fixbug::ResultCode *code = response->mutable_result();
         code->set_errcode(0);
-        code->set_errmsg("success");
+        code->set_errmsg("在服务端: 成功");
         response->set_success(login_result);
 
         // 执行回调操作。都是由框架来
         // 完成响应对象数据的序列化和网络发送
+        if (done)
+            std::cout << "在服务端Login: done不为空" << std::endl;
+        else 
+            std::cout << "在服务端Login: done为空" << std::endl;
+        std::cout << "在服务端Login: 开始执行done->Run()" << std::endl;
         done->Run();
+        std::cout << "在服务端Login: done->Run()执行结束" << std::endl;
     }
 
     void Register(::google::protobuf::RpcController* controller,
@@ -62,7 +67,13 @@ public:
         response->mutable_result()->set_errmsg("");
         response->set_success(ret);
 
+        if (done)
+            std::cout << "在服务端Register: done不为空" << std::endl;
+        else 
+            std::cout << "在服务端Register: done为空" << std::endl;
+        std::cout << "在服务端Register: 开始执行done->Run()" << std::endl;
         done->Run();
+        std::cout << "在服务端Register: done->Run()执行结束" << std::endl;
     }
 
 };

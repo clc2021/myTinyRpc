@@ -1,22 +1,4 @@
-// Licensed to the Apache Software Foundation (ASF) under one
-// or more contributor license agreements.  See the NOTICE file
-// distributed with this work for additional information
-// regarding copyright ownership.  The ASF licenses this file
-// to you under the Apache License, Version 2.0 (the
-// "License"); you may not use this file except in compliance
-// with the License.  You may obtain a copy of the License at
-//
-//   http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing,
-// software distributed under the License is distributed on an
-// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-// KIND, either express or implied.  See the License for the
-// specific language governing permissions and limitations
-// under the License.
-
-// A client sending requests to server asynchronously every 1 second.
-
+// 客户端每秒异步发送请求到服务器。
 #include <gflags/gflags.h>
 #include <butil/logging.h>
 #include <butil/time.h>
@@ -93,15 +75,13 @@ int main(int argc, char* argv[]) {
             cntl->request_attachment().append("foo");
         }
 
-        // We use protobuf utility `NewCallback' to create a closure object
-        // that will call our callback `HandleEchoResponse'. This closure
-        // will automatically delete itself after being called once
+        // 我们使用 protobuf 实用工具 NewCallback 来创建一个闭包对象，
+        // 该闭包对象将调用我们的回调函数 HandleEchoResponse。此闭包在被调用一次后将自动删除。
         google::protobuf::Closure* done = brpc::NewCallback(
             &HandleEchoResponse, cntl, response);
         stub.Echo(cntl, &request, response, done);
 
-        // This is an asynchronous RPC, so we can only fetch the result
-        // inside the callback
+        // 这是一个异步 RPC，因此我们只能在回调函数内部获取结果。
         sleep(1);
     }
 

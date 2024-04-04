@@ -5,23 +5,13 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <vector>
+#include <future> // 异步操作
+#include <functional>
+#include <memory>
 
-// void Wait() {
-//     std::unique_lock<std::mutex> lock_(mutex_);
-//     while (!ready_)
-//         condition_.wait(lock_);
-// }
-
-// void Notify() {
-//     std::lock_guard<std::mutex> lock_(mutex_);
-//     ready_ = true;
-//     condition_.notify_all();
-// }
-
-// 继承google::protobuf::Closure
-// fixbug是user.proto里的
 class LoginClosure: public google::protobuf::Closure {
-    private:
+    public:
     fixbug::LoginResponse& response_;
     MprpcController& controller_;
 
@@ -43,7 +33,6 @@ class LoginClosure: public google::protobuf::Closure {
                 std::cout << "RPC响应错误: " << response_.result().errmsg()  << std::endl;
         }
         std::cout << "login的闭包" << std::endl;
-        delete this; // 释放内存
     }
 
 };
@@ -57,12 +46,15 @@ void loginServiceAsync(fixbug::UserServiceRpc_Stub& stub, MprpcController& contr
     // 创建RPC响应
     fixbug::LoginResponse response;
     // 发起异步调用
-    stub.Login(&controller, &request, &response, new LoginClosure(response, controller));
+    //LoginClosure* closure = new LoginClosure(response, controller);
+    // stub.Login(&(closure->controller_), &request, &(closure->response_), closure);
+    std::unique_ptr<LoginClosure> closure(new LoginClosure(response, controller));
+    stub.Login(&controller, &request, &response, closure.release());
 }
 
 // 同理来构建Register
 class RegisterClosure: public google::protobuf::Closure {
-    private:
+    public:
     fixbug::RegisterResponse& response_;
     MprpcController& controller_;
 
@@ -81,7 +73,6 @@ class RegisterClosure: public google::protobuf::Closure {
         }
 
         std::cout << "register()的闭包" << std::endl;
-        delete this;
     }
 };
 
@@ -94,7 +85,9 @@ void registerServiceAsync(fixbug::UserServiceRpc_Stub& stub, MprpcController& co
     request.set_pwd("注册 123456");
     // 构建响应
     fixbug::RegisterResponse response;
-    stub.Register(&controller, &request, &response, new RegisterClosure(response, controller));
+    std::unique_ptr<RegisterClosure> closure(new RegisterClosure(response, controller));
+    // stub.Register(&(closure->controller_), &request, &(closure->response_), closure);
+    stub.Register(&controller, &request, &response, closure.release());
 }
 
 int main(int argc, char** argv) {
@@ -102,14 +95,19 @@ int main(int argc, char** argv) {
     fixbug::UserServiceRpc_Stub stub(new MprpcChannel());
     MprpcController controller;
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 2; i++) {
         std::cout <<"主线程开始第" << i << "轮RPC调用...." << std::endl;
-        loginServiceAsync(stub, controller);
-        registerServiceAsync(stub, controller);
-        std::cout << "客户端休眠等待..." << std:: endl;
-        std::this_thread::sleep_for(std::chrono::seconds(1)); //1s
+        std::cout << "客户端发送login" << std::endl;
+        std::thread loginThr([&]() { loginServiceAsync(stub, controller); });
+        loginThr.detach();
+        std::cout << "客户端发送完login, 发送register" << std::endl;
+        std::thread registerThr([&]() { registerServiceAsync(stub, controller); });
+        registerThr.detach();
+        std::cout << "客户端发送完register" << std::endl;
         std::cout << "客户端继续进行...." << std::endl;
-        
     }
+
+    // 主线程等待休眠一段时间: 
+    std::this_thread::sleep_for(std::chrono::milliseconds(5000)); 
     return 0;
 }
