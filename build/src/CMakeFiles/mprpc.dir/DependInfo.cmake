@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ubuntu/projects/tinyrpcGai/src/ConsistentHashLoadBalancer.cc" "src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o.d"
+  "/home/ubuntu/projects/tinyrpcGai/src/FuseProtector.cc" "src/CMakeFiles/mprpc.dir/FuseProtector.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/FuseProtector.cc.o.d"
   "/home/ubuntu/projects/tinyrpcGai/src/MprpcApplication.cc" "src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o.d"
   "/home/ubuntu/projects/tinyrpcGai/src/MprpcChannel.cc" "src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o.d"
   "/home/ubuntu/projects/tinyrpcGai/src/MprpcController.cc" "src/CMakeFiles/mprpc.dir/MprpcController.cc.o" "gcc" "src/CMakeFiles/mprpc.dir/MprpcController.cc.o.d"

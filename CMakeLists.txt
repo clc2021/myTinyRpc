@@ -6,7 +6,7 @@ project(mprpc)
 set(CMAKE_BUILD_TYPE "Debug")
 
 # 设置项目可执行文件输出的路径
-# PROJECT_SOURCE_DIR是CMake中的一个变量，它表示当前项目的顶层源代码目录的路径。
+# PROJECT_SOURCE_DIR是CMake中的一个变量，它表示当前项目的顶层源代码目录的路径。eg. tinyrpcGai/
 # 在CMakeLists.txt文件中，你可以使用PROJECT_SOURCE_DIR来引用项目的根目录，
 # 从而方便地组织你的项目结构和文件路径。
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

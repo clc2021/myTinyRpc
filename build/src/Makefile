@@ -154,6 +154,30 @@ ConsistentHashLoadBalancer.cc.s:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.s
 .PHONY : ConsistentHashLoadBalancer.cc.s
 
+FuseProtector.o: FuseProtector.cc.o
+.PHONY : FuseProtector.o
+
+# target to build an object file
+FuseProtector.cc.o:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/FuseProtector.cc.o
+.PHONY : FuseProtector.cc.o
+
+FuseProtector.i: FuseProtector.cc.i
+.PHONY : FuseProtector.i
+
+# target to preprocess a source file
+FuseProtector.cc.i:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/FuseProtector.cc.i
+.PHONY : FuseProtector.cc.i
+
+FuseProtector.s: FuseProtector.cc.s
+.PHONY : FuseProtector.s
+
+# target to generate assembly for a file
+FuseProtector.cc.s:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/FuseProtector.cc.s
+.PHONY : FuseProtector.cc.s
+
 MprpcApplication.o: MprpcApplication.cc.o
 .PHONY : MprpcApplication.o
 
@@ -334,6 +358,9 @@ help:
 	@echo "... ConsistentHashLoadBalancer.o"
 	@echo "... ConsistentHashLoadBalancer.i"
 	@echo "... ConsistentHashLoadBalancer.s"
+	@echo "... FuseProtector.o"
+	@echo "... FuseProtector.i"
+	@echo "... FuseProtector.s"
 	@echo "... MprpcApplication.o"
 	@echo "... MprpcApplication.i"
 	@echo "... MprpcApplication.s"

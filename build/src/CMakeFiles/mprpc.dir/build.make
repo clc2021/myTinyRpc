@@ -181,6 +181,20 @@ src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s"
 	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/ZookeeperUtil.cc -o CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s
 
+src/CMakeFiles/mprpc.dir/FuseProtector.cc.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/FuseProtector.cc.o: ../src/FuseProtector.cc
+src/CMakeFiles/mprpc.dir/FuseProtector.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/mprpc.dir/FuseProtector.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/FuseProtector.cc.o -MF CMakeFiles/mprpc.dir/FuseProtector.cc.o.d -o CMakeFiles/mprpc.dir/FuseProtector.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/FuseProtector.cc
+
+src/CMakeFiles/mprpc.dir/FuseProtector.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/FuseProtector.cc.i"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/FuseProtector.cc > CMakeFiles/mprpc.dir/FuseProtector.cc.i
+
+src/CMakeFiles/mprpc.dir/FuseProtector.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/FuseProtector.cc.s"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/FuseProtector.cc -o CMakeFiles/mprpc.dir/FuseProtector.cc.s
+
 # Object files for target mprpc
 mprpc_OBJECTS = \
 "CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o" \
@@ -190,7 +204,8 @@ mprpc_OBJECTS = \
 "CMakeFiles/mprpc.dir/rpc_header.pb.cc.o" \
 "CMakeFiles/mprpc.dir/MprpcChannel.cc.o" \
 "CMakeFiles/mprpc.dir/MprpcController.cc.o" \
-"CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o"
+"CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o" \
+"CMakeFiles/mprpc.dir/FuseProtector.cc.o"
 
 # External object files for target mprpc
 mprpc_EXTERNAL_OBJECTS =
@@ -203,9 +218,10 @@ mprpc_EXTERNAL_OBJECTS =
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/MprpcChannel.cc.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/MprpcController.cc.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o
+../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/FuseProtector.cc.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/build.make
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library ../../lib/libmprpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library ../../lib/libmprpc.a"
 	cd /home/ubuntu/projects/tinyrpcGai/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mprpc.dir/cmake_clean_target.cmake
 	cd /home/ubuntu/projects/tinyrpcGai/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mprpc.dir/link.txt --verbose=$(VERBOSE)
 

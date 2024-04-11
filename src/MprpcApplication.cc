@@ -155,6 +155,7 @@ void MprpcApplication::Init(int argc, char **argv)
     printf("loadbalancer:     %-10s\n", m_config.Load("loadbalancer").c_str()); // 负载策略
     printf("faulttolerant:    %-10s\n", m_config.Load("faulttolerant").c_str()); // 容错机制
     printf("retrycount:       %-10s\n", m_config.Load("retrycount").c_str()); // 重试次数
+    printf("FuseEnable:       %-10s\n", m_config.Load("FuseEnable").c_str()); // 开启熔断
     printf("==========================================================================\n");  
 }
 

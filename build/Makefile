@@ -130,17 +130,17 @@ mprpc/fast:
 .PHONY : mprpc/fast
 
 #=============================================================================
-# Target rules for targets named client
+# Target rules for targets named client_circuit_break
 
 # Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
-.PHONY : client
+client_circuit_break: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client_circuit_break
+.PHONY : client_circuit_break
 
 # fast build rule for target.
-client/fast:
-	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client.dir/build.make example/login/CMakeFiles/client.dir/build
-.PHONY : client/fast
+client_circuit_break/fast:
+	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/build
+.PHONY : client_circuit_break/fast
 
 #=============================================================================
 # Target rules for targets named client1
@@ -182,19 +182,6 @@ client_async/fast:
 .PHONY : client_async/fast
 
 #=============================================================================
-# Target rules for targets named client_multi_thread
-
-# Build rule for target.
-client_multi_thread: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client_multi_thread
-.PHONY : client_multi_thread
-
-# fast build rule for target.
-client_multi_thread/fast:
-	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_multi_thread.dir/build.make example/login/CMakeFiles/client_multi_thread.dir/build
-.PHONY : client_multi_thread/fast
-
-#=============================================================================
 # Target rules for targets named client_failover
 
 # Build rule for target.
@@ -228,12 +215,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... client"
 	@echo "... client1"
 	@echo "... client2"
 	@echo "... client_async"
+	@echo "... client_circuit_break"
 	@echo "... client_failover"
-	@echo "... client_multi_thread"
 	@echo "... mprpc"
 	@echo "... server"
 .PHONY : help

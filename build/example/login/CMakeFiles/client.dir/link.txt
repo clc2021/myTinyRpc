@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/client.dir/client.cc.o CMakeFiles/client.dir/__/user.pb.cc.o -o ../../../bin/client   -L/home/ubuntu/projects/tinyrpcGai/lib  -Wl,-rpath,/home/ubuntu/projects/tinyrpcGai/lib ../../../lib/libmprpc.a -lprotobuf -L/usr/local/lib/ -lprotobuf -lmuduo_net -lmuduo_base -lpthread -lzookeeper_mt -luuid 

@@ -5,11 +5,10 @@
 /home/ubuntu/projects/tinyrpcGai/build/src/CMakeFiles/rebuild_cache.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/CMakeFiles/edit_cache.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client.dir
+/home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client_circuit_break.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client1.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client2.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client_async.dir
-/home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client_multi_thread.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client_failover.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/server.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/edit_cache.dir

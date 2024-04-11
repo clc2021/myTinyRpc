@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../lib/libmprpc.pdb"
   "CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o"
   "CMakeFiles/mprpc.dir/ConsistentHashLoadBalancer.cc.o.d"
+  "CMakeFiles/mprpc.dir/FuseProtector.cc.o"
+  "CMakeFiles/mprpc.dir/FuseProtector.cc.o.d"
   "CMakeFiles/mprpc.dir/MprpcApplication.cc.o"
   "CMakeFiles/mprpc.dir/MprpcApplication.cc.o.d"
   "CMakeFiles/mprpc.dir/MprpcChannel.cc.o"

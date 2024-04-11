@@ -7,6 +7,7 @@ set(SRC_LIST
     MprpcChannel.cc
     MprpcController.cc
     ZookeeperUtil.cc
+    FuseProtector.cc
     )
 # aux_source_directory() 用于将指定目录下所有源文件都添加到一个变量中
 aux_source_directory(mprpc SRC_LIST)

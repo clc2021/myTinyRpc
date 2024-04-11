@@ -52,9 +52,8 @@ bool MprpcChannel::GetServiceAddress(const std::string& service_name, // eg. Use
         temp.port = atoi(host_data.substr(idx+1, host_data.size()-idx).c_str()); // 2181
         service_address.insert(temp);
     }
-    return true;
+    return !service_address.empty();
 }
-
 
 // 根据服务名字，查到zookeeper上的对应的ip地址，进行服务发现 
 bool MprpcChannel::GetServiceAddress(const std::string& service_name, // eg. UserServiceRpc
@@ -134,7 +133,8 @@ RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
 RPC_CHANNEL_CODE MprpcChannel::SendRpcRquest(int* fd,
                                const ServiceAddress& service_address, 
                                const std::string& send_rpc_str,
-                               ::google::protobuf::RpcController* controller)
+                               ::google::protobuf::RpcController* controller,
+                               const google::protobuf::MethodDescriptor* method)
 {
     // 使用tcp编程，完成rpc方法的远程调用
     int client_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -174,12 +174,14 @@ RPC_CHANNEL_CODE MprpcChannel::SendRpcRquest(int* fd,
     }
 
     // 发送rpc请求
+    //+todo熔断 在服务调用成功或失败的地方，根据调用结果更新熔断器状态
     std::cout << "客户端发送" << send_rpc_str << std::endl;
     if (-1 == send(client_fd, send_rpc_str.c_str(), send_rpc_str.size(), 0))
     {
         close(client_fd);
         char errtxt[512] = {0};
         sprintf(errtxt, "send error! errno:%d", errno);
+        fuseProtector->incrExcept(method->service()->name()); // 增加异常请求
         controller->SetFailed(errtxt);
         return CHANNEL_SEND_ERR;
     }
@@ -189,7 +191,8 @@ RPC_CHANNEL_CODE MprpcChannel::SendRpcRquest(int* fd,
 
 RPC_CHANNEL_CODE MprpcChannel::ReceiveRpcResponse(const int& client_fd,
                         google::protobuf::Message* response,
-                        ::google::protobuf::RpcController* controller)
+                        ::google::protobuf::RpcController* controller,
+                        const google::protobuf::MethodDescriptor* method)
 {
     // 接收响应缓冲区
     char recv_buf[1024] = {0};
@@ -200,6 +203,7 @@ RPC_CHANNEL_CODE MprpcChannel::ReceiveRpcResponse(const int& client_fd,
         char errtxt[512] = {0};
         sprintf(errtxt, "recv error! errno:%d", errno);
         controller->SetFailed(errtxt);
+        fuseProtector->incrExcept(method->service()->name()); // 增加异常请求
         return CHANNEL_RECEIVE_ERR;
     }
 
@@ -219,7 +223,7 @@ RPC_CHANNEL_CODE MprpcChannel::ReceiveRpcResponse(const int& client_fd,
 }
 
 // 重写RpcChannel::CallMethod方法，统一做rpc方法的序列化和网络发送
-// header_size service_name method_name args_size args
+// 可同步RPC
 void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                           google::protobuf::RpcController* controller, 
                           const google::protobuf::Message* request,
@@ -229,24 +233,43 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     // 按照自定义协议封装RPC请求
     std::string rpc_request_str;
     std::string* ptr = &rpc_request_str;
-    RPC_CHANNEL_CODE res =  PackageRequest(ptr, method, controller, request);
+    if (ptr == nullptr) {
+        controller->SetFailed("ptr is nullptr");
+        if (done != nullptr)
+            done->Run();
+        return;
+    }
+
+    RPC_CHANNEL_CODE res = PackageRequest(ptr, method, controller, request);
     if (res) {
         LOG_ERROR << "PackageRequest failed()";
-        done->Run();
+        if (done != nullptr)
+            done->Run();
         return;
     }
 
     // 获取微服务地址
     std::set<ServiceAddress> service_address_set; // 服务地址集合
 
-    if (false == GetServiceAddress(method->service()->name(), method->name(), service_address_set, controller))
+    if (false == GetServiceAddress(method->service()->name(), method->name(), service_address_set, controller) ||
+        service_address_set.empty())
     {
-        LOG_ERROR << "GetServiceAddress failed()";
-        done->Run();
+        LOG_ERROR << "GetServiceAddress failed(), 可能是不存在或者为空";
+        if (done != nullptr)
+            done->Run();
         return ;
     }
+
     for (auto it = service_address_set.begin(); it != service_address_set.end(); it++)
-        std::cout << it->port << "\t";
+        std::cout << "获取服务地址" << it->port << "\t";
+
+    // 到这儿，微服务地址获取成功，开始初始化熔断机制
+    // 最开始的时候是CLOSE，意味着不熔断。
+    std::unordered_map<std::string, std::set<ServiceAddress>> umap;
+    umap[method->service()->name()] = service_address_set;
+    fuseProtector->initCache(umap);  // 这里是初始化的熔断机制
+
+
     std::cout << std::endl;
     std::string loadbalancer = MprpcApplication::GetInstance().GetConfig().Load("loadbalancer"); 
     LoadBalancer* lB = nullptr;
@@ -272,8 +295,18 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     while (count <= retryCount) {
         // 通过网络发送RPC请求，返回clientfd，我们将用此接收响应
         int client_fd;
-        RPC_CHANNEL_CODE res1 = SendRpcRquest(&client_fd, curAddress, rpc_request_str, controller);
-        RPC_CHANNEL_CODE res2 = ReceiveRpcResponse(client_fd, response, controller);
+        RPC_CHANNEL_CODE res1 = SendRpcRquest(&client_fd, curAddress, rpc_request_str, controller, method);
+        RPC_CHANNEL_CODE res2 = ReceiveRpcResponse(client_fd, response, controller, method);
+        // 考虑熔断的可能再选择负载均衡策略。
+        
+        if (!fuseProtector->fuseHandle(method->service()->name())) {
+            // 当前服务处于熔断状态，就直接返回
+            controller->SetFailed("在CallMethod()中, 服务处于熔断状态");
+            if (done != nullptr)
+                done->Run();
+            return ;
+        }
+
         if (res1 || res2) {
             std::cout << "接收响应错误: " << std::endl;
             std::cout << "现在选择相应的容错策略: " << std::endl;
@@ -290,14 +323,16 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                 }
             } else {
                 LOG_ERROR << "ReceiveRpcResponse failed()";
-                done->Run();
+                if (done != nullptr)
+                    done->Run();
                 return ;
             }
             // return;
         } else {
             std::cout << "接收响应成功" << std::endl;
             std::cout << "CallMethod()里, done调用开始..." << std::endl;
-            done->Run();
+            if (done != nullptr)
+                done->Run();
             std::cout << "CallMethod()里, done调用结束..." << std::endl;
             return;
         }

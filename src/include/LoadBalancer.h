@@ -8,16 +8,16 @@
 #include <map> // 用来做哈希环
 #include <functional> // 
 #include <set>
+#include "ServiceAddress.h"
+// struct ServiceAddress
+// {
+//     std::string ip;
+//     uint16_t port;
 
-struct ServiceAddress
-{
-    std::string ip;
-    uint16_t port;
-
-    bool operator< (const ServiceAddress & other) const {
-        return ip != other.ip ? ip < other.ip : port < other.port;
-    }
-};
+//     bool operator< (const ServiceAddress & other) const {
+//         return ip != other.ip ? ip < other.ip : port < other.port;
+//     }
+// };
 
 // 这个类可以专门用来返回给Channel，这样可以准备当前节点和剩余节点
 class ServiceAddressRes {
