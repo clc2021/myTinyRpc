@@ -90,8 +90,8 @@ RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
                                               google::protobuf::RpcController* controller,
                                               const google::protobuf::Message* request)
 {
-    std::string service_name = method->service()->name();
-    std::string method_name = method->name();
+    std::string service_name = method->service()->name(); // UserSerivceRpc
+    std::string method_name = method->name(); // Register
 
     // request里面储存着请求参数
     // 我们需要将请求参数序列化
@@ -100,11 +100,11 @@ RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
     if (request->SerializeToString(&args_str)) {
         // uint32_t args_size = 0;
         args_size = args_str.size();
+        std::cout << "Package里, args_str = ////" << args_str << "//////, args_size = " << args_size << std::endl;
     } else {
         controller->SetFailed("serialize request error!");
         return CHANNEL_PACKAGE_ERR;
     }
-
     // 定义rpc的请求header
     mprpc::RpcHeader rpc_header;
     rpc_header.set_service_name(service_name);
@@ -115,7 +115,9 @@ RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
     uint32_t header_size = 0;
     std::string rpc_header_str;
     if (rpc_header.SerializeToString(&rpc_header_str)) {
+        std::cout << "Package里, rpc_header_str = //////" << rpc_header_str << "//////////" << std::endl;
         header_size = rpc_header_str.size();
+        std::cout << "Package里, header_size = " << header_size << std::endl;
     } else {
         controller->SetFailed("serialize rpc header error!");
         return CHANNEL_PACKAGE_ERR;
@@ -126,6 +128,8 @@ RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
     (*rpc_request_str) += rpc_header_str;
     (*rpc_request_str) += args_str;
 
+    // 
+    std::cout << "在Package里, 打包的结果是 rpc_request_str = ////////" << *rpc_request_str << "//////////" << std::endl;
     return CHANNEL_SUCCESS;
 }
 
@@ -175,13 +179,13 @@ RPC_CHANNEL_CODE MprpcChannel::SendRpcRquest(int* fd,
 
     // 发送rpc请求
     //+todo熔断 在服务调用成功或失败的地方，根据调用结果更新熔断器状态
-    std::cout << "客户端发送" << send_rpc_str << std::endl;
+    std::cout << "客户端发送" << "//////////" << send_rpc_str << "/////////////" <<  send_rpc_str.size() << std::endl;
     if (-1 == send(client_fd, send_rpc_str.c_str(), send_rpc_str.size(), 0))
     {
         close(client_fd);
         char errtxt[512] = {0};
         sprintf(errtxt, "send error! errno:%d", errno);
-        fuseProtector->incrExcept(method->service()->name()); // 增加异常请求
+       // fuseProtector->incrExcept(method->service()->name()); // 增加异常请求
         controller->SetFailed(errtxt);
         return CHANNEL_SEND_ERR;
     }
@@ -203,7 +207,7 @@ RPC_CHANNEL_CODE MprpcChannel::ReceiveRpcResponse(const int& client_fd,
         char errtxt[512] = {0};
         sprintf(errtxt, "recv error! errno:%d", errno);
         controller->SetFailed(errtxt);
-        fuseProtector->incrExcept(method->service()->name()); // 增加异常请求
+        // fuseProtector->incrExcept(method->service()->name()); // 增加异常请求
         return CHANNEL_RECEIVE_ERR;
     }
 
@@ -220,6 +224,16 @@ RPC_CHANNEL_CODE MprpcChannel::ReceiveRpcResponse(const int& client_fd,
 
     close(client_fd);    
     return CHANNEL_SUCCESS;
+}
+
+void MprpcChannel::initFuseProtectorIfNeeded(const std::string& service_name, const std::set<ServiceAddress>& service_addresses) {
+    if (!isFuseProtectorInit) {
+        std:: cout << "熔断初始化" << std::endl;
+        std::unordered_map<std::string, std::set<ServiceAddress>> umap;
+        umap[service_name] = service_addresses;
+        fuseProtector->initCache(umap);
+        isFuseProtectorInit = true;
+    }
 }
 
 // 重写RpcChannel::CallMethod方法，统一做rpc方法的序列化和网络发送
@@ -264,11 +278,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         std::cout << "获取服务地址" << it->port << "\t";
 
     // 到这儿，微服务地址获取成功，开始初始化熔断机制
-    // 最开始的时候是CLOSE，意味着不熔断。
-    std::unordered_map<std::string, std::set<ServiceAddress>> umap;
-    umap[method->service()->name()] = service_address_set;
-    fuseProtector->initCache(umap);  // 这里是初始化的熔断机制
-
+    initFuseProtectorIfNeeded(method->service()->name(), service_address_set); // 初始化
 
     std::cout << std::endl;
     std::string loadbalancer = MprpcApplication::GetInstance().GetConfig().Load("loadbalancer"); 
@@ -293,23 +303,42 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     retryCount = std::stoi(retryCountStr);
     int count = 1;
     while (count <= retryCount) {
+        // 发送请求前也可以进行一次熔断器的判断
+        if (!fuseProtector->fuseHandle(method->service()->name())) {
+            // 当前服务处于熔断状态，就直接返回
+            controller->SetFailed("执行完发送和接收请求前服务已经处于熔断状态");
+            if (done != nullptr)
+                done->Run();
+            return ;
+        }
+
         // 通过网络发送RPC请求，返回clientfd，我们将用此接收响应
         int client_fd;
         RPC_CHANNEL_CODE res1 = SendRpcRquest(&client_fd, curAddress, rpc_request_str, controller, method);
         RPC_CHANNEL_CODE res2 = ReceiveRpcResponse(client_fd, response, controller, method);
         // 考虑熔断的可能再选择负载均衡策略。
-        
+
+        // 更新熔断器状态
+        if (res1) {
+            // 服务调用失败，增加异常请求
+            std::cout << "对于熔断器, 服务调用失败, 增加异常请求" << std::endl;
+            fuseProtector->incrExcept(method->service()->name());
+        } else {
+            // 服务调用成功，增加成功请求
+            std::cout << "对于熔断器, 服务调用成功, 增加成功请求" << std::endl;
+            fuseProtector->incrSuccess(method->service()->name());
+        }
+
         if (!fuseProtector->fuseHandle(method->service()->name())) {
             // 当前服务处于熔断状态，就直接返回
-            controller->SetFailed("在CallMethod()中, 服务处于熔断状态");
+            controller->SetFailed("执行完发送和接收请求后, 服务处于熔断状态");
             if (done != nullptr)
                 done->Run();
             return ;
         }
 
         if (res1 || res2) {
-            std::cout << "接收响应错误: " << std::endl;
-            std::cout << "现在选择相应的容错策略: " << std::endl;
+            std::cout << "没熔断, 但是接收响应错误, 现在选择相应的容错策略: " << std::endl;
             if (faulTolerant == "FailOver") {
                 count++;
                 std::cout << "当前cur" << curAddress.port << std::endl << "others:  ";
@@ -333,7 +362,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
             std::cout << "CallMethod()里, done调用开始..." << std::endl;
             if (done != nullptr)
                 done->Run();
-            std::cout << "CallMethod()里, done调用结束..." << std::endl;
+            std::cout << "CallMethod()里, done调用结束, 返回..." << std::endl;
             return;
         }
     }

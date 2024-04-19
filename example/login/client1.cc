@@ -12,7 +12,7 @@
 void loginService(fixbug::UserServiceRpc_Stub& stub, MprpcController& controller)
 {
     fixbug::LoginRequest request;
-    request.set_name("zhang san");
+    request.set_name("My Rpc");
     request.set_pwd("123456");
     // rpc方法的响应
     fixbug::LoginResponse response;
@@ -31,12 +31,12 @@ void loginService(fixbug::UserServiceRpc_Stub& stub, MprpcController& controller
         // 业务成功响应码为0
         if (0 == response.result().errcode())
         {
-            std::cout << "rpc Login response success:" << response.success() << std::endl;
+            std::cout << "调用远程服务方法成功:" << response.success() << std::endl;
         }
         // 业务失败打印错误信息
         else
         {
-            std::cout << "rpc response error : " << response.result().errmsg() << std::endl;
+            std::cout << "调用远程服务方法失败: " << response.result().errmsg() << std::endl;
         }
     }
 }
@@ -47,7 +47,7 @@ void registerService(fixbug::UserServiceRpc_Stub& stub, MprpcController& control
     fixbug::RegisterRequest req;
     // TODO:整数形式是否可行
     req.set_id(100);
-    req.set_name("mprpc");
+    req.set_name("My Rpc");
     req.set_pwd("123456");
     fixbug::RegisterResponse rsp;
 
@@ -61,11 +61,11 @@ void registerService(fixbug::UserServiceRpc_Stub& stub, MprpcController& control
     {
         if (0 == rsp.result().errcode())
         {
-            std::cout << "rpc Register response success:" << rsp.success() << std::endl;
+            std::cout << "调用远程服务方法成功: " << rsp.success() << std::endl;
         }
         else
         {
-            std::cout << "rpc response error : " << rsp.result().errmsg() << std::endl;
+            std::cout << "调用远程服务方法失败: " << rsp.result().errmsg() << std::endl;
         }
     }
 }
@@ -79,10 +79,9 @@ int main(int argc, char **argv)
     fixbug::UserServiceRpc_Stub stub(new MprpcChannel());
     MprpcController controller;
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 1; i++) {
         loginService(stub, controller);
-        registerService(stub, controller);
-        sleep(2);
+        // registerService(stub, controller);
     }
     return 0;
 }

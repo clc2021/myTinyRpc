@@ -383,4 +383,5 @@ example/login/CMakeFiles/server.dir/server.cc.o: \
  /usr/include/boost/type_traits/is_same.hpp \
  /usr/include/muduo/net/EventLoop.h /usr/include/muduo/base/Mutex.h \
  /usr/include/muduo/base/CurrentThread.h /usr/include/muduo/net/TimerId.h \
+ /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /home/ubuntu/projects/tinyrpcGai/src/include/MprpcController.h

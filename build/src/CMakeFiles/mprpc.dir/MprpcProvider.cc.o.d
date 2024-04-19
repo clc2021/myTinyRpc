@@ -382,6 +382,8 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/include/boost/type_traits/is_same.hpp \
  /usr/include/muduo/net/EventLoop.h /usr/include/muduo/base/Mutex.h \
  /usr/include/muduo/base/CurrentThread.h /usr/include/muduo/net/TimerId.h \
+ /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /home/ubuntu/projects/tinyrpcGai/src/include/rpc_header.pb.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/extension_set.h \
- /usr/include/c++/11/cassert
+ /usr/include/c++/11/cassert \
+ /home/ubuntu/projects/tinyrpcGai/example/user.pb.h

@@ -75,12 +75,22 @@ int main(int argc, char **argv)
 {
     MprpcApplication::Init(argc, argv);
 
-    // 调用远程发布的rpc方法Login
-    //+在这里可以加入对负载均衡策略的选择
+    // 远程调用RPC
     MprpcChannel* rpc = new MprpcChannel();
     fixbug::UserServiceRpc_Stub stub(rpc);
-   
     MprpcController controller;
+
+    // 开启后台线程进行刷新
+    std::thread refreshThread(
+        [&]() {
+            while (true) {
+                LOG_INFO << "               刷新熔断器...";
+                std::this_thread::sleep_for(std::chrono::seconds(30)); // 30s刷新一次
+                rpc->refreshCache();
+                LOG_INFO << "               刷新熔断器完成...";
+            }
+        }
+    );
 
     for (int i = 0; i < 20; i++) {
         std::cout << "这是第" << i << "轮调用" << std::endl;

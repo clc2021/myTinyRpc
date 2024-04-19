@@ -207,6 +207,19 @@ server/fast:
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
+#=============================================================================
+# Target rules for targets named serverHttp
+
+# Build rule for target.
+serverHttp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 serverHttp
+.PHONY : serverHttp
+
+# fast build rule for target.
+serverHttp/fast:
+	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/build
+.PHONY : serverHttp/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +235,7 @@ help:
 	@echo "... client_failover"
 	@echo "... mprpc"
 	@echo "... server"
+	@echo "... serverHttp"
 .PHONY : help
 
 

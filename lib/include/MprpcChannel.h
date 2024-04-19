@@ -29,6 +29,9 @@ private:
     std::string uuidString;
     int retryCount;
     FuseProtector* fuseProtector;
+    bool isFuseProtectorInit = false; // 标记熔断器是否初始化
+    // 初始化熔断器状态
+    void initFuseProtectorIfNeeded(const std::string& service_name, const std::set<ServiceAddress>& service_addresses);
     
 public:
     MprpcChannel() {

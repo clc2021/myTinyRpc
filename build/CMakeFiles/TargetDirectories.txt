@@ -11,5 +11,6 @@
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client_async.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client_failover.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/server.dir
+/home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/serverHttp.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/edit_cache.dir
 /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/rebuild_cache.dir
