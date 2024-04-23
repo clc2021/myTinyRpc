@@ -69,22 +69,15 @@ public:
 
 private:
     void RegisterZookeeper(const muduo::net::InetAddress&, ZkClient*);
-
     void OnConnection(const muduo::net::TcpConnectionPtr&); /// 这是一个智能指针，代表了一个TCP连接
-
     void ParseRequest(muduo::net::Buffer* buffer, RequestInfo*);
-
     void ParseHttpRequest(muduo::net::Buffer* buffer, HttpRequest& http_request);
-
     void OnMessage(const muduo::net::TcpConnectionPtr&, muduo::net::Buffer*, muduo::Timestamp);
-
     void OnHttpMessage(const muduo::net::TcpConnectionPtr&, muduo::net::Buffer*, muduo::Timestamp);
-
     void SendRpcResponse(const muduo::net::TcpConnectionPtr&, google::protobuf::Message*);
-
     //void SendHttpResponse(const muduo::net::TcpConnectionPtr&, const HttpResponse& response);
     void SendHttpResponse(const muduo::net::TcpConnectionPtr&, google::protobuf::Message* response);
-
+    
     // 服务类型信息。这是单个服务信息。
     struct ServiceInfo
     {
