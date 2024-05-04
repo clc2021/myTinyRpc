@@ -2,9 +2,7 @@
 #include "rpc_header.pb.h"
 #include "/home/ubuntu/projects/tinyrpcGai/example/user.pb.h"
 #include "google/protobuf/descriptor.h"
-
 #include <functional>
-
 // 框架，需要设计成抽象基类
 // 注册服务，所以参数是服务类型的指针
 // 执行结果：对于传入的service，得到service名-Service的Info信息{service对象，多个方法+方法名}
@@ -84,7 +82,6 @@ void MprpcProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn)
         conn->shutdown();
     }
 }
-
 
 void MprpcProvider::ParseRequest(muduo::net::Buffer* buffer, RequestInfo* req_info)
 {
@@ -346,7 +343,7 @@ void MprpcProvider::Run()
     muduo::net::TcpServer server(&m_eventLoop, address, "RpcProvider"); // 一个TCP连接的对象，server
 
     // 设置muduo库线程数量
-    server.setThreadNum(4);
+    server.setThreadNum(8);
 
     // 绑定连接回调和消息读写回调方法  分离了网络代码和业务代码
     // this：当前Provider对象的实例

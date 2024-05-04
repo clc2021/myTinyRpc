@@ -2,10 +2,6 @@
 #include <algorithm>
 #include <iostream>
 
-// bool compareAddress(const ServiceAddress &a, const ServiceAddress& b) {
-//     return a.port < b.port;
-// }
-
 std::string ConsistentHashLoadBalancer::buildServiceInstanceKey(ServiceAddress address) { // 这里用的是eg. "127.0.0.1:4545"做哈希键
     std::string res = address.ip + ":" + std::to_string(address.port); // 
     return res;
@@ -26,11 +22,7 @@ std::map<int, ServiceAddress> ConsistentHashLoadBalancer::makeConsistentHashRing
             ring[str_hash(buildServiceInstanceKey(instance) + "$" + std::to_string(i))] = instance;
         }
     }
-    // std::cout << " ====================" << std::endl;
-    // for (auto it = ring.begin(); it != ring.end(); it++) {
-    //     std::cout << it->first << "=" << it->second.ip << ":" << it->second.port << std::endl;
-    // }
-    // std::cout << " ====================" << std::endl;
+
     return ring; // 返回哈希环
 }
 

@@ -1,8 +1,8 @@
 // 有FuseProtector类和ServiceState类
 #include "./include/fuse/FuseProtector.h"
 
-//////////////////////////////// ServiceState ////////////////////////////////////
-void ServiceState::incrRequest() {
+//////////////////////////////// ServiceState ///////////////////////////////////////////
+void ServiceState::incrRequest() { // 在调用的时候同时会修改熔断器的状态
     request.fetch_add(2); // 原子变量的增加1
     excepts.fetch_add(1); // +todo 为了计算？
     // +todo:我没看明白为什么请求和异常都+1，所以我就把源代码改了。
@@ -17,7 +17,7 @@ void ServiceState::incrRequest() {
     }
 }
 
-void ServiceState::incrExcepts() {
+void ServiceState::incrExcepts() { // 在调用的时候同时会修改熔断器的状态
     request.fetch_add(1);
     excepts.fetch_add(1);
     int requestNum = request.load();
@@ -31,11 +31,11 @@ void ServiceState::incrExcepts() {
         this->fuseState = HALF_OPEN;
     } else if (rate > 0.7) {
         std::cout << "熔断器当前切换至全开" << std::endl;
-        this->fuseState = FALL_OPEN;
+        this->fuseState = FULL_OPEN;
     }
 }
 
-//////////////////////////////// FuseProtector ////////////////////////////////////
+/////////////////////////////////////// FuseProtector ///////////////////////////////////////////
 // 服务名-对应一堆服务节点
 // 这个是初始化，下面那个是刷新
 void FuseProtector::initCache(std::unordered_map<std::string, std::set<ServiceAddress>> serviceList) {
@@ -52,7 +52,7 @@ bool FuseProtector::fuseHandle(std::string serviceName) { // 检查当前熔断�
     ServiceState serviceState = serviceStateCache[serviceName];
     switch (serviceState.getFuseState()) {
         case CLOSE: return true;
-        case FALL_OPEN: return false;
+        case FULL_OPEN: return false;
         case HALF_OPEN:
             return (rand() / (RAND_MAX + 1.0)) > serviceState.getInterceptRate();
     }
@@ -69,7 +69,7 @@ void FuseProtector::incrSuccess(std::string serviceName) {
 // 添加异常请求
 void FuseProtector::incrExcept(std::string serviceName) {
     std::lock_guard<std::mutex> lock(mtx); // 上锁
-    ServiceState& serviceState = serviceStateCache[serviceName];
+    ServiceState& serviceState = serviceStateCache[serviceName]; // 服务名-服务状态
     serviceState.incrExcepts(); // 会+1总请求，+1异常请求
 }
 

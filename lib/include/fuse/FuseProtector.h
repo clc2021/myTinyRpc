@@ -13,20 +13,20 @@
 #include <set>
 #include "../ServiceAddress.h"
 
+/////////////////////////////////// ServiceState ///////////////////////////////////////////
 class ServiceState {
 private:
     std::string serviceName; // 服务名
     std::atomic<int> request; // 总的请求的数量 
     std::atomic<int> excepts; // 异常请求的数量
-    FUSE_STATE_CODE fuseState;  // 当前服务熔断状态, 可选FALL_OPEN, HALF_OPEN, CLOSE
+    FUSE_STATE_CODE fuseState;  // 当前服务熔断状态, 可选FULL_OPEN, HALF_OPEN, CLOSE
     float interceptRate; // 当前服务拦截lv
     float k; // 熔断比率
 
 public:
-    // 默认构造
-    ServiceState() = default;
-    // 自定义构造
-    ServiceState(std::string serviceName) {
+    ServiceState() = default; // 默认构造
+    
+    ServiceState(std::string serviceName) { // 自定义构造
         this->serviceName = serviceName;
         this->request.store(0);
         this->excepts.store(0);
@@ -35,8 +35,7 @@ public:
         this->k = 1.2;
     }
 
-    // 拷贝构造
-     ServiceState(const ServiceState& other) {
+     ServiceState(const ServiceState& other) { // 拷贝构造
         serviceName = other.serviceName;
         request.store(other.request.load());
         excepts.store(other.excepts.load());
@@ -45,8 +44,7 @@ public:
         k = other.k;
     }
 
-    // 拷贝赋值
-    ServiceState& operator=(const ServiceState& other) {
+    ServiceState& operator=(const ServiceState& other) { // 拷贝赋值
         if (this != &other) {
             serviceName = other.serviceName;
             request.store(other.request.load());
@@ -71,6 +69,7 @@ public:
     void incrExcepts();
 };
 
+/////////////////////////////////// FuseProtector ///////////////////////////////////////////
 class FuseProtector {
 private:
     std::unordered_map<std::string, ServiceState> serviceStateCache;

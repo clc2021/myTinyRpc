@@ -42,11 +42,11 @@ void ZkClient::Start() // == zookeeper_init()连接节点。
     // 加载zookeeperIP地址和端口号
     std::string host = MprpcApplication::GetInstance().GetConfig().Load("zookeeper_ip"); // 127.0.0.1
     std::string port = MprpcApplication::GetInstance().GetConfig().Load("zookeeper_port"); // 2181
-    std::string connstr = host + ":" + port; // connstr="127.0.0.1:2181"
+    std::string connstr = host + ":" + port; // connstr="127.0.0.1:12182"
 
 	// zookeeper_mt：多线程版本；zookeeper的API客户端程序提供了三个线程；API调用线程；网络I/O线程  pthread_create  poll；watcher回调线程 pthread_create
 	// zookeeper_init() 是客户端用来连接zookeeper服务端的函数
-	// 具体来说：127.0.0.1:2181，watch函数, 会话过期时间为30秒，nullptr, nullptr, 0
+	// 具体来说：127.0.0.1:12182，watch函数, 会话过期时间为30秒，nullptr, nullptr, 0
 	/*
 	第一个参数 connstr.c_str() 是一个 C 风格的字符串，表示连接到 ZooKeeper 服务器的地址。
 	在 ZooKeeper 中，连接字符串通常采用以下格式：
@@ -54,7 +54,7 @@ void ZkClient::Start() // == zookeeper_init()连接节点。
 	其中 <host> 是 ZooKeeper 服务器的主机名或 IP 地址，<port> 是 ZooKeeper 服务器的端口号。
 	多个服务器地址用逗号分隔，这样可以提高 ZooKeeper 服务的可用性和容错性。
 	因此，connstr.c_str() 作为第一个参数传递给 zookeeper_init 函数，表示要连接的 ZooKeeper 服务器的地址。
-	在这个例子中，它可能是一个类似 "127.0.0.1:2181" 的字符串，表示连接到本地主机的 2181 端口的 ZooKeeper 服务器。
+	在这个例子中，它可能是一个类似 "127.0.0.1:12182" 的字符串，表示连接到本地主机的12182端口的ZooKeeper服务器。
 
 	问：一个zookeeper服务器是一个节点吗？
 	答：在 ZooKeeper 的术语中，一个 ZooKeeper 服务器通常称为一个 "节点"，但在分布式系统的上下文中，

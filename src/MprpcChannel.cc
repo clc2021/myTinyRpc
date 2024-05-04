@@ -1,9 +1,7 @@
 #include "MprpcChannel.h"
 #include "MprpcController.h"
 #include "rpc_header.pb.h"
-
 #include <muduo/net/TcpClient.h>
-
 #include <string>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -93,31 +91,29 @@ RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
     std::string service_name = method->service()->name(); // UserSerivceRpc
     std::string method_name = method->name(); // Register
 
-    // request里面储存着请求参数
-    // 我们需要将请求参数序列化
+    // request里面储存着请求参数，我们需要将请求参数序列化
     uint32_t args_size = 0;
     std::string args_str;
     if (request->SerializeToString(&args_str)) {
-        // uint32_t args_size = 0;
         args_size = args_str.size();
-        std::cout << "Package里, args_str = ////" << args_str << "//////, args_size = " << args_size << std::endl;
+        std::cout << "请求的长度request: " << args_size << "\t" << args_str << std::endl;
     } else {
-        controller->SetFailed("serialize request error!");
+        controller->SetFailed("序列化请求失败!");
         return CHANNEL_PACKAGE_ERR;
     }
     // 定义rpc的请求header
     mprpc::RpcHeader rpc_header;
-    rpc_header.set_service_name(service_name);
-    rpc_header.set_methon_name(method_name);
-    rpc_header.set_args_size(args_size);
+    rpc_header.set_service_name(service_name); // UserService
+    rpc_header.set_methon_name(method_name); // Login
+    rpc_header.set_args_size(args_size); // 16
 
     // 获取请求header的字符串长度
     uint32_t header_size = 0;
     std::string rpc_header_str;
     if (rpc_header.SerializeToString(&rpc_header_str)) {
-        std::cout << "Package里, rpc_header_str = //////" << rpc_header_str << "//////////" << std::endl;
         header_size = rpc_header_str.size();
-        std::cout << "Package里, header_size = " << header_size << std::endl;
+        std::cout << "请求头的长度rpc_header: " << header_size << "\t" << rpc_header_str << std::endl;
+        std::cout << service_name << "\t" << method_name << "\t" << args_size << std::endl;
     } else {
         controller->SetFailed("serialize rpc header error!");
         return CHANNEL_PACKAGE_ERR;
@@ -128,8 +124,6 @@ RPC_CHANNEL_CODE MprpcChannel::PackageRequest(std::string* rpc_request_str,
     (*rpc_request_str) += rpc_header_str;
     (*rpc_request_str) += args_str;
 
-    // 
-    std::cout << "在Package里, 打包的结果是 rpc_request_str = ////////" << *rpc_request_str << "//////////" << std::endl;
     return CHANNEL_SUCCESS;
 }
 
@@ -185,7 +179,6 @@ RPC_CHANNEL_CODE MprpcChannel::SendRpcRquest(int* fd,
         close(client_fd);
         char errtxt[512] = {0};
         sprintf(errtxt, "send error! errno:%d", errno);
-       // fuseProtector->incrExcept(method->service()->name()); // 增加异常请求
         controller->SetFailed(errtxt);
         return CHANNEL_SEND_ERR;
     }
@@ -207,7 +200,6 @@ RPC_CHANNEL_CODE MprpcChannel::ReceiveRpcResponse(const int& client_fd,
         char errtxt[512] = {0};
         sprintf(errtxt, "recv error! errno:%d", errno);
         controller->SetFailed(errtxt);
-        // fuseProtector->incrExcept(method->service()->name()); // 增加异常请求
         return CHANNEL_RECEIVE_ERR;
     }
 
@@ -228,7 +220,7 @@ RPC_CHANNEL_CODE MprpcChannel::ReceiveRpcResponse(const int& client_fd,
 
 void MprpcChannel::initFuseProtectorIfNeeded(const std::string& service_name, const std::set<ServiceAddress>& service_addresses) {
     if (!isFuseProtectorInit) {
-        std:: cout << "熔断初始化" << std::endl;
+        std:: cout << "\n熔断初始化" << std::endl;
         std::unordered_map<std::string, std::set<ServiceAddress>> umap;
         umap[service_name] = service_addresses;
         fuseProtector->initCache(umap);
@@ -356,7 +348,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                     done->Run();
                 return ;
             }
-            // return;
+
         } else {
             std::cout << "接收响应成功" << std::endl;
             std::cout << "CallMethod()里, done调用开始..." << std::endl;

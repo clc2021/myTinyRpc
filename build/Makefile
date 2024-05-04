@@ -220,6 +220,19 @@ serverHttp/fast:
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/build
 .PHONY : serverHttp/fast
 
+#=============================================================================
+# Target rules for targets named serverLimit
+
+# Build rule for target.
+serverLimit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 serverLimit
+.PHONY : serverLimit
+
+# fast build rule for target.
+serverLimit/fast:
+	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/build
+.PHONY : serverLimit/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -236,6 +249,7 @@ help:
 	@echo "... mprpc"
 	@echo "... server"
 	@echo "... serverHttp"
+	@echo "... serverLimit"
 .PHONY : help
 
 

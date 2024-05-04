@@ -4,6 +4,7 @@ MprpcProvider 注册服务
 之前提到过，protobuf 只是提供了数据的序列化/反序列化和 RPC 接口，
 但是并没有提供网络传输相关代码。而在这个项目中，我们发送和接收数据包的操作
 由 muduo 库来完成。我们需要注册回调函数来处理不同的事件。
+
 */
 #ifndef __MPRPC_PROVIDER_H__
 #define __MPRPC_PROVIDER_H__
@@ -69,22 +70,15 @@ public:
 
 private:
     void RegisterZookeeper(const muduo::net::InetAddress&, ZkClient*);
-
     void OnConnection(const muduo::net::TcpConnectionPtr&); /// 这是一个智能指针，代表了一个TCP连接
-
     void ParseRequest(muduo::net::Buffer* buffer, RequestInfo*);
-
     void ParseHttpRequest(muduo::net::Buffer* buffer, HttpRequest& http_request);
-
     void OnMessage(const muduo::net::TcpConnectionPtr&, muduo::net::Buffer*, muduo::Timestamp);
-
     void OnHttpMessage(const muduo::net::TcpConnectionPtr&, muduo::net::Buffer*, muduo::Timestamp);
-
     void SendRpcResponse(const muduo::net::TcpConnectionPtr&, google::protobuf::Message*);
-
     //void SendHttpResponse(const muduo::net::TcpConnectionPtr&, const HttpResponse& response);
     void SendHttpResponse(const muduo::net::TcpConnectionPtr&, google::protobuf::Message* response);
-
+    
     // 服务类型信息。这是单个服务信息。
     struct ServiceInfo
     {

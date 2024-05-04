@@ -1,6 +1,3 @@
-/*
-给客户端client.cc用的
-*/
 #ifndef __MPRPC_CHANNEL_H__
 #define __MPRPC_CHANNEL_H__
 
@@ -16,12 +13,6 @@
 #include <uuid/uuid.h>
 #include <set>
 #include "./fuse/FuseProtector.h"
-
-// struct ServiceAddress
-// {
-//     std::string ip;
-//     uint16_t port;
-// };
 
 class MprpcChannel : public google::protobuf::RpcChannel
 {

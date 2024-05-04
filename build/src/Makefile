@@ -322,6 +322,102 @@ ZookeeperUtil.cc.s:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s
 .PHONY : ZookeeperUtil.cc.s
 
+limit/LimitProcess.o: limit/LimitProcess.cc.o
+.PHONY : limit/LimitProcess.o
+
+# target to build an object file
+limit/LimitProcess.cc.o:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o
+.PHONY : limit/LimitProcess.cc.o
+
+limit/LimitProcess.i: limit/LimitProcess.cc.i
+.PHONY : limit/LimitProcess.i
+
+# target to preprocess a source file
+limit/LimitProcess.cc.i:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.i
+.PHONY : limit/LimitProcess.cc.i
+
+limit/LimitProcess.s: limit/LimitProcess.cc.s
+.PHONY : limit/LimitProcess.s
+
+# target to generate assembly for a file
+limit/LimitProcess.cc.s:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.s
+.PHONY : limit/LimitProcess.cc.s
+
+limit/SampleEntity.o: limit/SampleEntity.cc.o
+.PHONY : limit/SampleEntity.o
+
+# target to build an object file
+limit/SampleEntity.cc.o:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o
+.PHONY : limit/SampleEntity.cc.o
+
+limit/SampleEntity.i: limit/SampleEntity.cc.i
+.PHONY : limit/SampleEntity.i
+
+# target to preprocess a source file
+limit/SampleEntity.cc.i:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.i
+.PHONY : limit/SampleEntity.cc.i
+
+limit/SampleEntity.s: limit/SampleEntity.cc.s
+.PHONY : limit/SampleEntity.s
+
+# target to generate assembly for a file
+limit/SampleEntity.cc.s:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.s
+.PHONY : limit/SampleEntity.cc.s
+
+limit/SampleWindow.o: limit/SampleWindow.cc.o
+.PHONY : limit/SampleWindow.o
+
+# target to build an object file
+limit/SampleWindow.cc.o:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o
+.PHONY : limit/SampleWindow.cc.o
+
+limit/SampleWindow.i: limit/SampleWindow.cc.i
+.PHONY : limit/SampleWindow.i
+
+# target to preprocess a source file
+limit/SampleWindow.cc.i:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.i
+.PHONY : limit/SampleWindow.cc.i
+
+limit/SampleWindow.s: limit/SampleWindow.cc.s
+.PHONY : limit/SampleWindow.s
+
+# target to generate assembly for a file
+limit/SampleWindow.cc.s:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.s
+.PHONY : limit/SampleWindow.cc.s
+
+limit/SlidingWindow.o: limit/SlidingWindow.cc.o
+.PHONY : limit/SlidingWindow.o
+
+# target to build an object file
+limit/SlidingWindow.cc.o:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o
+.PHONY : limit/SlidingWindow.cc.o
+
+limit/SlidingWindow.i: limit/SlidingWindow.cc.i
+.PHONY : limit/SlidingWindow.i
+
+# target to preprocess a source file
+limit/SlidingWindow.cc.i:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.i
+.PHONY : limit/SlidingWindow.cc.i
+
+limit/SlidingWindow.s: limit/SlidingWindow.cc.s
+.PHONY : limit/SlidingWindow.s
+
+# target to generate assembly for a file
+limit/SlidingWindow.cc.s:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.s
+.PHONY : limit/SlidingWindow.cc.s
+
 rpc_header.pb.o: rpc_header.pb.cc.o
 .PHONY : rpc_header.pb.o
 
@@ -379,6 +475,18 @@ help:
 	@echo "... ZookeeperUtil.o"
 	@echo "... ZookeeperUtil.i"
 	@echo "... ZookeeperUtil.s"
+	@echo "... limit/LimitProcess.o"
+	@echo "... limit/LimitProcess.i"
+	@echo "... limit/LimitProcess.s"
+	@echo "... limit/SampleEntity.o"
+	@echo "... limit/SampleEntity.i"
+	@echo "... limit/SampleEntity.s"
+	@echo "... limit/SampleWindow.o"
+	@echo "... limit/SampleWindow.i"
+	@echo "... limit/SampleWindow.s"
+	@echo "... limit/SlidingWindow.o"
+	@echo "... limit/SlidingWindow.i"
+	@echo "... limit/SlidingWindow.s"
 	@echo "... rpc_header.pb.o"
 	@echo "... rpc_header.pb.i"
 	@echo "... rpc_header.pb.s"

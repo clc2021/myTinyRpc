@@ -8,7 +8,12 @@ set(SRC_LIST
     MprpcController.cc
     ZookeeperUtil.cc
     FuseProtector.cc
+    ./limit/LimitProcess.cc
+    ./limit/SampleEntity.cc
+    ./limit/SampleWindow.cc
+    ./limit/SlidingWindow.cc
     )
+    
 # aux_source_directory() 用于将指定目录下所有源文件都添加到一个变量中
 aux_source_directory(mprpc SRC_LIST)
 # 生成静态库: 生成可执行文件用 add_exe, 生成静态库用add_library()

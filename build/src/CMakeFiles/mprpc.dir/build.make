@@ -195,6 +195,62 @@ src/CMakeFiles/mprpc.dir/FuseProtector.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/FuseProtector.cc.s"
 	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/FuseProtector.cc -o CMakeFiles/mprpc.dir/FuseProtector.cc.s
 
+src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o: ../src/limit/LimitProcess.cc
+src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o -MF CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o.d -o CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/limit/LimitProcess.cc
+
+src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/limit/LimitProcess.cc.i"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/limit/LimitProcess.cc > CMakeFiles/mprpc.dir/limit/LimitProcess.cc.i
+
+src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/limit/LimitProcess.cc.s"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/limit/LimitProcess.cc -o CMakeFiles/mprpc.dir/limit/LimitProcess.cc.s
+
+src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o: ../src/limit/SampleEntity.cc
+src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o -MF CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o.d -o CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/limit/SampleEntity.cc
+
+src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/limit/SampleEntity.cc.i"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/limit/SampleEntity.cc > CMakeFiles/mprpc.dir/limit/SampleEntity.cc.i
+
+src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/limit/SampleEntity.cc.s"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/limit/SampleEntity.cc -o CMakeFiles/mprpc.dir/limit/SampleEntity.cc.s
+
+src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o: ../src/limit/SampleWindow.cc
+src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o -MF CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o.d -o CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/limit/SampleWindow.cc
+
+src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/limit/SampleWindow.cc.i"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/limit/SampleWindow.cc > CMakeFiles/mprpc.dir/limit/SampleWindow.cc.i
+
+src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/limit/SampleWindow.cc.s"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/limit/SampleWindow.cc -o CMakeFiles/mprpc.dir/limit/SampleWindow.cc.s
+
+src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o: src/CMakeFiles/mprpc.dir/flags.make
+src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o: ../src/limit/SlidingWindow.cc
+src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o: src/CMakeFiles/mprpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o -MF CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o.d -o CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o -c /home/ubuntu/projects/tinyrpcGai/src/limit/SlidingWindow.cc
+
+src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.i"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/src/limit/SlidingWindow.cc > CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.i
+
+src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.s"
+	cd /home/ubuntu/projects/tinyrpcGai/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/src/limit/SlidingWindow.cc -o CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.s
+
 # Object files for target mprpc
 mprpc_OBJECTS = \
 "CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o" \
@@ -205,7 +261,11 @@ mprpc_OBJECTS = \
 "CMakeFiles/mprpc.dir/MprpcChannel.cc.o" \
 "CMakeFiles/mprpc.dir/MprpcController.cc.o" \
 "CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o" \
-"CMakeFiles/mprpc.dir/FuseProtector.cc.o"
+"CMakeFiles/mprpc.dir/FuseProtector.cc.o" \
+"CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o" \
+"CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o" \
+"CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o" \
+"CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o"
 
 # External object files for target mprpc
 mprpc_EXTERNAL_OBJECTS =
@@ -219,9 +279,13 @@ mprpc_EXTERNAL_OBJECTS =
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/MprpcController.cc.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/FuseProtector.cc.o
+../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o
+../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/limit/SampleEntity.cc.o
+../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o
+../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/build.make
 ../lib/libmprpc.a: src/CMakeFiles/mprpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library ../../lib/libmprpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library ../../lib/libmprpc.a"
 	cd /home/ubuntu/projects/tinyrpcGai/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mprpc.dir/cmake_clean_target.cmake
 	cd /home/ubuntu/projects/tinyrpcGai/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mprpc.dir/link.txt --verbose=$(VERBOSE)
 

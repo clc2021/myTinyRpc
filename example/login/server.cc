@@ -5,9 +5,8 @@
 
 #include <iostream>
 #include <string>
-
 class UserService : public fixbug::UserServiceRpc  // 这里用fixbug，是因为在package fixbug
-{   
+{    
 public:
     bool Login(const std::string& name, const std::string& pwd)
     {
@@ -19,6 +18,7 @@ public:
     {
         std::cout << "在服务端: Register" << std::endl;
         std::cout << "id" << id << "name:" << name << " pwd:" << pwd << std::endl;
+        this->name = name;
     }
 
     void Login(::google::protobuf::RpcController* controller,
@@ -83,7 +83,8 @@ int main(int argc, char **argv)
     MprpcApplication::Init(argc, argv); // 第1步: 对 RPC 框架进行初始化操作，配置信息通过命令行传递。
     // provider是一个rpc网络服务对象，把userService对象发布到rpc节点上
     MprpcProvider provider; // 第2步: 生成一个 provider 对象，用于将业务发布到 RPC 节点上。
-    provider.NotifyService(new UserService());
+    UserService* service = new UserService();
+    provider.NotifyService(service);
 
     // 启动一个rpc发布节点，进入阻塞状态等待远处rpc请求
     // 启动muduo的事件循环 

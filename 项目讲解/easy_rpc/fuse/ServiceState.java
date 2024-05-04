@@ -9,19 +9,35 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Data
 @Slf4j
 public class ServiceState {
+    /**
+     * 服务名
+     */
+    private String serviceName;
+    /**
+     * 请求数量
+     */
+    private AtomicInteger request;
+    /**
+     * 异常的请求数量
+     */
+    private AtomicInteger excepts;
+    /**
+     * 当前服务熔断状态
+     */
+    private FuseState fuseState;
 
-    private String serviceName; // 服务名
-    private AtomicInteger request; // 请求数量。总请求数量
-    private AtomicInteger excepts; // 异常的请求数量。错误请求数量。
-    private FuseState fuseState; // 当前服务熔断状态, 可选FALL_OPEN, HALF_OPEN, CLOSE
-    private float interceptRate; // 当前服务拦截lv
+    /**
+     * 当前服务拦截lv
+     * @param serviceName
+     */
+    private float interceptRate;
 
     public ServiceState(String serviceName) {
         this.serviceName = serviceName;
         this.request = new AtomicInteger(0);
         this.excepts = new AtomicInteger(0);
         this.interceptRate = 0;
-        this.fuseState = FuseState.CLOSE; // 默认关闭
+        this.fuseState = FuseState.CLOSE;
     }
 
     public void incrRequest(){
@@ -55,6 +71,7 @@ public class ServiceState {
             log.info("熔断器当前切换至全开");
             this.fuseState = FuseState.FALL_OPEN;
         }
+
 
     }
 }
