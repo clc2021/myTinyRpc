@@ -5,10 +5,12 @@
 
 #include <iostream>
 #include <string>
-
+#include <functional>
 // 是限流+降级的RPC服务端
-#include "LimitProcess.h"
+#include "./limit/LimitProcess.h"
+#include <thread>
 
+// 记住这个扩展了protobuf的类叫做UserService, 
 class UserService : public fixbug::UserServiceRpc  
 {
 private:
@@ -26,7 +28,6 @@ public:
     {
         std::cout << "在服务端: Register" << std::endl;
         std::cout << "id" << id << "name:" << name << " pwd:" << pwd << std::endl;
-        this->name = name;
     }
 
     void Login(::google::protobuf::RpcController* controller,
@@ -39,8 +40,11 @@ public:
         std::string pwd = request->pwd();
 
         // 进行降级处理
-        std::function<void()> fallBackMethod = fallBackObj.handleFallback1; // 设置降级方法为 handleFallback1
+        std::function<void()> fallBackMethod = std::bind(&FallBackClass::handleFallback1, &fallBackObj); // 设置降级方法为 handleFallback1
+        // LimitingRule(id, fallBackMethod, blockStrategy, limitKey, limitValue, maxQPS) 
+        // 限流的id是Login,方法是降级1，拒绝，limitKey和limitValue都是空, 100
         LimitingRule loginFallBackRule("Login", fallBackMethod, IMMEDIATE_REFUSE, "", nullptr, 100);  // 设置最大QPS为100
+        std::cout << "fallBackTriggered = 开头: " << std::this_thread::get_id() << std::endl;
         bool fallBackTriggered = limitProcess.limitHandle(loginFallBackRule);
         if (fallBackTriggered) {
             std::cout << "Login请求被降级" << std::endl;
@@ -54,7 +58,9 @@ public:
         }
 
         // 进行限流处理
+        // 限流的id是Login, 方法是空，拒绝，limitKey和limitValue都是空, 100
         LimitingRule loginLimitRule("Login", nullptr, IMMEDIATE_REFUSE, "", nullptr, 100); // 设置最大QPS为100
+        std::cout << "loginAllowed = 开头: " << std::this_thread::get_id() << std::endl;
         bool loginAllowed = limitProcess.limitHandle(loginLimitRule);
         if (!loginAllowed) {
             std::cout << "Login请求被限流" << std::endl;
@@ -89,8 +95,9 @@ public:
         std::string pwd = request->pwd();
 
         // 进行降级处理
-        std::function<void()> fallBackMethod = fallBackObj.handleFallback2; 
+        std::function<void()> fallBackMethod = std::bind(&FallBackClass::handleFallback2, &fallBackObj); 
         LimitingRule registerFallBackRule("Register", fallBackMethod, IMMEDIATE_REFUSE, "", nullptr, 100); // 最大请求是100
+        std::cout << "R fallBackTriggered = 开头: " << std::this_thread::get_id() << std::endl;
         bool fallBackTriggered = limitProcess.limitHandle(registerFallBackRule);
         if (fallBackTriggered) {
             std::cout << "Register请求被降级" << std::endl;
@@ -104,6 +111,7 @@ public:
 
         // 进行限流处理
         LimitingRule registerLimitRule("Register", nullptr, IMMEDIATE_REFUSE, "", nullptr, 100); // 设置最大是100
+        std::cout << "registerAllowed = 开头: " << std::this_thread::get_id() << std::endl;
         bool registerAllowed = limitProcess.limitHandle(registerLimitRule);
         if (!registerAllowed) {
             std::cout << "Register请求被限流" << std::endl;
@@ -130,9 +138,10 @@ public:
 int main(int argc, char **argv)
 {
     MprpcApplication::Init(argc, argv); 
+    std::cout << "main函数开头: " << std::this_thread::get_id() << std::endl;
     MprpcProvider provider; 
-    UserService* service = new UserService();
-    provider.NotifyService(service);
-    provider.Run();
+    UserService* service = new UserService(); // 就是造了一个UserService的类对象
+    provider.NotifyService(service); // 
+    provider.Run(); // 等待执行
     return 0;
 }

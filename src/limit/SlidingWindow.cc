@@ -17,12 +17,13 @@ bool SlidingWindow::isSampleWindowDeprecated(long time, SampleWindow* sampleWind
     return ((time - sampleWindow->getStartTimeInMs()) > windowIntervalInMs); 
 }
 
+// to_do 这段逻辑存疑？
 std::vector<SampleWindow*> SlidingWindow::getValidSampleWindow(long time) { // 获取有效窗口
     std::lock_guard<std::mutex> lock(updateMtx); // 上锁
     std::vector<SampleWindow*> res;
     int length = sampleWindowVector.size();
     for (int i = 0; i < length; i++) {
-        SampleWindow* sampleWindow = sampleWindowVector[i].load();
+        SampleWindow* sampleWindow = sampleWindowVector[i];
         if (!isSampleWindowDeprecated(time, sampleWindow))
             res.emplace_back(new SampleWindow(*sampleWindow));
     }
@@ -30,15 +31,6 @@ std::vector<SampleWindow*> SlidingWindow::getValidSampleWindow(long time) { // �
     return res;   
 }
 
-/*
-获取当前的样本窗口 (核心)
-1：获取系统时间
-2:通过该系统时间找到样本窗口的下标
-3：计算当前系统时间对应的样本窗口的开始时间
-4：先查看样本窗口如果是为nullptr，则进行创建一个样本窗口，然后返窗口
-5：如果数组中的样本窗口有值，则查看该样本窗口的起始时间是否与计算的开始时间一致，如果一致则直接返回该样本窗口
-6：如果不一致，则该窗口以前创建过，是一个过去的样本窗口，则进行初始化为当前窗口
-*/
 SampleWindow* SlidingWindow::getCurSampleWindow() { // 获取当前窗口
     // 获取当前的系统时间
     long curSystemTime = std::chrono::system_clock::now().time_since_epoch().count();
@@ -46,23 +38,31 @@ SampleWindow* SlidingWindow::getCurSampleWindow() { // 获取当前窗口
     long curSampleWindowStartTime = getCurSampleWindowStartTime(curSystemTime);
     while (true) {
         // 若为nullptr，则初始化一个窗口
-        if (!sampleWindowVector[curSampleWindowIdx].load()) {
-            SampleWindow* newSampleWindow = new 
-                SampleWindow(curSampleWindowStartTime, sampleWindowIntervalInMs, SampleEntity());
-            if (std::atomic_exchange(&sampleWindowVector[curSampleWindowIdx], newSampleWindow) == nullptr)
-                return newSampleWindow;
-            else {
-                delete newSampleWindow;
-                std::this_thread::yield();
+        SampleWindow* currentSampleWindow = nullptr;
+        {
+            std::lock_guard<std::mutex> lock(updateMtx); // 上锁
+            currentSampleWindow = sampleWindowVector[curSampleWindowIdx];
+        }
+        if (!currentSampleWindow) {
+            SampleWindow* newSampleWindow = new SampleWindow(curSampleWindowStartTime, sampleWindowIntervalInMs, SampleEntity());
+            {
+                std::lock_guard<std::mutex> lock(updateMtx); // 上锁
+                if (!sampleWindowVector[curSampleWindowIdx]) {
+                    sampleWindowVector[curSampleWindowIdx] = newSampleWindow;
+                } else {
+                    delete newSampleWindow;
+                    std::this_thread::yield();
+                    continue;
+                }
             }
+            return newSampleWindow;
         } else { // 不空检查
-            auto oldSampleWindow = sampleWindowVector[curSampleWindowIdx].load(); // 旧的窗口
-            if (oldSampleWindow->getStartTimeInMs() == curSampleWindowStartTime)
-                return oldSampleWindow;
-            else if (oldSampleWindow->getStartTimeInMs() < curSampleWindowStartTime) {
+            if (currentSampleWindow->getStartTimeInMs() == curSampleWindowStartTime)
+                return currentSampleWindow;
+            else if (currentSampleWindow->getStartTimeInMs() < curSampleWindowStartTime) {
                 std::lock_guard<std::mutex> lock(updateMtx); // 上锁：更新锁
-                oldSampleWindow->reset(curSampleWindowStartTime); // 更新窗口
-            } else if (oldSampleWindow->getStartTimeInMs() > curSampleWindowStartTime) {
+                currentSampleWindow->reset(curSampleWindowStartTime); // 更新窗口
+            } else {
                 return new SampleWindow(curSampleWindowStartTime, sampleWindowIntervalInMs, SampleEntity());
             }
         } 
@@ -90,7 +90,7 @@ int SlidingWindow::getPassCount(long time, void* obj) {
 }
 
 void SlidingWindow::incrPassCount() {
-    SamlpleWindow* sw = getCurSampleWindow();
+    SampleWindow* sw = getCurSampleWindow();
     sw->getSampleEntity().addPass();
 }
 

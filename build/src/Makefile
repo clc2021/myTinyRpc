@@ -322,6 +322,30 @@ ZookeeperUtil.cc.s:
 	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.s
 .PHONY : ZookeeperUtil.cc.s
 
+include/limit/FallBackMethod.o: include/limit/FallBackMethod.cc.o
+.PHONY : include/limit/FallBackMethod.o
+
+# target to build an object file
+include/limit/FallBackMethod.cc.o:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/include/limit/FallBackMethod.cc.o
+.PHONY : include/limit/FallBackMethod.cc.o
+
+include/limit/FallBackMethod.i: include/limit/FallBackMethod.cc.i
+.PHONY : include/limit/FallBackMethod.i
+
+# target to preprocess a source file
+include/limit/FallBackMethod.cc.i:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/include/limit/FallBackMethod.cc.i
+.PHONY : include/limit/FallBackMethod.cc.i
+
+include/limit/FallBackMethod.s: include/limit/FallBackMethod.cc.s
+.PHONY : include/limit/FallBackMethod.s
+
+# target to generate assembly for a file
+include/limit/FallBackMethod.cc.s:
+	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/include/limit/FallBackMethod.cc.s
+.PHONY : include/limit/FallBackMethod.cc.s
+
 limit/LimitProcess.o: limit/LimitProcess.cc.o
 .PHONY : limit/LimitProcess.o
 
@@ -475,6 +499,9 @@ help:
 	@echo "... ZookeeperUtil.o"
 	@echo "... ZookeeperUtil.i"
 	@echo "... ZookeeperUtil.s"
+	@echo "... include/limit/FallBackMethod.o"
+	@echo "... include/limit/FallBackMethod.i"
+	@echo "... include/limit/FallBackMethod.s"
 	@echo "... limit/LimitProcess.o"
 	@echo "... limit/LimitProcess.i"
 	@echo "... limit/LimitProcess.s"

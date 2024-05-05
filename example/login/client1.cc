@@ -75,7 +75,7 @@ int main(int argc, char **argv)
     fixbug::UserServiceRpc_Stub stub(new MprpcChannel());
     MprpcController controller;
 
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 10; i++) {
         loginService(stub, controller);
         sleep(1);
         // registerService(stub, controller);

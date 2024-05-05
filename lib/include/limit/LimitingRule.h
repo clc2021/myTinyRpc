@@ -6,6 +6,14 @@
 #include <functional>
 #include "BlockStrategy.h"
 
+// id：movie_streaming_rule
+// fallBackClass：FallbackMovieService.class
+// fallBackMethod：getFallbackMovie() 方法提供者
+// BlockStrategy：BlockStrategy.REJECT（直接拒绝）
+// limitKey：用户的ID
+// limitValue：请求的时间戳
+// maxQPS：100 （每秒最多处理100个请求）
+
 // 这是一个整体的降级类，这个降级类里有2个降级方法
 class FallBackClass { // 降级类。最初的降级类，之后可以用别的类去扩展它
 public:
@@ -18,16 +26,15 @@ public:
     }
 };
 
-void FallBackMethod() {
-    std::cout << "降级方法1..." << std::endl;
-}
+// 外部声明 FallBackMethod 函数
+extern void FallBackMethod();
 
 class LimitingRule {
 private:
     std::string id; // 限流标识id
     FallBackClass* fallBackClass; // 降级类对象指针
     std::function<void()> fallBackMethod; // 降级方法 // to_do 这里降级方法用这个可以吗？
-    BlockStrategy blockStrategy; // 限流策略
+    BLOCK_STRATEGY blockStrategy; // 限流策略
     std::string limitKey; // 限流key
     void* limitValue; // 限流值
     int maxQPS; // 最大QPS
@@ -38,13 +45,12 @@ public:
         blockStrategy = IMMEDIATE_REFUSE;
         limitKey = "";
         maxQPS = 0;
-        fallBackMethod = std::bind(&FallBackMethod);
+        fallBackMethod = std::bind(FallBackMethod);
     }
 
-    // to_do ？？？ 怎么初始化合适
     LimitingRule(const std::string& _id, 
                 std::function<void()> _fallBackMethod,
-                BlockStrategy _blockStrategy, 
+                BLOCK_STRATEGY _blockStrategy, 
                 const std::string& _limitKey, 
                 void* _limitValue, 
                 int _maxQPS)

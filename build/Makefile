@@ -130,6 +130,19 @@ mprpc/fast:
 .PHONY : mprpc/fast
 
 #=============================================================================
+# Target rules for targets named serverLimit
+
+# Build rule for target.
+serverLimit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 serverLimit
+.PHONY : serverLimit
+
+# fast build rule for target.
+serverLimit/fast:
+	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/build
+.PHONY : serverLimit/fast
+
+#=============================================================================
 # Target rules for targets named client_circuit_break
 
 # Build rule for target.
@@ -219,19 +232,6 @@ serverHttp: cmake_check_build_system
 serverHttp/fast:
 	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/build
 .PHONY : serverHttp/fast
-
-#=============================================================================
-# Target rules for targets named serverLimit
-
-# Build rule for target.
-serverLimit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 serverLimit
-.PHONY : serverLimit
-
-# fast build rule for target.
-serverLimit/fast:
-	$(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/build
-.PHONY : serverLimit/fast
 
 # Help Target
 help:

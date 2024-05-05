@@ -1,11 +1,7 @@
 #include "../include/limit/SampleEntity.h"
 
-SampleEntity::SampleEntity() {
-    pass.store(0); // 给原子变量赋值
-    block.store(0);
-}
-
 void SampleEntity::init() {
+    std::lock_guard<std::mutex> lock(mtx); // 上锁
     passMap.clear();
     blockMap.clear();
     pass.store(0);
@@ -37,7 +33,7 @@ int SampleEntity::getPassCount() {
 }
 
 int SampleEntity::getBlockCount() {
-    return block.laod();
+    return block.load();
 }
 
 int SampleEntity::getPassCountByKey(void* obj) {

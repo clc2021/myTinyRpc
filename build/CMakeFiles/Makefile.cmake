@@ -125,6 +125,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/mprpc.dir/DependInfo.cmake"
+  "example/login/CMakeFiles/serverLimit.dir/DependInfo.cmake"
   "example/login/CMakeFiles/client_circuit_break.dir/DependInfo.cmake"
   "example/login/CMakeFiles/client1.dir/DependInfo.cmake"
   "example/login/CMakeFiles/client2.dir/DependInfo.cmake"
@@ -132,5 +133,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "example/login/CMakeFiles/client_failover.dir/DependInfo.cmake"
   "example/login/CMakeFiles/server.dir/DependInfo.cmake"
   "example/login/CMakeFiles/serverHttp.dir/DependInfo.cmake"
-  "example/login/CMakeFiles/serverLimit.dir/DependInfo.cmake"
   )

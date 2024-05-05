@@ -18,7 +18,6 @@ public:
     {
         std::cout << "在服务端: Register" << std::endl;
         std::cout << "id" << id << "name:" << name << " pwd:" << pwd << std::endl;
-        this->name = name;
     }
 
     void Login(::google::protobuf::RpcController* controller,
