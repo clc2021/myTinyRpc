@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/RoundRobinLoadBalancer.cc \
+ /home/ubuntu/projects/tinyRPC/src/RoundRobinLoadBalancer.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/LoadBalancer.h \
+ /home/ubuntu/projects/tinyRPC/src/include/LoadBalancer.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -185,4 +185,4 @@ src/CMakeFiles/mprpc.dir/RoundRobinLoadBalancer.cc.o: \
  /usr/include/c++/11/bits/uniform_int_dist.h /usr/include/c++/11/set \
  /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ServiceAddress.h
+ /home/ubuntu/projects/tinyRPC/src/include/ServiceAddress.h

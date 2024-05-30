@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/projects/tinyrpcGai/example/user.pb.cc" "example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.o" "gcc" "example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.o.d"
-  "/home/ubuntu/projects/tinyrpcGai/example/login/serverLimit.cc" "example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.o" "gcc" "example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.o.d"
+  "/home/ubuntu/projects/tinyRPC/example/user.pb.cc" "example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.o" "gcc" "example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.o.d"
+  "/home/ubuntu/projects/tinyRPC/example/login/serverLimit.cc" "example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.o" "gcc" "example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/ubuntu/projects/tinyrpcGai/build/src/CMakeFiles/mprpc.dir/DependInfo.cmake"
+  "/home/ubuntu/projects/tinyRPC/build/src/CMakeFiles/mprpc.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

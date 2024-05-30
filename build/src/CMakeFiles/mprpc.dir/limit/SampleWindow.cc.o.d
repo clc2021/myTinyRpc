@@ -1,8 +1,8 @@
 src/CMakeFiles/mprpc.dir/limit/SampleWindow.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/limit/SampleWindow.cc \
+ /home/ubuntu/projects/tinyRPC/src/limit/SampleWindow.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/SampleWindow.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/SampleEntity.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/SampleWindow.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/SampleEntity.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/type_traits \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

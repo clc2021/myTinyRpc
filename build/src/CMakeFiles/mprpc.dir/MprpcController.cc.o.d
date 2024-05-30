@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/MprpcController.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/MprpcController.cc \
+ /home/ubuntu/projects/tinyRPC/src/MprpcController.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcController.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcController.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/service.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/rpc_header.pb.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/rpc_header.pb.cc \
+ /home/ubuntu/projects/tinyRPC/src/rpc_header.pb.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/rpc_header.pb.h \
+ /home/ubuntu/projects/tinyRPC/src/include/rpc_header.pb.h \
  /usr/include/c++/11/limits \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

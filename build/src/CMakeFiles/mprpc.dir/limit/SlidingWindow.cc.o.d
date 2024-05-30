@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/limit/SlidingWindow.cc \
+ /home/ubuntu/projects/tinyRPC/src/limit/SlidingWindow.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/SlidingWindow.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/SlidingWindow.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -150,8 +150,8 @@ src/CMakeFiles/mprpc.dir/limit/SlidingWindow.cc.o: \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/refwrap.h /usr/include/c++/11/bits/unique_ptr.h \
  /usr/include/c++/11/bits/this_thread_sleep.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/SampleWindow.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/SampleEntity.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/SampleWindow.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/SampleEntity.h \
  /usr/include/c++/11/unordered_map \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/hashtable.h \

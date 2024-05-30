@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/MprpcProvider.cc \
+ /home/ubuntu/projects/tinyRPC/src/MprpcProvider.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcProvider.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcProvider.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/service.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -208,8 +208,8 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/stubs/hash.h \
  /usr/include/c++/11/cstring /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcApplication.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcChannel.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcApplication.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcChannel.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/descriptor.h \
  /usr/include/c++/11/atomic \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/stubs/logging.h \
@@ -288,12 +288,12 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp \
  /usr/include/boost/core/addressof.hpp \
- /home/ubuntu/projects/tinyrpcGai/src/include/ErrorCode.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/LoadBalancer.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ServiceAddress.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ErrorCode.h \
+ /home/ubuntu/projects/tinyRPC/src/include/LoadBalancer.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ServiceAddress.h \
  /usr/include/uuid/uuid.h /usr/include/x86_64-linux-gnu/sys/time.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/FuseProtector.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/FuseState.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/FuseProtector.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/FuseState.h \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -317,9 +317,9 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/../ServiceAddress.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcController.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ZookeeperUtil.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/../ServiceAddress.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcController.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ZookeeperUtil.h \
  /usr/include/semaphore.h /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/zookeeper/zookeeper.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
@@ -383,7 +383,7 @@ src/CMakeFiles/mprpc.dir/MprpcProvider.cc.o: \
  /usr/include/muduo/net/EventLoop.h /usr/include/muduo/base/Mutex.h \
  /usr/include/muduo/base/CurrentThread.h /usr/include/muduo/net/TimerId.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
- /home/ubuntu/projects/tinyrpcGai/src/include/rpc_header.pb.h \
+ /home/ubuntu/projects/tinyRPC/src/include/rpc_header.pb.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/extension_set.h \
  /usr/include/c++/11/cassert \
- /home/ubuntu/projects/tinyrpcGai/example/user.pb.h
+ /home/ubuntu/projects/tinyRPC/example/user.pb.h

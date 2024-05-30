@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/projects/tinyrpcGai/example/login
+# Install script for directory: /home/ubuntu/projects/tinyRPC/example/login
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

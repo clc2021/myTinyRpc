@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/projects/tinyrpcGai
+# Install script for directory: /home/ubuntu/projects/tinyRPC
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ubuntu/projects/tinyrpcGai/build/src/cmake_install.cmake")
-  include("/home/ubuntu/projects/tinyrpcGai/build/example/cmake_install.cmake")
+  include("/home/ubuntu/projects/tinyRPC/build/src/cmake_install.cmake")
+  include("/home/ubuntu/projects/tinyRPC/build/example/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/projects/tinyrpcGai/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/projects/tinyRPC/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

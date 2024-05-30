@@ -8,8 +8,8 @@ SampleEntity SampleWindow::getSampleEntity() {
     return sampleEntity;
 }
 
-SampleWindow SampleWindow::reset(long startTime) {  
+SampleWindow* SampleWindow::reset(long startTime) {  
     startTimeInMs = startTime; // 重置
     sampleEntity.init();
-    return *this;
+    return this;
 }

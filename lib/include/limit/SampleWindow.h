@@ -28,6 +28,6 @@ public:
     
     long getStartTimeInMs();
     SampleEntity getSampleEntity();
-    SampleWindow reset(long startTime);
+    SampleWindow* reset(long startTime);
 };
 #endif

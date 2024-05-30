@@ -9,6 +9,7 @@
 // 是限流+降级的RPC服务端
 #include "./limit/LimitProcess.h"
 #include <thread>
+#include <chrono>
 
 // 记住这个扩展了protobuf的类叫做UserService, 
 class UserService : public fixbug::UserServiceRpc  
@@ -35,7 +36,7 @@ public:
                     ::fixbug::LoginResponse* response,
                     ::google::protobuf::Closure* done)
     {
-
+        long curSystemTime = std::chrono::system_clock::now().time_since_epoch().count(); // 当前系统时间
         std::string name = request->name();
         std::string pwd = request->pwd();
 
@@ -43,8 +44,8 @@ public:
         std::function<void()> fallBackMethod = std::bind(&FallBackClass::handleFallback1, &fallBackObj); // 设置降级方法为 handleFallback1
         // LimitingRule(id, fallBackMethod, blockStrategy, limitKey, limitValue, maxQPS) 
         // 限流的id是Login,方法是降级1，拒绝，limitKey和limitValue都是空, 100
-        LimitingRule loginFallBackRule("Login", fallBackMethod, IMMEDIATE_REFUSE, "", nullptr, 100);  // 设置最大QPS为100
-        std::cout << "fallBackTriggered = 开头: " << std::this_thread::get_id() << std::endl;
+        LimitingRule loginFallBackRule("Login", fallBackMethod, IMMEDIATE_REFUSE, "", reinterpret_cast<void*>(curSystemTime), 100);  // 设置最大QPS为100
+        std::cout << "对Login(), 得到降级结果的线程ID: " << std::this_thread::get_id() << std::endl;
         bool fallBackTriggered = limitProcess.limitHandle(loginFallBackRule);
         if (fallBackTriggered) {
             std::cout << "Login请求被降级" << std::endl;
@@ -59,8 +60,8 @@ public:
 
         // 进行限流处理
         // 限流的id是Login, 方法是空，拒绝，limitKey和limitValue都是空, 100
-        LimitingRule loginLimitRule("Login", nullptr, IMMEDIATE_REFUSE, "", nullptr, 100); // 设置最大QPS为100
-        std::cout << "loginAllowed = 开头: " << std::this_thread::get_id() << std::endl;
+        LimitingRule loginLimitRule("Login", nullptr, IMMEDIATE_REFUSE, "", reinterpret_cast<void*>(curSystemTime), 100); // 设置最大QPS为100
+        std::cout << "对Login(), 得到限流的结果的线程ID: " << std::this_thread::get_id() << std::endl;
         bool loginAllowed = limitProcess.limitHandle(loginLimitRule);
         if (!loginAllowed) {
             std::cout << "Login请求被限流" << std::endl;
@@ -90,14 +91,15 @@ public:
                 ::fixbug::RegisterResponse* response,
                 ::google::protobuf::Closure* done)
     {
+        long curSystemTime = std::chrono::system_clock::now().time_since_epoch().count(); // 当前系统时间
         uint32_t id = request->id();
         std::string name = request->name();
         std::string pwd = request->pwd();
 
         // 进行降级处理
         std::function<void()> fallBackMethod = std::bind(&FallBackClass::handleFallback2, &fallBackObj); 
-        LimitingRule registerFallBackRule("Register", fallBackMethod, IMMEDIATE_REFUSE, "", nullptr, 100); // 最大请求是100
-        std::cout << "R fallBackTriggered = 开头: " << std::this_thread::get_id() << std::endl;
+        LimitingRule registerFallBackRule("Register", fallBackMethod, IMMEDIATE_REFUSE, "", reinterpret_cast<void*>(curSystemTime), 100); // 最大请求是100
+        std::cout << "对Register(), 得到降级处理结果的线程ID: " << std::this_thread::get_id() << std::endl;
         bool fallBackTriggered = limitProcess.limitHandle(registerFallBackRule);
         if (fallBackTriggered) {
             std::cout << "Register请求被降级" << std::endl;
@@ -109,9 +111,9 @@ public:
             return ;
         }
 
-        // 进行限流处理
-        LimitingRule registerLimitRule("Register", nullptr, IMMEDIATE_REFUSE, "", nullptr, 100); // 设置最大是100
-        std::cout << "registerAllowed = 开头: " << std::this_thread::get_id() << std::endl;
+        // 进行限流处理 整一下
+        LimitingRule registerLimitRule("Register", nullptr, IMMEDIATE_REFUSE, "", reinterpret_cast<void*>(curSystemTime), 100); // 设置最大是100
+        std::cout << "对Register(), 得到限流结果的线程ID: " << std::this_thread::get_id() << std::endl;
         bool registerAllowed = limitProcess.limitHandle(registerLimitRule);
         if (!registerAllowed) {
             std::cout << "Register请求被限流" << std::endl;

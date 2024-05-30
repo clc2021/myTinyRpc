@@ -1,6 +1,6 @@
 #include "MprpcProvider.h"
 #include "rpc_header.pb.h"
-#include "/home/ubuntu/projects/tinyrpcGai/example/user.pb.h"
+#include "/home/ubuntu/projects/tinyRPC/example/user.pb.h"
 #include "google/protobuf/descriptor.h"
 #include <functional>
 // 框架，需要设计成抽象基类
@@ -269,7 +269,7 @@ void MprpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
 
     service->CallMethod(method, nullptr, request, response, done);
 }
-
+/*
 void MprpcProvider::OnHttpMessage(const muduo::net::TcpConnectionPtr& conn, 
                                 muduo::net::Buffer* buffer,
                                 muduo::Timestamp timestamp)
@@ -330,6 +330,67 @@ void MprpcProvider::OnHttpMessage(const muduo::net::TcpConnectionPtr& conn,
 
     service->CallMethod(method, nullptr, request, response, done);
 }
+*/
+void MprpcProvider::OnHttpMessage(const muduo::net::TcpConnectionPtr& conn, 
+                                muduo::net::Buffer* buffer,
+                                muduo::Timestamp timestamp)
+{
+    HttpRequest request_info; //服务名-方法名-大小-参数
+    ParseHttpRequest(buffer, request_info); // 缓冲区-请求信息
+
+    auto it = m_serviceMap.find(request_info.service_name);
+    if (it == m_serviceMap.end())
+    {
+        LOG_WARN << request_info.service_name << " is not exist!";
+        return;
+    }
+
+    auto mit = it->second.m_methodMap.find(request_info.method_name);
+    if (mit == it->second.m_methodMap.end())
+    {
+        LOG_WARN << request_info.service_name << ":" << request_info.method_name << " is not exist!";
+        return;
+    }
+
+    google::protobuf::Service *service = it->second.m_service;  // UserServiceRpc
+    const google::protobuf::MethodDescriptor *method = mit->second;  // Login
+
+    google::protobuf::Message *request = service->GetRequestPrototype(method).New(); // requsest
+    google::protobuf::Message *response = service->GetResponsePrototype(method).New(); // response
+    //////////////====================================
+    // 先用Login试一下
+    if (request_info.body == "My Rpc123456") // 假设请求体内容为 "My Rpc123456"
+    {
+        // 创建一个登录请求消息对象
+        fixbug::LoginRequest* login_request = dynamic_cast<fixbug::LoginRequest*>(request);
+        if (login_request)
+        {
+            // 将用户名和密码填充到登录请求消息对象中
+            login_request->set_name("My rpc"); // 替换为实际的用户名
+            login_request->set_pwd("123456"); // 替换为实际的密码
+            std::cout << "LoginRequest填充成功" << std::endl;
+        }
+        else
+        {
+            LOG_WARN << "Failed to cast request to LoginRequest";
+            return;
+        }
+    }
+    else
+    {
+        LOG_WARN << "Invalid request body";
+        return;
+    }
+    ////////////=========================================
+    google::protobuf::Closure *done = google::protobuf::NewCallback<MprpcProvider, 
+                                                                    const muduo::net::TcpConnectionPtr&, 
+                                                                    google::protobuf::Message*>
+                                                                    (this, 
+                                                                    &MprpcProvider::SendHttpResponse, 
+                                                                    conn, response);
+
+    service->CallMethod(method, nullptr, request, response, done);
+}
 
 
 // 启动rpc服务节点，开始提供rpc远程网络调用服务
@@ -343,7 +404,7 @@ void MprpcProvider::Run()
     muduo::net::TcpServer server(&m_eventLoop, address, "RpcProvider"); // 一个TCP连接的对象，server
 
     // 设置muduo库线程数量
-    server.setThreadNum(8);
+    server.setThreadNum(4);
 
     // 绑定连接回调和消息读写回调方法  分离了网络代码和业务代码
     // this：当前Provider对象的实例

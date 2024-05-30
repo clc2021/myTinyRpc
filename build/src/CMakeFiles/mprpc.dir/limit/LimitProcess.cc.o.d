@@ -1,8 +1,8 @@
 src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/limit/LimitProcess.cc \
+ /home/ubuntu/projects/tinyRPC/src/limit/LimitProcess.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/LimitProcess.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/LimitingRule.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/LimitProcess.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/LimitingRule.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -170,8 +170,8 @@ src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/BlockStrategy.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/SlidingWindow.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/BlockStrategy.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/SlidingWindow.h \
  /usr/include/c++/11/mutex /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/limits \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
@@ -182,8 +182,8 @@ src/CMakeFiles/mprpc.dir/limit/LimitProcess.cc.o: \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/unique_ptr.h \
  /usr/include/c++/11/bits/this_thread_sleep.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/SampleWindow.h \
- /home/ubuntu/projects/tinyrpcGai/src/limit/../include/limit/SampleEntity.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/SampleWindow.h \
+ /home/ubuntu/projects/tinyRPC/src/limit/../include/limit/SampleEntity.h \
  /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \

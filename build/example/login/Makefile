@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyrpcGai
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyRPC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyrpcGai/build
+CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyRPC/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles /home/ubuntu/projects/tinyrpcGai/build/example/login//CMakeFiles/progress.marks
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyrpcGai/build/CMakeFiles 0
+	cd /home/ubuntu/projects/tinyRPC/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyRPC/build/CMakeFiles /home/ubuntu/projects/tinyRPC/build/example/login//CMakeFiles/progress.marks
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/projects/tinyRPC/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/clean
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/preinstall
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/preinstall
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/projects/tinyRPC/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/login/CMakeFiles/serverLimit.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/serverLimit.dir/rule
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/serverLimit.dir/rule
 .PHONY : example/login/CMakeFiles/serverLimit.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ serverLimit: example/login/CMakeFiles/serverLimit.dir/rule
 
 # fast build rule for target.
 serverLimit/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/build
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/build
 .PHONY : serverLimit/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client_circuit_break.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_circuit_break.dir/rule
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_circuit_break.dir/rule
 .PHONY : example/login/CMakeFiles/client_circuit_break.dir/rule
 
 # Convenience name for target.
@@ -141,12 +141,12 @@ client_circuit_break: example/login/CMakeFiles/client_circuit_break.dir/rule
 
 # fast build rule for target.
 client_circuit_break/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/build
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/build
 .PHONY : client_circuit_break/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client1.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client1.dir/rule
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client1.dir/rule
 .PHONY : example/login/CMakeFiles/client1.dir/rule
 
 # Convenience name for target.
@@ -155,12 +155,12 @@ client1: example/login/CMakeFiles/client1.dir/rule
 
 # fast build rule for target.
 client1/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/build
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/build
 .PHONY : client1/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client2.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client2.dir/rule
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client2.dir/rule
 .PHONY : example/login/CMakeFiles/client2.dir/rule
 
 # Convenience name for target.
@@ -169,12 +169,12 @@ client2: example/login/CMakeFiles/client2.dir/rule
 
 # fast build rule for target.
 client2/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/build
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/build
 .PHONY : client2/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client_async.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_async.dir/rule
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_async.dir/rule
 .PHONY : example/login/CMakeFiles/client_async.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ client_async: example/login/CMakeFiles/client_async.dir/rule
 
 # fast build rule for target.
 client_async/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/build
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/build
 .PHONY : client_async/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/client_failover.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_failover.dir/rule
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/client_failover.dir/rule
 .PHONY : example/login/CMakeFiles/client_failover.dir/rule
 
 # Convenience name for target.
@@ -197,12 +197,12 @@ client_failover: example/login/CMakeFiles/client_failover.dir/rule
 
 # fast build rule for target.
 client_failover/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/build
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/build
 .PHONY : client_failover/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/server.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/server.dir/rule
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/server.dir/rule
 .PHONY : example/login/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
@@ -211,12 +211,12 @@ server: example/login/CMakeFiles/server.dir/rule
 
 # fast build rule for target.
 server/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/build
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
 # Convenience name for target.
 example/login/CMakeFiles/serverHttp.dir/rule:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/serverHttp.dir/rule
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/login/CMakeFiles/serverHttp.dir/rule
 .PHONY : example/login/CMakeFiles/serverHttp.dir/rule
 
 # Convenience name for target.
@@ -225,7 +225,7 @@ serverHttp: example/login/CMakeFiles/serverHttp.dir/rule
 
 # fast build rule for target.
 serverHttp/fast:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/build
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/build
 .PHONY : serverHttp/fast
 
 __/user.pb.o: __/user.pb.cc.o
@@ -233,14 +233,14 @@ __/user.pb.o: __/user.pb.cc.o
 
 # target to build an object file
 __/user.pb.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.o
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/__/user.pb.cc.o
 .PHONY : __/user.pb.cc.o
 
 __/user.pb.i: __/user.pb.cc.i
@@ -248,14 +248,14 @@ __/user.pb.i: __/user.pb.cc.i
 
 # target to preprocess a source file
 __/user.pb.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.i
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/__/user.pb.cc.i
 .PHONY : __/user.pb.cc.i
 
 __/user.pb.s: __/user.pb.cc.s
@@ -263,14 +263,14 @@ __/user.pb.s: __/user.pb.cc.s
 
 # target to generate assembly for a file
 __/user.pb.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.s
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/__/user.pb.cc.s
 .PHONY : __/user.pb.cc.s
 
 client1.o: client1.cc.o
@@ -278,7 +278,7 @@ client1.o: client1.cc.o
 
 # target to build an object file
 client1.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.o
 .PHONY : client1.cc.o
 
 client1.i: client1.cc.i
@@ -286,7 +286,7 @@ client1.i: client1.cc.i
 
 # target to preprocess a source file
 client1.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.i
 .PHONY : client1.cc.i
 
 client1.s: client1.cc.s
@@ -294,7 +294,7 @@ client1.s: client1.cc.s
 
 # target to generate assembly for a file
 client1.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client1.dir/build.make example/login/CMakeFiles/client1.dir/client1.cc.s
 .PHONY : client1.cc.s
 
 client2.o: client2.cc.o
@@ -302,7 +302,7 @@ client2.o: client2.cc.o
 
 # target to build an object file
 client2.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.o
 .PHONY : client2.cc.o
 
 client2.i: client2.cc.i
@@ -310,7 +310,7 @@ client2.i: client2.cc.i
 
 # target to preprocess a source file
 client2.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.i
 .PHONY : client2.cc.i
 
 client2.s: client2.cc.s
@@ -318,7 +318,7 @@ client2.s: client2.cc.s
 
 # target to generate assembly for a file
 client2.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client2.dir/build.make example/login/CMakeFiles/client2.dir/client2.cc.s
 .PHONY : client2.cc.s
 
 client_async.o: client_async.cc.o
@@ -326,7 +326,7 @@ client_async.o: client_async.cc.o
 
 # target to build an object file
 client_async.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.o
 .PHONY : client_async.cc.o
 
 client_async.i: client_async.cc.i
@@ -334,7 +334,7 @@ client_async.i: client_async.cc.i
 
 # target to preprocess a source file
 client_async.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.i
 .PHONY : client_async.cc.i
 
 client_async.s: client_async.cc.s
@@ -342,7 +342,7 @@ client_async.s: client_async.cc.s
 
 # target to generate assembly for a file
 client_async.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_async.dir/build.make example/login/CMakeFiles/client_async.dir/client_async.cc.s
 .PHONY : client_async.cc.s
 
 client_circuit_break.o: client_circuit_break.cc.o
@@ -350,7 +350,7 @@ client_circuit_break.o: client_circuit_break.cc.o
 
 # target to build an object file
 client_circuit_break.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o
 .PHONY : client_circuit_break.cc.o
 
 client_circuit_break.i: client_circuit_break.cc.i
@@ -358,7 +358,7 @@ client_circuit_break.i: client_circuit_break.cc.i
 
 # target to preprocess a source file
 client_circuit_break.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.i
 .PHONY : client_circuit_break.cc.i
 
 client_circuit_break.s: client_circuit_break.cc.s
@@ -366,7 +366,7 @@ client_circuit_break.s: client_circuit_break.cc.s
 
 # target to generate assembly for a file
 client_circuit_break.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_circuit_break.dir/build.make example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.s
 .PHONY : client_circuit_break.cc.s
 
 client_failover.o: client_failover.cc.o
@@ -374,7 +374,7 @@ client_failover.o: client_failover.cc.o
 
 # target to build an object file
 client_failover.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.o
 .PHONY : client_failover.cc.o
 
 client_failover.i: client_failover.cc.i
@@ -382,7 +382,7 @@ client_failover.i: client_failover.cc.i
 
 # target to preprocess a source file
 client_failover.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.i
 .PHONY : client_failover.cc.i
 
 client_failover.s: client_failover.cc.s
@@ -390,7 +390,7 @@ client_failover.s: client_failover.cc.s
 
 # target to generate assembly for a file
 client_failover.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/client_failover.dir/build.make example/login/CMakeFiles/client_failover.dir/client_failover.cc.s
 .PHONY : client_failover.cc.s
 
 server.o: server.cc.o
@@ -398,7 +398,7 @@ server.o: server.cc.o
 
 # target to build an object file
 server.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.o
 .PHONY : server.cc.o
 
 server.i: server.cc.i
@@ -406,7 +406,7 @@ server.i: server.cc.i
 
 # target to preprocess a source file
 server.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.i
 .PHONY : server.cc.i
 
 server.s: server.cc.s
@@ -414,7 +414,7 @@ server.s: server.cc.s
 
 # target to generate assembly for a file
 server.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/server.dir/build.make example/login/CMakeFiles/server.dir/server.cc.s
 .PHONY : server.cc.s
 
 serverHttp.o: serverHttp.cc.o
@@ -422,7 +422,7 @@ serverHttp.o: serverHttp.cc.o
 
 # target to build an object file
 serverHttp.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/serverHttp.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/serverHttp.cc.o
 .PHONY : serverHttp.cc.o
 
 serverHttp.i: serverHttp.cc.i
@@ -430,7 +430,7 @@ serverHttp.i: serverHttp.cc.i
 
 # target to preprocess a source file
 serverHttp.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/serverHttp.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/serverHttp.cc.i
 .PHONY : serverHttp.cc.i
 
 serverHttp.s: serverHttp.cc.s
@@ -438,7 +438,7 @@ serverHttp.s: serverHttp.cc.s
 
 # target to generate assembly for a file
 serverHttp.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/serverHttp.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverHttp.dir/build.make example/login/CMakeFiles/serverHttp.dir/serverHttp.cc.s
 .PHONY : serverHttp.cc.s
 
 serverLimit.o: serverLimit.cc.o
@@ -446,7 +446,7 @@ serverLimit.o: serverLimit.cc.o
 
 # target to build an object file
 serverLimit.cc.o:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.o
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.o
 .PHONY : serverLimit.cc.o
 
 serverLimit.i: serverLimit.cc.i
@@ -454,7 +454,7 @@ serverLimit.i: serverLimit.cc.i
 
 # target to preprocess a source file
 serverLimit.cc.i:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.i
 .PHONY : serverLimit.cc.i
 
 serverLimit.s: serverLimit.cc.s
@@ -462,7 +462,7 @@ serverLimit.s: serverLimit.cc.s
 
 # target to generate assembly for a file
 serverLimit.cc.s:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build && $(MAKE) $(MAKESILENT) -f example/login/CMakeFiles/serverLimit.dir/build.make example/login/CMakeFiles/serverLimit.dir/serverLimit.cc.s
 .PHONY : serverLimit.cc.s
 
 # Help Target
@@ -519,6 +519,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/projects/tinyRPC/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

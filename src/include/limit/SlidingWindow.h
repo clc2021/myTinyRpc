@@ -11,12 +11,12 @@
 
 class SlidingWindow {
 private:
-    const long windowIntervalInMs; 
-    const int sampleWindowAmount; 
-    const long sampleWindowIntervalInMs;
+    const long windowIntervalInMs; // 1000
+    const int sampleWindowAmount; // 8
+    const long sampleWindowIntervalInMs; // 125
     std::vector<SampleWindow*> sampleWindowVector;
     std::mutex updateMtx; // 更新锁
-    // std::mutex vecMtx; // 样本数组锁
+    // std::mutex vecMtx; // 样本数组锁 to_do 不确定要不要用
 
     int getCurSampleWindowIdx(long time);
     long getCurSampleWindowStartTime(long time);

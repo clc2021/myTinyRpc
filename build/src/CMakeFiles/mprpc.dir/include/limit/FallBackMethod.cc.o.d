@@ -1,5 +1,5 @@
 src/CMakeFiles/mprpc.dir/include/limit/FallBackMethod.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/include/limit/FallBackMethod.cc \
+ /home/ubuntu/projects/tinyRPC/src/include/limit/FallBackMethod.cc \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

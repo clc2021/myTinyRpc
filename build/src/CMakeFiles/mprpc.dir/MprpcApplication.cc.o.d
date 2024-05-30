@@ -1,8 +1,8 @@
 src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/MprpcApplication.cc \
+ /home/ubuntu/projects/tinyRPC/src/MprpcApplication.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcApplication.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcChannel.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcApplication.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcChannel.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/service.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -287,13 +287,13 @@ src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp \
  /usr/include/boost/core/addressof.hpp \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcApplication.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ErrorCode.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/LoadBalancer.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ServiceAddress.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcApplication.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ErrorCode.h \
+ /home/ubuntu/projects/tinyRPC/src/include/LoadBalancer.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ServiceAddress.h \
  /usr/include/uuid/uuid.h /usr/include/x86_64-linux-gnu/sys/time.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/FuseProtector.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/FuseState.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/FuseProtector.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/FuseState.h \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -317,9 +317,9 @@ src/CMakeFiles/mprpc.dir/MprpcApplication.cc.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/../ServiceAddress.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcController.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ZookeeperUtil.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/../ServiceAddress.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcController.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ZookeeperUtil.h \
  /usr/include/semaphore.h /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/zookeeper/zookeeper.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \

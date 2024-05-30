@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyrpcGai
+CMAKE_SOURCE_DIR = /home/ubuntu/projects/tinyRPC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyrpcGai/build
+CMAKE_BINARY_DIR = /home/ubuntu/projects/tinyRPC/build
 
 # Include any dependencies generated for this target.
 include example/login/CMakeFiles/client_circuit_break.dir/depend.make
@@ -72,30 +72,30 @@ include example/login/CMakeFiles/client_circuit_break.dir/flags.make
 example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o: example/login/CMakeFiles/client_circuit_break.dir/flags.make
 example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o: ../example/login/client_circuit_break.cc
 example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o: example/login/CMakeFiles/client_circuit_break.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o"
-	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o -MF CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o.d -o CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o -c /home/ubuntu/projects/tinyrpcGai/example/login/client_circuit_break.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o"
+	cd /home/ubuntu/projects/tinyRPC/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o -MF CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o.d -o CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.o -c /home/ubuntu/projects/tinyRPC/example/login/client_circuit_break.cc
 
 example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.i"
-	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/example/login/client_circuit_break.cc > CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyRPC/example/login/client_circuit_break.cc > CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.i
 
 example/login/CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.s"
-	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/example/login/client_circuit_break.cc -o CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyRPC/example/login/client_circuit_break.cc -o CMakeFiles/client_circuit_break.dir/client_circuit_break.cc.s
 
 example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o: example/login/CMakeFiles/client_circuit_break.dir/flags.make
 example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o: ../example/user.pb.cc
 example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o: example/login/CMakeFiles/client_circuit_break.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o"
-	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o -MF CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o.d -o CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o -c /home/ubuntu/projects/tinyrpcGai/example/user.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/projects/tinyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o"
+	cd /home/ubuntu/projects/tinyRPC/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o -MF CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o.d -o CMakeFiles/client_circuit_break.dir/__/user.pb.cc.o -c /home/ubuntu/projects/tinyRPC/example/user.pb.cc
 
 example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_circuit_break.dir/__/user.pb.cc.i"
-	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyrpcGai/example/user.pb.cc > CMakeFiles/client_circuit_break.dir/__/user.pb.cc.i
+	cd /home/ubuntu/projects/tinyRPC/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/projects/tinyRPC/example/user.pb.cc > CMakeFiles/client_circuit_break.dir/__/user.pb.cc.i
 
 example/login/CMakeFiles/client_circuit_break.dir/__/user.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_circuit_break.dir/__/user.pb.cc.s"
-	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyrpcGai/example/user.pb.cc -o CMakeFiles/client_circuit_break.dir/__/user.pb.cc.s
+	cd /home/ubuntu/projects/tinyRPC/build/example/login && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/projects/tinyRPC/example/user.pb.cc -o CMakeFiles/client_circuit_break.dir/__/user.pb.cc.s
 
 # Object files for target client_circuit_break
 client_circuit_break_OBJECTS = \
@@ -110,18 +110,18 @@ client_circuit_break_EXTERNAL_OBJECTS =
 ../bin/client_circuit_break: example/login/CMakeFiles/client_circuit_break.dir/build.make
 ../bin/client_circuit_break: ../lib/libmprpc.a
 ../bin/client_circuit_break: example/login/CMakeFiles/client_circuit_break.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyrpcGai/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/client_circuit_break"
-	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client_circuit_break.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/projects/tinyRPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/client_circuit_break"
+	cd /home/ubuntu/projects/tinyRPC/build/example/login && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client_circuit_break.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/login/CMakeFiles/client_circuit_break.dir/build: ../bin/client_circuit_break
 .PHONY : example/login/CMakeFiles/client_circuit_break.dir/build
 
 example/login/CMakeFiles/client_circuit_break.dir/clean:
-	cd /home/ubuntu/projects/tinyrpcGai/build/example/login && $(CMAKE_COMMAND) -P CMakeFiles/client_circuit_break.dir/cmake_clean.cmake
+	cd /home/ubuntu/projects/tinyRPC/build/example/login && $(CMAKE_COMMAND) -P CMakeFiles/client_circuit_break.dir/cmake_clean.cmake
 .PHONY : example/login/CMakeFiles/client_circuit_break.dir/clean
 
 example/login/CMakeFiles/client_circuit_break.dir/depend:
-	cd /home/ubuntu/projects/tinyrpcGai/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/tinyrpcGai /home/ubuntu/projects/tinyrpcGai/example/login /home/ubuntu/projects/tinyrpcGai/build /home/ubuntu/projects/tinyrpcGai/build/example/login /home/ubuntu/projects/tinyrpcGai/build/example/login/CMakeFiles/client_circuit_break.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/projects/tinyRPC/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/projects/tinyRPC /home/ubuntu/projects/tinyRPC/example/login /home/ubuntu/projects/tinyRPC/build /home/ubuntu/projects/tinyRPC/build/example/login /home/ubuntu/projects/tinyRPC/build/example/login/CMakeFiles/client_circuit_break.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/login/CMakeFiles/client_circuit_break.dir/depend
 

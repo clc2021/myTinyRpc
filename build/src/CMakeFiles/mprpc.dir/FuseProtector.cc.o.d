@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/FuseProtector.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/FuseProtector.cc \
+ /home/ubuntu/projects/tinyRPC/src/FuseProtector.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/./include/fuse/FuseProtector.h \
+ /home/ubuntu/projects/tinyRPC/src/./include/fuse/FuseProtector.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -150,7 +150,7 @@ src/CMakeFiles/mprpc.dir/FuseProtector.cc.o: \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/atomic \
  /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
- /home/ubuntu/projects/tinyrpcGai/src/./include/fuse/FuseState.h \
+ /home/ubuntu/projects/tinyRPC/src/./include/fuse/FuseState.h \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/tuple /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/array \
@@ -192,4 +192,4 @@ src/CMakeFiles/mprpc.dir/FuseProtector.cc.o: \
  /usr/include/c++/11/tr1/riemann_zeta.tcc /usr/include/c++/11/set \
  /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
- /home/ubuntu/projects/tinyrpcGai/src/./include/fuse/../ServiceAddress.h
+ /home/ubuntu/projects/tinyRPC/src/./include/fuse/../ServiceAddress.h

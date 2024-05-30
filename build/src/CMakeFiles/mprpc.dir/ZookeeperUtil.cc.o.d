@@ -1,7 +1,7 @@
 src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o: \
- /home/ubuntu/projects/tinyrpcGai/src/ZookeeperUtil.cc \
+ /home/ubuntu/projects/tinyRPC/src/ZookeeperUtil.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ZookeeperUtil.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ZookeeperUtil.h \
  /usr/include/semaphore.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -155,8 +155,8 @@ src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcApplication.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcChannel.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcApplication.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcChannel.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/service.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/stubs/callback.h \
  /usr/local/protobuf/protobuf-3.21.0/include/google/protobuf/stubs/macros.h \
@@ -308,13 +308,13 @@ src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o: \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp \
  /usr/include/boost/core/addressof.hpp \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcApplication.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ErrorCode.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/LoadBalancer.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ServiceAddress.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcApplication.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ErrorCode.h \
+ /home/ubuntu/projects/tinyRPC/src/include/LoadBalancer.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ServiceAddress.h \
  /usr/include/uuid/uuid.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/FuseProtector.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/FuseState.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/FuseProtector.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/FuseState.h \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -338,7 +338,7 @@ src/CMakeFiles/mprpc.dir/ZookeeperUtil.cc.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/ubuntu/projects/tinyrpcGai/src/include/./fuse/../ServiceAddress.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/MprpcController.h \
- /home/ubuntu/projects/tinyrpcGai/src/include/ZookeeperUtil.h \
+ /home/ubuntu/projects/tinyRPC/src/include/./fuse/../ServiceAddress.h \
+ /home/ubuntu/projects/tinyRPC/src/include/MprpcController.h \
+ /home/ubuntu/projects/tinyRPC/src/include/ZookeeperUtil.h \
  /usr/include/memory.h
